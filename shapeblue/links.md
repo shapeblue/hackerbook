@@ -33,6 +33,7 @@ https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/9535502/Lab+Network+Ov
 
 ## Rest
 
+- [Team Holiday List 2018](https://shapeblue.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7B00932368-56FB-4034-9F02-E761E31E7CBA%7D&file=Holiday%20calendar%202018.xls&action=default&mobileredirect=true)
 - [Email (web)](https://outlook.office.com/owa/?realm=shapeblue.com)
 - [Calendar (web)](https://outlook.office.com/owa/?realm=shapeblue.com&path=/calendar/view/Week)
 - [SharePoint](https://shapeblue.sharepoint.com)

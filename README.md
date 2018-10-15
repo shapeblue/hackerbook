@@ -1,8 +1,4 @@
-## CloudStack HackerBook
+# ShapeBlue Engineering Handbook
 
-
-[ShapeBlue Internal](shapeblue/links.md)
-
-## Authors
-
-Rohit Yadav <rohit@apache.org>
+- [ShapeBlue Internal](shapeblue/links.md)
+- [CloudStack HackerBook](cloudstack/index.md)
