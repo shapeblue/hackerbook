@@ -39,6 +39,10 @@ https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/9535502/Lab+Network+Ov
 - [SharePoint](https://shapeblue.sharepoint.com)
 - [ShapeBlue Blog Login](https://www.shapeblue.com/wpssadmin/)
 
+## Misc
+
+- [Bootcamp Slides](https://shapeblue.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?csf=1&e=tJdS1J&RootFolder=%2fShared%20Documents%2fTraining%2fBootcamps%2f2%20Day%20CloudStack%204%2e11%20Bootcamp&FolderCTID=0x012000885A31BE067616469D0B0A86CACD589D)
+
 ## Processes
 
 https://shapeblue.atlassian.net/wiki/spaces/PT/pages/24707085/Recommended+Reading
