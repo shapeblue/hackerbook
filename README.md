@@ -1,4 +1,4 @@
 # ShapeBlue Engineering Handbook
 
-- [ShapeBlue Internal](shapeblue/links.md)
-- [CloudStack HackerBook](cloudstack/index.md)
+- [ShapeBlue Internal](shapeblue/README.md)
+- [CloudStack HackerBook](cloudstack/README.md)
