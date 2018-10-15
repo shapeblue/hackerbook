@@ -17,7 +17,7 @@ After fresh install, install following:
     apt-get update
     apt-get dist-upgrade
     # general packages
-    apt-get install vim git subversion mercurial patch rsync curl wget sed awk openssh-client gpg gnupg2 build-essential gzip bzip2 zip unzip p7zip-full p7zip-rar
+    apt-get install vim git subversion mercurial patch rsync curl wget sed openssh-client gpg gnupg2 build-essential gzip bzip2 zip unzip p7zip-full p7zip-rar
     # cloudstack related development
     apt-get install openjdk-8-jdk maven mysql-client mysql-server libmysql-java nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-bin virt-manager ipmitool jq uuid uuid-runtime python python-dev python-libvirt python-mysql.connector python-netaddr python-pip python-setuptools libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
     # security
