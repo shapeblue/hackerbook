@@ -1,5 +1,19 @@
 # Getting Started
 
+- What is CloudStack: https://cloudstack.apache.org/about.html
+- 2 Minute Introduction to Apache CloudStack: https://www.youtube.com/watch?v=oJ4b8HFmFTc
+- Building IaaS with Apache CloudStack: https://www.youtube.com/watch?v=bxEL06BPGNw
+- CloudStack - The best kept secret in the cloud: https://www.youtube.com/watch?v=nJiJRnJ_34w
+- Building Clouds with Apache CloudStack: https://www.youtube.com/watch?v=4qFFwyK9hos
+
+## Prerequisites
+
+We assume you know:
+
+- Basics of Virtualization (go try VirtualBox, VMware fusion, KVM etc)
+- Basic Java, Python, shell scripting, git, maven
+- Linux adminstration and usage
+
 ## Workstation Setup
 
 Recommended laptop setup:
@@ -43,7 +57,23 @@ Install manually: (optionals)
 - IntelliJ Goland: https://www.jetbrains.com/go/
 - VS Code: https://code.visualstudio.com/
 
-## Development
+Recommended: Create and maintain a `dotfiles` repo for your env configuration.
+For example, see https://github.com/rhtyd/dotfiles.
 
-- [MonkeyBox - DevCloud Appliance](https://github.com/rhtyd/monkeybox)
+## Know the Project
 
+- [The Apache Way](http://theapacheway.com/)
+- [Project website](https://cloudstack.apache.org)
+- [Join dev, users and other MLs](https://cloudstack.apache.org/mailing-lists.html)
+- IRC channels on freenode: \#cloudstack, \#cloudstack-dev
+
+Useful links:
+- Git repo: https://github.com/apache/cloudstack
+- Pull requests: https://github.com/apache/cloudstack/pulls
+- Bug tracking: https://github.com/apache/cloudstack/issues
+- Old bug tracking: https://issues.apache.org/jira/browse/CLOUDSTACK
+- Docs: http://docs.cloudstack.apache.org/
+- API docs: https://cloudstack.apache.org/api.html
+
+Contributing Guideline:
+https://github.com/apache/cloudstack/blob/master/CONTRIBUTING.md
