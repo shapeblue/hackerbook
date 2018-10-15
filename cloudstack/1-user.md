@@ -14,9 +14,6 @@ Next, find out the IP of the VM, ensure that you're able to SSH into the host.
 Next, follow the following blog to install CloudStack with KVM in the VM:
 https://rohityadav.cloud/blog/cloudstack-kvm/
 
-.. WIP ..
-
-## Deploying a Basic Zone with Security Groups
-
 ## Deploying an Advanced Zone
 
+add steps etc. here

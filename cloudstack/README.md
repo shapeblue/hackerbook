@@ -7,9 +7,9 @@ Rapid learning framework for CloudStack hackers!
 
 ### Contents
 
-- [Getting Started](1-start.md)
-- [Test Drive as a User](2-try.md)
-- Development Environment
+- [Getting Started](0-init.md)
+- [Try as a User](1-user.md)
+- [Development 101](2-dev.md)
   - Codebase
     - Filesystem layout
     - Maven build system
@@ -51,6 +51,12 @@ Rapid learning framework for CloudStack hackers!
   - Virtual Router
   - SystemVM changes
   - Version Upgrades
+
+### Recommended Schedule
+
+Week 1: Getting Started, Try as a User, Development 101
+Week 2:
+...wip..
 
 ### Authors
 
