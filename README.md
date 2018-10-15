@@ -1,7 +1,7 @@
 ## CloudStack HackerBook
 
 
-[ShapeBlue Internal](shapeblue/link.md)
+[ShapeBlue Internal](shapeblue/links.md)
 
 ## Authors
 
