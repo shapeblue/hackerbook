@@ -3,8 +3,10 @@
 - What is CloudStack: https://cloudstack.apache.org/about.html
 - 2 Minute Introduction to Apache CloudStack: https://www.youtube.com/watch?v=oJ4b8HFmFTc
 - Building IaaS with Apache CloudStack: https://www.youtube.com/watch?v=bxEL06BPGNw
-- CloudStack - The best kept secret in the cloud: https://www.youtube.com/watch?v=nJiJRnJ_34w
 - Building Clouds with Apache CloudStack: https://www.youtube.com/watch?v=4qFFwyK9hos
+
+Recommended reading:
+http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/concepts.html
 
 ## Prerequisites
 

@@ -38,3 +38,15 @@ https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/9535502/Lab+Network+Ov
 - [Calendar (web)](https://outlook.office.com/owa/?realm=shapeblue.com&path=/calendar/view/Week)
 - [SharePoint](https://shapeblue.sharepoint.com)
 - [ShapeBlue Blog Login](https://www.shapeblue.com/wpssadmin/)
+
+## Processes
+
+https://shapeblue.atlassian.net/wiki/spaces/PT/pages/24707085/Recommended+Reading
+
+https://shapeblue.atlassian.net/wiki/spaces/PT/pages/67343436/Release+Process
+
+https://shapeblue.atlassian.net/wiki/spaces/PT/pages/28377100/Contributing+PR+to+apache+cloudstack
+
+https://shapeblue.atlassian.net/wiki/spaces/PT/pages/15269899/Building+Packages+and+Repositories
+
+
