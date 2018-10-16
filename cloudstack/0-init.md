@@ -16,6 +16,30 @@ We assume you know:
 - Basic Java, Python, shell scripting, git, maven
 - Linux adminstration and usage
 
+## Books and Readings List
+
+CloudStack:
+- [The Apache Way](http://theapacheway.com/)a
+- [Apache CloudStack bylaws](http://cloudstack.apache.org/bylaws.html)
+- [Apache CloudStack docs](http://docs.cloudstack.apache.org)
+
+Java:
+- Effective Java
+- Java Concurrency in Practice
+- Java Performance
+- Clean Code
+
+Design and software engineering:
+- The Pragmatic Programmer
+- Release It!: Design and Deploy Production-Ready Software (Pragmatic Programmers)
+- [SOLID papers](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
+
+Distributed systems:
+- [Distributed Systems for fun and profit](http://book.mixu.net/distsys/)
+- [Perspective on the CAP theorem](https://groups.csail.mit.edu/tds/papers/Gilbert/Brewer2.pdf) (paper)
+- [Time, clocks and the ordering of events in a distributed system](https://amturing.acm.org/p558-lamport.pdf) (paper)
+- [A comprehensive study of C/CRDTs](https://hal.inria.fr/file/index/docid/555588/filename/techreport.pdf) (paper)
+
 ## Workstation Setup
 
 Recommended laptop setup:
@@ -64,7 +88,6 @@ For example, see https://github.com/rhtyd/dotfiles.
 
 ## Know the Project
 
-- [The Apache Way](http://theapacheway.com/)
 - [Project website](https://cloudstack.apache.org)
 - [Join dev, users and other MLs](https://cloudstack.apache.org/mailing-lists.html)
 - IRC channels on freenode: \#cloudstack, \#cloudstack-dev
