@@ -65,9 +65,6 @@ such as KVM, VMware and XenServer. The usual setup consists of a management
 server and the resoures it should manage such as the hypervisor and storage
 hosts and networking configuration such as IP address ranges, VLANs etc.
 
-Recommended reading:
-http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/concepts.html
-
 The management server is a monolith that provides orchestration and control
 plane accessible via query based http APIs through its UI and CLI. Various
 authentication mechanisms such as the default authentication (pbkdf2), ldap,
@@ -100,9 +97,12 @@ CloudStack supports many networking models and topologies:
 
 What is L2/L3, VLAN etc? We'll cover that in later chapters.
 
-Lastly, CloudStack has events (for auditing purposes), allows customization via
+Lastly, CloudStack has several features including events and customizations via
 compute, network, storage/disk, system offerings, and limits/thresholds/settings
 for various resources.
+
+Recommended reading:
+http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/index.html
 
 ## Workstation Setup
 
