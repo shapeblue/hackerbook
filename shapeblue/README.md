@@ -15,6 +15,7 @@
 - [Staging Server](http://staging.yadav.xyz/) (only over SBLab VPN)
 - [ShapeBlue BrickFTP](https://shapeblue.brickftp.com/)
 - [AWS S3](https://console.aws.amazon.com/s3/home?region=us-east-1)
+- [AD Access](http://10.2.0.19:8888/showLogin.cc) (only over SBLab VPN)
 
 ## VPN Access
 

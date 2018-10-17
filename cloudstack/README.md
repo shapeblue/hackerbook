@@ -8,7 +8,11 @@ Rapid learning framework for CloudStack hackers!
 ### Contents
 
 - [Getting Started](0-init.md)
-- [Try as a User](1-user.md)
+- [Test Drive](1-user.md)
+  - Install CloudStack
+  - Deploy Zone
+  - API, UI, CLI
+  - Lifecyles
 - [Development 101](2-dev.md)
   - Codebase
     - Filesystem layout
