@@ -42,19 +42,22 @@ Rapid learning framework for CloudStack hackers!
   - Isolation: SG, VLAN etc.
   - Virtual Routers
   - Network tools, usage and debugging
-- Applied Development
-  - Design and Orchestration patterns
-  - API
-  - Service Layer
-  - DB Layer
-  - Agent and RPC
-  - Plugins and Framework
+- **Applied Hacking**
+  - [Automation](hack/automation.md)
+  - [Programming Patterns in CloudStack](hack/patterns.md)
+  - [API Development](hack/api.md)
+  - [UI Development](hack/ui.md)
+  - [Service Layer Development](hack/service.md)
+  - [DB Layer Development](hack/db.md)
+  - [RPC and Agent Framework](hack/rpc.md)
+  - [IPC, Events and message bus](hack/ipc.md)
+  - [Pluggable Framework and Plugin development](hack/framework.md)
   - Hypervisor Plugin
   - Storage Plugin
   - Network Plugin
   - Virtual Router
   - SystemVM changes
-  - Version Upgrades
+  - Upgrade Paths
 
 ### Recommended Schedule
 

@@ -7,7 +7,7 @@ and get them to speed in few weeks by means of
 [hacking](http://www.catb.org/esr/faqs/hacker-howto.html). Following guildelines
 are recommended:
 
-- Learn by coding and experimentation
+- Learn by programming, debugging and experimentation
 - Avoid being stuck with only theory
 - Do not attempt to understand everything the first time
 - Do not read everything end to end
@@ -101,7 +101,7 @@ Lastly, CloudStack has several features including events and customizations via
 compute, network, storage/disk, system offerings, and limits/thresholds/settings
 for various resources.
 
-Recommended reading:
+**Recommended reading**:
 http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/index.html
 
 ## Workstation Setup
@@ -159,7 +159,7 @@ For example, see https://github.com/rhtyd/dotfiles.
 ## References: Additional Books and Readings  List
 
 CloudStack:
-- [The Apache Way](http://theapacheway.com/)a
+- [The Apache Way](http://theapacheway.com/)
 - [Apache CloudStack bylaws](http://cloudstack.apache.org/bylaws.html)
 - [Apache CloudStack docs](http://docs.cloudstack.apache.org)
 
