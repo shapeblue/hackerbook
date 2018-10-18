@@ -5,6 +5,8 @@ and install it and test drive its features.
 
 ## Setting up CloudStack
 
+Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/1-user/1-user-task1.mp4
+
 On your workstation, with KVM enabled and installed, using the
 [virt-manager](https://virt-manager.org/) create a new VM
 using [Ubuntu](https://www.ubuntu.com/download/server) 18.04+ ISO with at least
@@ -190,6 +192,8 @@ To troubleshoot, check the management server logs for errors:
     tail -f /var/log/cloudstack/management/management-server.log
 
 ## Deploying Advanced Zone
+
+Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/1-user/1-user-task2.mp4
 
 In this section, you'll create an advanced KVM-based zone in your CloudStack
 environment. Skip the basic zone guided tour installation wizard, and proceed
