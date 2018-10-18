@@ -3,7 +3,7 @@
 The best way to learn about CloudStack is to start as a user, learn how to setup
 and install it and test drive its features.
 
-* [Setting up CloudStack](#setting-up-cloudstack)
+* [Installing CloudStack](#installing-cloudstack)
     * [Validate your VM](#validate-your-vm)
     * [Configure Networking](#configure-networking)
     * [Install Packages](#install-packages)
@@ -18,11 +18,14 @@ and install it and test drive its features.
     * [Setup Network](#setup-network)
     * [Add Resources](#add-resources)
     * [Finishing Deployment](#finishing-deployment)
-* [Using your CloudStack IaaS](#using-your-cloudstack-iaas)
+* [Using CloudStack](#using-cloudstack)
 
-## Setting up CloudStack
+## Installing CloudStack
 
 Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/1-user/1-user-task1.mp4
+
+**Recommended Reading**:
+http://docs.cloudstack.apache.org/en/latest/installguide/
 
 On your workstation, with KVM enabled and installed, using the
 [virt-manager](https://virt-manager.org/) create a new VM
@@ -296,20 +299,99 @@ Finally, confirm and enable the zone!
 
 ### Finishing Deployment
 
-If you're deploying a zone using the onboarding wizard, click Launch or finalize
-the setup and enable the zone. Watchout for any errors by tailing the management
-server log.
+Wait for the system VMs to start before you can use your newly deployed zone.
+You may troubleshoot using the management server logs for any errors.
 
 **Recommended Exercise**:
 - Deploy a Basic KVM based zone using the guided tour wizard
-- CloudStack [Automation](hack/automation.md) using CloudMonkey and Ansible.
 
-## Using your CloudStack IaaS
+## Using CloudStack
 
 Congratulations, you've successfully installed and deployed a zone in your test
-VM. Once your zone is launched or enabled, two system VMs - Console Proxy VM
-(CPVM) and Secondary Storage VM (SSVM) will start which you can track in the UI
-by going to Infrastructure > System VMs.
+VM. In this section, you'll learn CloudStack administartion and usage.
 
-After the system VMs are `Up`, you can proceed to setup a template, deploy an
-instance etc.
+**Recommended Reading**:
+http://docs.cloudstack.apache.org/en/latest/adminguide/
+
+Once your zone is enabled, before you proceed wait for two the system VMs to
+come online - the Console Proxy VM (CPVM) and the Secondary Storage VM (SSVM).
+You can track them in the UI at Infrastructure > System VMs.
+
+### Access
+
+- API
+- UI
+- CLI
+
+### Business
+
+- Roles
+- Accounts
+- Users
+- Domains
+- Authentication and Authorization
+- LDAP and SAML
+- Projects
+- Regions
+- Events
+
+### Cloud
+
+- VMs
+- Volumes
+- Volume and VM Snapshots
+- Templates and ISOs
+- Network
+  - Shared Network
+  - Isolated Network
+  - VPC
+  - L2 Network
+
+### Infrastructure
+
+- Organization Units
+  - Regions
+  - Zones
+    - Basic Zone
+    - Advanced Zone
+  - Pods
+  - Cluster
+  - Hosts
+  - Storage
+    - Primary Storage
+    - Secondary Storage
+  - Network
+
+Topics:
+
+- Administration
+  - Compute: VMs, allocation algorithms
+  - Storage: Template, ISOs, Volume, Snapshots
+  - Network
+- Hosts
+  - KVM
+  - XenServer
+  - VMware
+- System VMs
+- Storage
+  - Primary and Secondary Storage
+  - Local Storage
+  - Shared Storage (NFS, Ceph etc)
+- Networks and Traffic
+- Service Offerings
+  - Compute
+  - Disk
+  - Network
+  - System
+- Limits, Thresholds and Notifications
+- Events and Usage Records
+- Misc
+  - Dedicated Resources
+- Operations
+  - Database
+  - Logging
+  - Monitoring
+  - Troubleshooting
+
+**Recommended Exercise**:
+- CloudStack [Automation](hack/automation.md) using CloudMonkey and Ansible.

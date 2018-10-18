@@ -1,5 +1,10 @@
 # Development 101
 
+**Recommended Reference**:
+- http://docs.cloudstack.apache.org/en/latest/developersguide
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/How+to+build+CloudStack
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Development+101
+
 ## Setup Environment
 
 Follow the MonkeyBox project to setup a development environment:
