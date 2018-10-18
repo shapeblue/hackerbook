@@ -2,6 +2,14 @@
 
 Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/0-init/0-init.mp4
 
+* [About](#about)
+* [Prerequisites](#prerequisites)
+* [What is CloudStack?](#what-is-cloudstack)
+* [Know the Project](#know-the-project)
+* [Core Concepts](#core-concepts)
+* [Workstation Setup](#workstation-setup)
+* [References](#references-additional-books-and-readings--list)
+
 ## About
 
 This fast learning course is designed to onboard new CloudStack developers

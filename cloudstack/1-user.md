@@ -3,6 +3,23 @@
 The best way to learn about CloudStack is to start as a user, learn how to setup
 and install it and test drive its features.
 
+* [Setting up CloudStack](#setting-up-cloudstack)
+    * [Validate your VM](#validate-your-vm)
+    * [Configure Networking](#configure-networking)
+    * [Install Packages](#install-packages)
+    * [MySQL Server and CloudStack DB](#mysql-server-and-cloudstack-db)
+    * [NFS Server](#nfs-server)
+    * [SystemVM Template](#systemvm-template)
+    * [KVM Setup](#kvm-setup)
+    * [Security Configuration](#security-configuration)
+    * [Setup Management Server](#setup-management-server)
+* [Deploying Advanced Zone](#deploying-advanced-zone)
+    * [Setup Zone](#setup-zone)
+    * [Setup Network](#setup-network)
+    * [Add Resources](#add-resources)
+    * [Finishing Deployment](#finishing-deployment)
+* [Using your CloudStack IaaS](#using-your-cloudstack-iaas)
+
 ## Setting up CloudStack
 
 Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/1-user/1-user-task1.mp4
