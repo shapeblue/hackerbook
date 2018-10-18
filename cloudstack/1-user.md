@@ -13,7 +13,8 @@ setting and tick `Copy host CPU configuration`. Start the VM and complete the
 installation.
 
 Next, find out the IP of the VM, ensure that you're able to SSH into the host.
-Ensure that you can SSH as `root` user with a known password.
+Ensure that you can SSH as `root` user with a known password. Also ensure
+that the `universe` *apt* repository is enabled.
 
 Next, we'll be building a local all-in-a-box cloud using CloudStack. You may
 optionally refer to the CentOS based quick installation guide here:
@@ -50,7 +51,7 @@ any yaml file at /etc/netplan: (change interface names, ip ranges accordingly)
        version: 2
        renderer: networkd
        ethernets:
-         enp2s0:
+         ens3:
            dhcp4: false
            dhcp6: false
            optional: true
@@ -71,7 +72,10 @@ Save the file and apply network config, finally reboot:
 
     netplan generate
     netplan apply
-    reboot
+
+Your connection will break since the VM's IP has changed, SSH again:
+
+    ssh root@192.168.122.10
 
 ### Install Packages
 
@@ -91,6 +95,7 @@ in mysql server's `/etc/mysql/mysql.conf.d/mysqld.cnf` as follows:
     [mysqld]
 
     server_id = 1
+    sql-mode="STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION,ERROR_FOR_DIVISION_BY_ZERO,NO_ZERO_DATE,NO_ZERO_IN_DATE,NO_ENGINE_SUBSTITUTION"
     innodb_rollback_on_timeout=1
     innodb_lock_wait_timeout=600
     max_connections=1000
@@ -100,7 +105,7 @@ in mysql server's `/etc/mysql/mysql.conf.d/mysqld.cnf` as follows:
 Restart MySQL server and setup CloudStack database:
 
     systemctl restart mysql
-    cloudstack-setup-databases cloud:cloud@localhost --deploy-as=root:<root-user-password> -i 192.168.122.10
+    cloudstack-setup-databases cloud:cloud@localhost --deploy-as=root:<root password, default blank> -i 192.168.122.10
 
 ### NFS Server
 
@@ -136,9 +141,14 @@ Enable VNC for console proxy:
 
     sed -i -e 's/\#vnc_listen.*$/vnc_listen = "0.0.0.0"/g' /etc/libvirt/qemu.conf
 
-Enable libvirtd in listen mode:
+Enable libvirtd in listen mode and configure non-TLS setup:
 
     sed -i -e 's/.*libvirtd_opts.*/libvirtd_opts="-l"/' /etc/default/libvirtd
+    echo 'listen_tls=0' >> /etc/libvirt/libvirtd.conf
+    echo 'listen_tcp=1' >> /etc/libvirt/libvirtd.conf
+    echo 'tcp_port = "16509"' >> /etc/libvirt/libvirtd.conf
+    echo 'mdns_adv = 0' >> /etc/libvirt/libvirtd.conf
+    echo 'auth_tcp = "none"' >> /etc/libvirt/libvirtd.conf
     systemctl restart libvirtd
 
 ### Security Configuration
@@ -170,64 +180,98 @@ Your installation and configuration is complete! You can now start the
 management server as follows:
 
     cloudstack-setup-management
-    systemctl status cloudstack-management
 
-Open up `http://192.168.122.10:8080/client` in Chrome (recommended) or any
+Open up http://192.168.122.10:8080/client in Chrome (recommended) or any
 modern browser and log into the CloudStack UI using the username `admin` and
-password `password. If you've any troubles, check the management server logs
-for possible errors:
+password `password.
+
+To troubleshoot, check the management server logs for errors:
 
     tail -f /var/log/cloudstack/management/management-server.log
 
 ## Deploying Advanced Zone
 
 In this section, you'll create an advanced KVM-based zone in your CloudStack
-environment. You can start the installation process by going through the wizard
-or proceed to the `Infrastructure` Tab > Zone and click on add zone with following
-settings:
+environment. Skip the basic zone guided tour installation wizard, and proceed
+to the `Infrastructure` Tab > Zone in the UI.
 
+### Setup Zone
+
+Click on add zone, select advanced zone and provide following configuration:
+
+    Name - any name
     Public DNS 1 - 8.8.8.8
-    Public DNS 2 - blank
     Internal DNS1 - 192.168.122.1
-    Internal DNS2 - blank
+    Hypervisor - KVM
 
-### Pod Configuration
+### Setup Network
 
-Create a pod with following:
+Use the default, which is `VLAN` isolation method on a single physical nic (on
+the host) that will carry all traffic types (management, public, guest etc).
 
-    Name - any given name
+Public traffic configuration:
+
     Gateway - 192.168.122.1
     Netmask - 255.255.255.0
-    Start/end reserved system IPs - 192.168.122.11-192.168.122.20
-    Guest gateway - 192.168.122.1
-    Guest netmask - 255.255.255.0
-    Guest start/end IP - 192.168.122.30-192.168.122.100
+    VLAN/VNI - (leave blank)
+    Start IP - 192.168.122.11
+    End IP - 192.168.122.30
 
-### Cluster Configuration
+Pod Configuration:
+
+    Name - any name
+    Gateway - 192.168.122.1
+    Start/end reserved system IPs - 192.168.122.31 - 192.168.122.50
+
+Guest traffic:
+
+    VLAN range: 100-200
+
+### Add Resources
 
 Create a cluster with following:
 
-    Name - any given name
+    Name - any name
     Hypervisor - Choose KVM
 
-To add your first host, provide following information:
+Add your default/first host:
 
     Hostname - 192.168.122.10
     Username - root
     Password - <password for root user>
 
-### Storage Configuration
+Add primary storage:
 
-For primary storage, use following configuration:
-
-    Name - any given name
+    Name - any name
+    Scope - zone-wide
+    Protocol - NFS
     Server - 192.168.122.10
     Path - /export/primary
 
-For secondary storage, use following configuration:
+Add secondary storage:
 
-    NFS server - 192.168.122.10
+    Provider - NFS
+    Name - any name
+    Server - 192.168.122.10
     Path - /export/secondary
+
+Next, click `Launch Zone` which will perform following actions:
+
+    Create Zone
+    Create Physical networks:
+      - Add various traffic types to the physical network
+      - Update and enable the physical network
+      - Configure, enable and update various network provider and elements such as the virtual network element
+    Create Pod
+    Configure public traffic
+    Configure guest traffic (vlan range for physical network)
+    Create Cluster
+    Add host
+    Create primary storage (also mounts it on the KVM host)
+    Create secondary storage
+    Complete zone creation
+
+Finally, confirm and enable the zone!
 
 ### Finishing Deployment
 
@@ -235,8 +279,9 @@ If you're deploying a zone using the onboarding wizard, click Launch or finalize
 the setup and enable the zone. Watchout for any errors by tailing the management
 server log.
 
-**Recommended Exercise**: CloudStack [Automation](hack/automation.md) using
-CloudMonkey and Ansible.
+**Recommended Exercise**:
+- Deploy a Basic KVM based zone using the guided tour wizard
+- CloudStack [Automation](hack/automation.md) using CloudMonkey and Ansible.
 
 ## Using your CloudStack IaaS
 
