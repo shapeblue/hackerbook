@@ -28,7 +28,7 @@ Tools to use:
 - cmk (modern)
 - bash and jq
 
-Challenges:
+**Challenges**:
 - Easy/Medium: Write a bash script to deploy few VMs using CloudMonkey and using
   jq capture and print list of running VMs. The bash script should take this
   number as a command line argument, for example to deploy 10 VMs:
@@ -60,6 +60,6 @@ Tools to use:
 - ansible
 - bash
 
-Challenges:
+**Challenges**:
 - Deploy a VM in a VPC with two tiers
 - Deploy a basic zone (KVM+Monkeybox or simulator based environment)

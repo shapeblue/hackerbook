@@ -1,7 +1,5 @@
 # Programming Patterns in CloudStack
 
-WIP, under review
-
 ## Design Patterns
 
 Practice and make yourself familiar with GoFs design patterns. Some popular
@@ -23,9 +21,8 @@ patterns in CloudStack:
 Example code:
 - https://github.com/rhtyd/hacklab/tree/master/designpatterns/java
 
-Challenge:
-- Write each of the design patterns for any example problem in Java
-  (recommended) and/or Python
+**Challenge**: Write each of the design patterns for any example problem in Java
+(recommended) and/or Python
 
 ## Orchestration Patterns
 
@@ -41,11 +38,11 @@ Network and firewall management:
 ## Challenge
 
 The following problem can have several similarities with CloudStack's design,
-organization units and orchestration. The task is to implement a management
-plane and orchestration enginge for a fictitious coffee shop in any language
-such as Python, Go etc.
+organization units and orchestration. The task is to design and optionally
+implement a management plane and orchestration engine for a fictitious cafe.
+For mockups and workflows you may use draw.io or dia.
 
-The system is defined by following scope, requirements and specs:
+High level specification:
   - The coffee shop has an owner (root admin), a manager (domain admin),
     baristas (agent/workers) and its customers (users).
   - Users can place an order using a kiosk, which the manager processes and

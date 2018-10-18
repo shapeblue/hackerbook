@@ -1,5 +1,7 @@
 # Getting Started
 
+Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/0-init/0-init.mp4
+
 ## About
 
 This fast learning course is designed to onboard new CloudStack developers
