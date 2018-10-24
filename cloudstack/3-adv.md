@@ -9,12 +9,11 @@
   - Plugin architecture
 
 ## Advanced Development Topics
-
-- [Programming Patterns in CloudStack](hack/patterns.md)
-
-| Upgrade Paths | 2-5 hours |
-| SystemVM changes | 2-5 hours |
+| Topic | Effort |
+| ----- | ------ |
+| SystemVM | 5-10 hours |
 | Virtual Router | 10-40 hours |
+| [Programming Patterns in CloudStack](hack/patterns.md) | 10-40 hours |
 | Hypervisor Plugin | 5-10 hours |
 | Storage Plugin | 5-10 hours |
 | Network Plugin | 5-10 hours |

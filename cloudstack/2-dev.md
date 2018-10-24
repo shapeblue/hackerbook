@@ -17,17 +17,24 @@
 - Git 101
 - Codebase layout and structure
 
+## Setting up IntelliJ IDEA
+
+IDE 101
+
 ## Building CloudStack
 
 Maven 101?
 
+Put in sudoers:
+Cmnd_Alias CLOUDSTACK = /bin/mkdir, /bin/mount, /bin/umount, /bin/cp, /bin/chmod, /usr/bin/keytool, /bin/keytool
+
+Defaults:bhaisaab !requiretty
+
+bhaisaab ALL=(ALL) NOPASSWD:CLOUDSTACK
+
 ## Testing CloudStack
 
 Unit tests and marvin/integration tests
-
-## Setting up IntelliJ IDEA
-
-IDE 101
 
 ## Simulator Based Development
 
@@ -42,13 +49,17 @@ https://github.com/rhtyd/monkeybox
 - Remote debugging with IntelliJ
 - Debugging using Visual VM and MAT
 
-## Basic Development Tasks
+## Basic Development Topics
 
-- [API Development](hack/api.md)
-- [UI Development](hack/ui.md)
-- [Service Layer Development](hack/service.md)
-- [DB Layer Development](hack/db.md)
-- [RPC and Agent Framework](hack/rpc.md)
-- [IPC, Events and message bus](hack/ipc.md)
-- [Pluggable Framework and Plugin development](hack/framework.md)
-- Upgrade Paths
+| Topic | Effort |
+| ----- | ------ |
+| [API Development](hack/api.md) | 2-5 hours |
+| [UI Development](hack/ui.md) | 2-5 hours |
+| [Service Layer Development](hack/service.md) | 2-5 hours |
+| [DB Layer Development](hack/db.md) | 2-5 hours |
+| [IPC, Events and message bus](hack/ipc.md) | 2-5 hours |
+| [RPC and Agent Framework](hack/rpc.md) | 2-5 hours |
+| [Misc: Global Settings, Background Tasks](hack/misc.md) | 2-5 hours |
+| [Pluggable Framework and Plugin development](hack/framework.md) | 2-5 hours |
+| Upgrade Paths | 2-5 hours |
+

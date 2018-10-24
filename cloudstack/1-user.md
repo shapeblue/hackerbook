@@ -433,18 +433,29 @@ etc.
 
 ### CloudStack Ops
 
-CloudStack management server config files are by default installed at
-`/etc/cloudstack/management` and at `/etc/default/cloudstack-management`. The
-software artifacts are installed at `/usr/share/cloudstack-management/`. The
-logs are available at `/var/log/cloudstack/management/`.
+CloudStack management/usage/agent config directories and logs location:
 
-Similar folder and file structure exists for cloudstack-usage (the CloudStack
-usage server) and cloudstack-agent (the CloudStack KVM agent).
+| Service | Config | Logs |
+| ------- | ------ | ---- |
+| cloudstack-management | `dir:/etc/cloudstack/management/`, `file:/etc/default/cloudstack-management` | `dir:/var/log/cloudstack/management/` |
+| cloudstack-usage | `dir:/etc/cloudstack/usage/`, `file:/etc/default/cloudstack-usage` | `dir:/var/log/cloudstack/usage/` |
+| cloudstack-agent | `dir:/etc/cloudstack/agent/`, `file:/etc/default/cloudstack-agent` | `dir:/var/log/cloudstack/agent/` |
+
+Go through each of the directories and files, notable files:
+- `server.properties`: management server config file
+- `db.properties`: database config file
+- `agent.properties`: agent config file
+- `log4j-cloud.xml`: log config file
+- `key`: encryption password file
 
 Troubleshooting references:
 - http://docs.cloudstack.apache.org/en/latest/adminguide/troubleshooting.html
 - https://www.slideshare.net/ShapeBlue/cloudstack-top-5-technical-issues-and-troubleshooting
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/SSVM%2C+templates%2C+Secondary+storage+troubleshooting
 
-**Recommended Exercise**:
-- CloudStack [Automation](hack/automation.md) using CloudMonkey and Ansible.
+**Recommended Exercises**:
+- Learn to read the CloudStack management server logs, `tail -f` the logs and
+  deploy a fresh virtual machine with a new network, read and try to understand
+  all the steps that happen during VM deployment.
+- Attempt CloudStack [Automation](hack/automation.md) challenge using
+  CloudMonkey and Ansible.

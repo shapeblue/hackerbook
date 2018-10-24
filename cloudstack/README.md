@@ -10,13 +10,14 @@ Rapid learning framework for CloudStack hackers!
 | Topic | Effort |
 | ----- | ------ |
 | [Getting Started](0-init.md) | 5-10 hours |
-| [Test Drive CloudStack](1-user.md) | 40-60 hours |
-| [Basic CloudStack Development](2-dev.md) | 20-40 hours |
+| [Test Drive CloudStack](1-user.md) | 40-80 hours |
+| [Basic CloudStack Development](2-dev.md) | 40-80 hours |
 | [Advanced CloudStack Development](3-adv.md) | 40-80 hours |
 | [Hacking Hypervisor](4-hypervisor.md) | 40-80 hours |
 | [Hacking Networking](5-network.md) | 40-80 hours |
-| [Hacking Storage](6-storage.md) | 20-40 hours |
-| [Hacking Distributed Systems](7-dsys.md) | 20-40 hours |
+| [Hacking Storage](6-storage.md) | 30-40 hours |
+| [Hacking Distributed Systems](7-dsys.md) | 20-30 hours |
+| | **255-480 hours** |
 
 ### Applied Hacking Topics
 
@@ -27,11 +28,12 @@ Rapid learning framework for CloudStack hackers!
 | [UI Development](hack/ui.md) | 2-5 hours |
 | [Service Layer Development](hack/service.md) | 2-5 hours |
 | [DB Layer Development](hack/db.md) | 2-5 hours |
-| [RPC and Agent Framework](hack/rpc.md) | 2-5 hours |
 | [IPC, Events and message bus](hack/ipc.md) | 2-5 hours |
+| [RPC and Agent Framework](hack/rpc.md) | 2-5 hours |
+| [Misc: Global Settings, Background Tasks](hack/misc.md) | 2-5 hours |
 | [Pluggable Framework and Plugin development](hack/framework.md) | 2-5 hours |
 | Upgrade Paths | 2-5 hours |
-| SystemVM changes | 2-5 hours |
+| SystemVM | 5-10 hours |
 | Virtual Router | 10-40 hours |
 | [Programming Patterns in CloudStack](hack/patterns.md) | 10-40 hours |
 | Hypervisor Plugin | 5-10 hours |
