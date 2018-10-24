@@ -1,11 +1,11 @@
-## CloudStack HackerBook
+# CloudStack HackerBook
 
 Rapid learning framework for CloudStack hackers!
 
 - [CloudStack Awesome List](https://github.com/resmo/awesome-cloudstack)
 - [CloudStack Docs](http://docs.cloudstack.apache.org/en/4.11.1.0/)
 
-### Contents
+## Contents
 
 | Topic | Effort |
 | ----- | ------ |
@@ -18,7 +18,8 @@ Rapid learning framework for CloudStack hackers!
 | [Hacking Storage](6-storage.md) | 40-80 hours |
 | [Hacking Distributed Systems](7-dsys.md) | 40 hours |
 
-**Applied Hacking Topics**:
+### Applied Hacking Topics
+
 | Topic | Effort |
 | ----- | ------ |
 | [Automation](hack/automation.md) | 10-20 hours |
@@ -37,6 +38,6 @@ Rapid learning framework for CloudStack hackers!
 | Storage Plugin | 5-10 hours |
 | Network Plugin | 5-10 hours |
 
-### Authors
+## Authors
 
 Rohit Yadav <rohit@apache.org>
