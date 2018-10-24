@@ -7,63 +7,35 @@ Rapid learning framework for CloudStack hackers!
 
 ### Contents
 
-- [Getting Started](0-init.md)
-- [Test Drive](1-user.md)
-  - Install CloudStack
-  - Deploy Zone
-  - API, UI, CLI
-  - Lifecyles
-- [Development 101](2-dev.md)
-  - Codebase
-    - Filesystem layout
-    - Maven build system
-  - MonkeyBox
-  - Building
-  - Testing
-  - Debugging
-- Design and Architecture
-  - Modules and Components
-  - Kernel and building blocks
-  - Layers and Subsystems
-  - IPC, RPC and Communication
-  - Dependency Injection
-  - Plugin architecture
-- Distributed Systems
-  - Scalability, Availability
-  - Latency, fault tolerance, performance
-  - Partition and replication
-  - Client-Server, agent based
-  - CAP, Time and Order
-  - Rebalancing, claim ownership
-  - Reconciliation, eventual consistency
-- Networking
-  - Overview
-  - Networks: L2, Shared, Isolated, VPC
-  - Isolation: SG, VLAN etc.
-  - Virtual Routers
-  - Network tools, usage and debugging
-- **Applied Hacking**
-  - [Automation](hack/automation.md)
-  - [Programming Patterns in CloudStack](hack/patterns.md)
-  - [API Development](hack/api.md)
-  - [UI Development](hack/ui.md)
-  - [Service Layer Development](hack/service.md)
-  - [DB Layer Development](hack/db.md)
-  - [RPC and Agent Framework](hack/rpc.md)
-  - [IPC, Events and message bus](hack/ipc.md)
-  - [Pluggable Framework and Plugin development](hack/framework.md)
-  - Hypervisor Plugin
-  - Storage Plugin
-  - Network Plugin
-  - Virtual Router
-  - SystemVM changes
-  - Upgrade Paths
+| Topic | Effort |
+| ----- | ------ |
+| [Getting Started](0-init.md) | 1-10 hours |
+| [Test Drive CloudStack](1-user.md) | 10-40 hours |
+| [Basic CloudStack Development](2-dev.md) | 20-40 hours |
+| [Advanced CloudStack Development](3-adv.md) | 40-80 hours |
+| [Hacking Hypervisor](4-hypervisor.md) | 40-120 hours |
+| [Hacking Networking](5-network.md) | 40-80 hours |
+| [Hacking Storage](6-storage.md) | 40-80 hours |
+| [Hacking Distributed Systems](7-dsys.md) | 40 hours |
 
-### Recommended Schedule
-
-Week 1: Getting Started, Try as a User, Development 101
-Week 2:
-...wip..
+**Applied Hacking Topics**:
+| Topic | Effort |
+| ----- | ------ |
+| [Automation](hack/automation.md) | 10-20 hours |
+| [API Development](hack/api.md) | 2-5 hours |
+| [UI Development](hack/ui.md) | 2-5 hours |
+| [Service Layer Development](hack/service.md) | 2-5 hours |
+| [DB Layer Development](hack/db.md) | 2-5 hours |
+| [RPC and Agent Framework](hack/rpc.md) | 2-5 hours |
+| [IPC, Events and message bus](hack/ipc.md) | 2-5 hours |
+| [Pluggable Framework and Plugin development](hack/framework.md) | 2-5 hours |
+| Upgrade Paths | 2-5 hours |
+| SystemVM changes | 2-5 hours |
+| Virtual Router | 10-40 hours |
+| [Programming Patterns in CloudStack](hack/patterns.md) | 10-40 hours |
+| Hypervisor Plugin | 5-10 hours |
+| Storage Plugin | 5-10 hours |
+| Network Plugin | 5-10 hours |
 
 ### Authors
 

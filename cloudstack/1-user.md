@@ -1,4 +1,4 @@
-# Test Drive
+# Test Drive CloudStack
 
 The best way to learn about CloudStack is to start as a user, learn how to setup
 and install it and test drive its features.
@@ -19,6 +19,9 @@ and install it and test drive its features.
     * [Add Resources](#add-resources)
     * [Finishing Deployment](#finishing-deployment)
 * [Using CloudStack](#using-cloudstack)
+    * [Access](#access)
+    * [CloudStack Feature Set](#cloudstack-feature-set)
+    * [CloudStack Ops](#cloudstack-ops)
 
 ## Installing CloudStack
 
@@ -308,90 +311,140 @@ You may troubleshoot using the management server logs for any errors.
 ## Using CloudStack
 
 Congratulations, you've successfully installed and deployed a zone in your test
-VM. In this section, you'll learn CloudStack administartion and usage.
+VM. In this section, you'll learn CloudStack administration and usage.
+
+Once your zone is enabled, before you proceed wait for two the system VMs to
+come online - the Console Proxy VM (CPVM) and the Secondary Storage VM (SSVM).
+You can track them in the UI at Infrastructure > System VMs. After they are up
+you can use your CloudStack setup for testing various features and resource
+lifecycles.
 
 **Recommended Reading**:
 http://docs.cloudstack.apache.org/en/latest/adminguide/
 
-Once your zone is enabled, before you proceed wait for two the system VMs to
-come online - the Console Proxy VM (CPVM) and the Secondary Storage VM (SSVM).
-You can track them in the UI at Infrastructure > System VMs.
-
 ### Access
 
-- API
-- UI
-- CLI
+CloudStack has a query based HTTP API endpoint that can be used to access and
+use the management server. There are two common modes of access:
 
-### Business
+- UI: The CloudStack UI is a jQuery based single page app. The UI is by default
+  accessible at `http://<ip>:8080/client`.
+- CLI: The CloudStack cloudmonkey (cmk) is the official CLI, it can be installed
+  on Linux, Mac and Windows to access the API endpoint by default at
+  `http://<ip>:8080/client/api`.
 
-- Roles
-- Accounts
-- Users
-- Domains
-- Authentication and Authorization
-- LDAP and SAML
-- Projects
-- Regions
-- Events
+### CloudStack Feature Set
 
-### Cloud
+CloudStack feature sets can be broadly divided into three types:
+- Business features
+- Cloud (user) features
+- Infrastructure (admin/management) features
 
-- VMs
-- Volumes
-- Volume and VM Snapshots
-- Templates and ISOs
-- Network
-  - Shared Network
-  - Isolated Network
-  - VPC
-  - L2 Network
+#### Business
 
-### Infrastructure
+- Roles: Set of allow/reject APIs. The `Admin` and `User` are two widely used
+  default roles.
+- Accounts: Record of an individual user/customer or a team, all the resources
+  in CloudStack are owned by an account. The `system` and `admin` are default
+  CloudStack accounts. All account have a `role`.
+- Users: A member/user of an account. Users in an account can be treated as
+  aliases to the account. All accounts have one or more users.
+- Domains: Accounts in a group. All account in a domain, by default in `/` the
+  root domain.
+- Authentication: Means of checking if you are who you say you are.
+- Authorization: Means of checking if you can access resource `X` or have
+  suitable privilege for other actions.
+- LDAP and SAML: Two widely used authentication plugins in CloudStack.
+- Projects: For organizing users and resources.
+- Regions: Represents a CloudStack installation. Largely, an incomplete feature.
+- Events: Used for auditing, monitoring, usage records and billing, and
+  event-driven integration with other external systems.
 
-- Organization Units
-  - Regions
-  - Zones
-    - Basic Zone
-    - Advanced Zone
-  - Pods
-  - Cluster
-  - Hosts
-  - Storage
-    - Primary Storage
-    - Secondary Storage
-  - Network
+#### Cloud
 
-Topics:
+- Instance: Virtual machines.
+- Volume: Disks of virtual machines.
+- Volume snapshot: Checkpoint or snapshot of disk of a VM.
+- VM snapshot: Checkpoint or snapshot of disk and memory of a VM.
+- Template: Virtual machines disk that has a guest OS installed and can
+  directly be used for creation of a VM.
+- ISO: CDrom files for installation of a guest OS in a VM.
+- Network:
+  - Shared Network: a flat L3 network where VMs directly receive a public IP, a
+    virtual router is usually deployed that provides DHCP and DNS services.
+  - L2 Network: a flat L2 network with no services or virtual routers.
+  - Isolated Network: a NAT-ed network that is provided by a virtual router that
+    itself takes public IPs and provides a RFC1918 L3 private network with
+    services to guest VMs like DHCP, DNS, NAT/SNAT, port-forwarding, firewall,
+    vpn, load balancing etc.
+  - VPC: similar to isolated network but provides multiple guest network tiers
+    and ACLs for those network tiers.
 
-- Administration
-  - Compute: VMs, allocation algorithms
-  - Storage: Template, ISOs, Volume, Snapshots
-  - Network
-- Hosts
-  - KVM
-  - XenServer
-  - VMware
-- System VMs
-- Storage
-  - Primary and Secondary Storage
-  - Local Storage
-  - Shared Storage (NFS, Ceph etc)
-- Networks and Traffic
-- Service Offerings
+#### Infrastructure
+
+CloudStack has several organization units such as zones, pods, clusters, hosts
+etc.
+
+- Zone: Represents a datacenter or availability zone
+  - Basic zone: massively scalable AWS styled flat-network cloud usually with
+    isolation and multitenancy implemented at host/hypervisor level by L2
+    firewall (ebtables) rules by a feature called security groups.
+  - Advanced zone: in additional to shared networks, provides enterprise
+    network models with isolated and VPC networks with isolation provided by
+    VLAN, VXLAN etc.
+- Pod: Represents a rack.
+- Cluster: Represents a group of hosts.
+- Host: Hypervisor host that runs workloads/VMs. For example, KVM, VMware and
+  XenServer.
+- Storage:
+  - Primary storage: Storage pool for virtual machine's disks.
+    - Local storage: When disks are on same machine as the VM.
+    - Shared storage: When disks are on a different machine, for example on a
+      NFS server/host, Ceph, etc.
+  - Secondary Storage: Image storage pool for templates, isos and snapshots.
+- Physical network: Allows configuration of physical network, traffic labels,
+  VLAN and IP address ranges for guest, public and private networks.
+- System VMs: Special service VMs created and managed by CloudStack management
+  server that implements an infrastructural service. They are based on a Debian
+  based guest template called the `systemvmtemplates`. All system vms run sshd
+  on port `3922` and can be accessed as follows based on the hypervisor:
+  - KVM and XenServer: ssh to the link-local IP of the systemvm on port 3922
+    using local `~/.ssh` key file.
+  - VMware: ssh to the private IP of the systemvm from a management server host
+    using the ssh key file at `/var/cloudstack/management/.ssh` location.
+  Notable systemvm types:
+  - SSVM: Secondary storage virtual machine provides means to manage the
+    secondary storage, register/copy templates/isos, host snapshots and copy
+    templates/isos to primary storage for consumption.
+  - CPVM: Console proxy virtual machine provides means to access console of a
+    VM. They act as a VNC/RDP proxy between the end user (browser) and the
+    hypervisor where VMs run.
+  - Virtual router: They provide router functionalities for various network
+    models.
+- Service offerings: Provides admins a way to create a catalogue of resource
+  offerings to end users such as:
   - Compute
   - Disk
   - Network
   - System
-- Limits, Thresholds and Notifications
-- Events and Usage Records
-- Misc
-  - Dedicated Resources
-- Operations
-  - Database
-  - Logging
-  - Monitoring
-  - Troubleshooting
+- Limits and thresholds: Provides means for admins to define usage limits and
+  threshold for various resource. Popular example is to set limit on
+  accounts/domains and cpu/memory thresholds on clusters etc.
+
+### CloudStack Ops
+
+CloudStack management server config files are by default installed at
+`/etc/cloudstack/management` and at `/etc/default/cloudstack-management`. The
+software artifacts are installed at `/usr/share/cloudstack-management/`. The
+logs are available at `/var/log/cloudstack/management/`.
+
+Similar folder and file structure exists for cloudstack-usage (the CloudStack
+usage server) and cloudstack-agent (the CloudStack KVM agent).
+
+Troubleshooting references:
+- http://docs.cloudstack.apache.org/en/latest/adminguide/troubleshooting.html
+- https://www.slideshare.net/ShapeBlue/cloudstack-top-5-technical-issues-and-troubleshooting
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/SSVM%2C+templates%2C+Secondary+storage+troubleshooting
 
 **Recommended Exercise**:
 - CloudStack [Automation](hack/automation.md) using CloudMonkey and Ansible.

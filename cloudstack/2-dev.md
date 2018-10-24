@@ -1,21 +1,49 @@
-# Development 101
+# Basic CloudStack Development
+
+## CloudStack Development 101
+
+- Architecture and Layers
+- System Design
 
 **Recommended Reference**:
-- http://docs.cloudstack.apache.org/en/latest/developersguide
-- https://cwiki.apache.org/confluence/display/CLOUDSTACK/How+to+build+CloudStack
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/Development+101
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/How+to+build+CloudStack
+- http://docs.cloudstack.apache.org/en/latest/developersguide
 
-## Setup Environment
+## Development Environment
+
+## Getting Code
+
+- Git 101
+- Codebase layout and structure
+
+## Building CloudStack
+
+Maven 101?
+
+## Testing CloudStack
+
+Unit tests and marvin/integration tests
+
+## Setting up IntelliJ IDEA
+
+IDE 101
+
+## Simulator Based Development
+
+## MonkeyBox Based Development
 
 Follow the MonkeyBox project to setup a development environment:
 https://github.com/rhtyd/monkeybox
 
-TODO: add stuff
+## Debugging CloudStack
 
-## CloudStack Development Topics
+- Debugging via logs
+- Remote debugging with IntelliJ
+- Debugging using Visual VM and MAT
 
-- [Automation](hack/automation.md)
-- [Programming Patterns in CloudStack](hack/patterns.md)
+## Basic Development Tasks
+
 - [API Development](hack/api.md)
 - [UI Development](hack/ui.md)
 - [Service Layer Development](hack/service.md)
@@ -23,9 +51,4 @@ TODO: add stuff
 - [RPC and Agent Framework](hack/rpc.md)
 - [IPC, Events and message bus](hack/ipc.md)
 - [Pluggable Framework and Plugin development](hack/framework.md)
-- Hypervisor Plugin
-- Storage Plugin
-- Network Plugin
-- Virtual Router
-- SystemVM changes
 - Upgrade Paths

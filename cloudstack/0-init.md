@@ -81,9 +81,6 @@ authentication mechanisms such as the default authentication (pbkdf2), ldap,
 saml2, api/secret key based etc are supported. Authorization is supported
 through `Roles` which have access to a set/subset of APIs.
 
-Authentication is `you are who you say you are`. Authorization is `are you
-allowed access for resource X`.
-
 For user management CloudStack has `Domains` that have `Accounts` that have
 `Users`, and all `Accounts` have some `Role`. It has `Projects` that allows
 users across domains to participate as a team.
@@ -163,8 +160,11 @@ Install manually:
 - VS Code: https://code.visualstudio.com/
 - Slack: https://slack.com/downloads/linux
 
-Recommended: Create and maintain a `dotfiles` repo for your env configuration.
-For example, see https://github.com/rhtyd/dotfiles.
+Productivity recommendations:
+- Develop muscle memory for git, maven, vi/vim and IntelliJ IDEA.
+- Create and maintain a `dotfiles` repo for your env configuration. For example,
+  see https://github.com/rhtyd/dotfiles.
+- Learn to touch type faster.
 
 ## References: Additional Books and Readings  List
 

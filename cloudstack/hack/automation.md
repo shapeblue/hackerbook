@@ -34,9 +34,9 @@ Tools to use:
 **Challenges**:
 - Easy/Medium: Write a bash script to deploy few VMs using CloudMonkey and using
   jq capture and print list of running VMs. The bash script should take this
-  number as a command line argument, for example to deploy 10 VMs:
+  number as a command line argument, for example to deploy 5 VMs:
 
-      bash deploy-script.sh 10
+      bash deploy-script.sh 5
 
 - Hard: Write a bash script that can deploy an advanced CloudStack zone using
   CloudMonkey (hint: deploy a zone using the UI, before hitting the `Launch
