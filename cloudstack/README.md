@@ -9,14 +9,14 @@ Rapid learning framework for CloudStack hackers!
 
 | Topic | Effort |
 | ----- | ------ |
-| [Getting Started](0-init.md) | 1-10 hours |
-| [Test Drive CloudStack](1-user.md) | 10-40 hours |
+| [Getting Started](0-init.md) | 5-10 hours |
+| [Test Drive CloudStack](1-user.md) | 40-60 hours |
 | [Basic CloudStack Development](2-dev.md) | 20-40 hours |
 | [Advanced CloudStack Development](3-adv.md) | 40-80 hours |
-| [Hacking Hypervisor](4-hypervisor.md) | 40-120 hours |
+| [Hacking Hypervisor](4-hypervisor.md) | 40-80 hours |
 | [Hacking Networking](5-network.md) | 40-80 hours |
-| [Hacking Storage](6-storage.md) | 40-80 hours |
-| [Hacking Distributed Systems](7-dsys.md) | 40 hours |
+| [Hacking Storage](6-storage.md) | 20-40 hours |
+| [Hacking Distributed Systems](7-dsys.md) | 20-40 hours |
 
 ### Applied Hacking Topics
 
