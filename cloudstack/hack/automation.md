@@ -16,6 +16,9 @@ https://github.com/apache/cloudstack-cloudmonkey/releases
 Documentation for the modern CloudMonkey:
 https://github.com/apache/cloudstack-cloudmonkey/wiki
 
+API documentation:
+https://cloudstack.apache.org/api.html
+
 Things to hack and learn:
 - Understand how to configure CloudMonkey
 - How to create and use CloudMonkey server profiles
@@ -36,7 +39,8 @@ Tools to use:
       bash deploy-script.sh 10
 
 - Hard: Write a bash script that can deploy an advanced CloudStack zone using
-  CloudMonkey (you may either use KVM+MonkeyBox or simulator based environment)
+  CloudMonkey (hint: deploy a zone using the UI, before hitting the `Launch
+  zone` button start tracing the API requests using Chrome/devtools)
 
 ## Ansible and CloudStack
 
