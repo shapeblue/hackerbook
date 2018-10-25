@@ -1,4 +1,4 @@
-# ShapeBlue Internal Systems
+# ShapeBlue Internal Handbook
 
 ## First Day
 
@@ -43,11 +43,32 @@ https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/15269908/How+to+access
 - [ShapeBlue Blog Login](https://www.shapeblue.com/wpssadmin/)
 - [Team Holiday List 2018](https://shapeblue.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7B00932368-56FB-4034-9F02-E761E31E7CBA%7D&file=Holiday%20calendar%202018.xls&action=default&mobileredirect=true)
 
+## Important Documents
+
+- [Company Policy Docs](https://shapeblue.sharepoint.com/Shared%20Documents/Consultant%20Info/Company%20Polices)
+- [CloudStack Bootcamp Slides](https://shapeblue.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?csf=1&e=tJdS1J&RootFolder=%2fShared%20Documents%2fTraining%2fBootcamps%2f2%20Day%20CloudStack%204%2e11%20Bootcamp&FolderCTID=0x012000885A31BE067616469D0B0A86CACD589D) by ShapeBlue
+
 ## Misc
 
-- [Bootcamp Slides](https://shapeblue.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?csf=1&e=tJdS1J&RootFolder=%2fShared%20Documents%2fTraining%2fBootcamps%2f2%20Day%20CloudStack%204%2e11%20Bootcamp&FolderCTID=0x012000885A31BE067616469D0B0A86CACD589D)
 - ShapeBlue FR release process: https://shapeblue.atlassian.net/wiki/spaces/PT/pages/67343436/Release+Process
 - Contributing PR to ACS: https://shapeblue.atlassian.net/wiki/spaces/PT/pages/28377100/Contributing+PR+to+apache+cloudstack
 - How to build ACS packages: https://shapeblue.atlassian.net/wiki/spaces/PT/pages/15269899/Building+Packages+and+Repositories
 - SBLab setup: https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/9535502/Lab+Network+Overview+and+Design
+- [Customer repository codenames](https://shapeblue.atlassian.net/wiki/spaces/PT/pages/65737759/packages.shapeblue.com+uploads+project+names)
 
+## Guidelines: Working Remotely
+
+- Equip: Have an adequate internet connection and workstation for your job.
+- Structure: Choose a quiet and distraction-free working space. If you're unable
+  to work peacefully at home, get to a place where you can.
+- Schedule: Set yourself working hours, maintain work-life balance.
+- Communicate: Be open, responsive, friendly and helpful to your colleagues.
+- Resolve: Avoid email if a discussion or argument escalates, get on a call with
+  your colleagues.
+- Accountability: Dedicate your full attention to job duties during working
+  hours.
+- Mastery: Learn often, learn fast, improve and be productive.
+- Autonomy: Set clear expectations, manage your work with discipline and
+  responsibility, take ownership. You break it, you fix it.
+- Purpose: Explore your areas of interests, define short/long term goals that
+  you desire.

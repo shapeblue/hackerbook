@@ -9,6 +9,7 @@
   - Plugin architecture
 
 ## Advanced Development Topics
+
 | Topic | Effort |
 | ----- | ------ |
 | SystemVM | 5-10 hours |
@@ -17,4 +18,3 @@
 | Hypervisor Plugin | 5-10 hours |
 | Storage Plugin | 5-10 hours |
 | Network Plugin | 5-10 hours |
-
