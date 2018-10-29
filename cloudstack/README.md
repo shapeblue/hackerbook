@@ -5,6 +5,10 @@ Rapid learning framework for CloudStack hackers!
 - [CloudStack Awesome List](https://github.com/resmo/awesome-cloudstack)
 - [CloudStack Docs](http://docs.cloudstack.apache.org/en/4.11.1.0/)
 
+## Authors
+
+Rohit Yadav <rohit@apache.org>
+
 ## Contents
 
 | Topic | Effort |
@@ -42,6 +46,19 @@ Rapid learning framework for CloudStack hackers!
 | Network Subsystem | 16-24 hours |
 | | **152-312 hours** (19-39 days) |
 
-## Authors
+## How to Use
 
-Rohit Yadav <rohit@apache.org>
+Mentee responsibility:
+- Go through the chapters one by one
+- Watch video for sections of a chapter
+- Follow and read recommended and reference articles (but don't go too deep)
+- Watch the amount spent on chapters and hacking exercises against estimates
+- Attempt to solve recommended exercises and challenges
+- Send a brief update (email) to their mentor every work day, summarising what
+  they completed, any issues/questions/blockers and what they will do next
+
+Mentor responsibility:
+- Mentor should review mentee's work and do daily short syncups and washups
+- Follow daily logs and updates, answer questions and unblock early
+- Mentor should update the [ShapeBlue Tracksheet](https://shapeblue.atlassian.net/wiki/spaces/TRAIN/pages/816381954/HackerBook+Tracksheet)
+

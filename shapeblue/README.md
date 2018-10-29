@@ -47,6 +47,7 @@ https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/15269908/How+to+access
 
 - [Company Policy Docs](https://shapeblue.sharepoint.com/Shared%20Documents/Consultant%20Info/Company%20Polices)
 - [CloudStack Bootcamp Slides](https://shapeblue.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?csf=1&e=tJdS1J&RootFolder=%2fShared%20Documents%2fTraining%2fBootcamps%2f2%20Day%20CloudStack%204%2e11%20Bootcamp&FolderCTID=0x012000885A31BE067616469D0B0A86CACD589D) by ShapeBlue
+- [HackerBook Tracksheet](https://shapeblue.atlassian.net/wiki/spaces/TRAIN/pages/816381954/HackerBook+Tracksheet)
 
 ## Misc
 
