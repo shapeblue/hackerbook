@@ -4,6 +4,7 @@
 
 - Architecture and Layers
 - System Design
+- High Overview
 
 **Recommended Reference**:
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/Development+101
@@ -24,17 +25,24 @@ IDE 101
 ## Building CloudStack
 
 Maven 101?
-
-Put in sudoers:
-Cmnd_Alias CLOUDSTACK = /bin/mkdir, /bin/mount, /bin/umount, /bin/cp, /bin/chmod, /usr/bin/keytool, /bin/keytool
-
-Defaults:bhaisaab !requiretty
-
-bhaisaab ALL=(ALL) NOPASSWD:CLOUDSTACK
+Build profiles:
+- noredist
+- simulator
+- deploydb
+Build artifacts:
+- apidocs, marvin
 
 ## Testing CloudStack
 
-Unit tests and marvin/integration tests
+- Unit tests
+- Integration (Marvin) tests
+
+## CloudStack Packaging
+
+## Contributing to CloudStack
+
+Case study: Dynamic Roles
+https://markmail.org/message/kkn5ihttg65i76kl
 
 ## Simulator Based Development
 
@@ -45,9 +53,18 @@ https://github.com/rhtyd/monkeybox
 
 ## Debugging CloudStack
 
-- Debugging via logs
-- Remote debugging with IntelliJ
+- Logging
+- Remote debugging (with IntelliJ)
 - Debugging using Visual VM and MAT
+
+## Env Issues
+
+Put in sudoers:
+Cmnd_Alias CLOUDSTACK = /bin/mkdir, /bin/mount, /bin/umount, /bin/cp, /bin/chmod, /usr/bin/keytool, /bin/keytool
+
+Defaults:bhaisaab !requiretty
+
+bhaisaab ALL=(ALL) NOPASSWD:CLOUDSTACK
 
 ## Basic Development Topics
 

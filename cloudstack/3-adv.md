@@ -1,5 +1,6 @@
 # Advanced CloudStack Development
 
+- Packages and modules
 - Design and Architecture
   - Modules and Components
   - Kernel and building blocks
@@ -7,6 +8,12 @@
   - IPC, RPC and Communication
   - Dependency Injection
   - Plugin architecture
+- Orchestration Layer
+- Hypervisor Support
+- Networking models
+- System VMs and Virtual Routers
+- Specialized Plugin: Auth, Hypervisor, Storage, Network
+
 
 ## Advanced Development Topics
 
