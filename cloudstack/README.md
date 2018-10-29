@@ -9,36 +9,38 @@ Rapid learning framework for CloudStack hackers!
 
 | Topic | Effort |
 | ----- | ------ |
-| [Getting Started](0-init.md) | 5-10 hours |
-| [Test Drive CloudStack](1-user.md) | 40-80 hours |
-| [Basic CloudStack Development](2-dev.md) | 40-80 hours |
+| [Getting Started](0-init.md) | 8-16 hours |
+| [Test Drive CloudStack](1-user.md) | 24-40 hours |
+| [Basic CloudStack Development](2-dev.md) | 24-40 hours |
 | [Advanced CloudStack Development](3-adv.md) | 40-80 hours |
-| [Hacking Hypervisor](4-hypervisor.md) | 40-80 hours |
-| [Hacking Networking](5-network.md) | 40-80 hours |
-| [Hacking Storage](6-storage.md) | 30-40 hours |
-| [Hacking Distributed Systems](7-dsys.md) | 20-30 hours |
-| | **255-480 hours** |
+| [Hypervisor](4-hypervisor.md) | 24-40 hours |
+| [Storage](5-storage.md) | 24-40 hours |
+| [Networking](6-network.md) | 24-40 hours |
+| [Distributed Systems](7-dsys.md) | 24-40 hours |
+| | **192-336 hours** (24-42 days) |
 
-### Applied Hacking Topics
+### Applied Hacking
 
 | Topic | Effort |
 | ----- | ------ |
-| [Automation](hack/automation.md) | 10-20 hours |
-| [API Development](hack/api.md) | 2-5 hours |
-| [UI Development](hack/ui.md) | 2-5 hours |
-| [Service Layer Development](hack/service.md) | 2-5 hours |
-| [DB Layer Development](hack/db.md) | 2-5 hours |
-| [IPC, Events and message bus](hack/ipc.md) | 2-5 hours |
-| [RPC and Agent Framework](hack/rpc.md) | 2-5 hours |
-| [Misc: Global Settings, Background Tasks](hack/misc.md) | 2-5 hours |
-| [Pluggable Framework and Plugin development](hack/framework.md) | 2-5 hours |
-| Upgrade Paths | 2-5 hours |
-| SystemVM | 5-10 hours |
-| Virtual Router | 10-40 hours |
-| [Programming Patterns in CloudStack](hack/patterns.md) | 10-40 hours |
-| Hypervisor Plugin | 5-10 hours |
-| Storage Plugin | 5-10 hours |
-| Network Plugin | 5-10 hours |
+| [Automation](hack/automation.md) | 8-24 hours |
+| [Functional Spec](hack/spec.md) | 4-8 hours |
+| [API Development](hack/api.md) | 8-24 hours |
+| [UI Development](hack/ui.md) | 8-24 hours |
+| [Service Layer Development](hack/service.md) | 8-16 hours |
+| [DB Layer Development](hack/db.md) | 8-16 hours |
+| [Functional Testing](hack/testing.md) | 8-16 hours |
+| [IPC, Events and message bus](hack/ipc.md) | 4-8 hours |
+| [RPC and Agent Framework](hack/rpc.md) | 4-8 hours |
+| [Misc: Global Settings, Background Tasks](hack/misc.md) | 4-8 hours |
+| [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |
+| [Programming Patterns in CloudStack](hack/patterns.md) | 8-16 hours |
+| SystemVM and Agents | 8-16 hours |
+| Virtual Router | 16-40 hours |
+| Hypervisor Subsystem | 16-24 hours |
+| Storage Subsystem | 16-24 hours |
+| Network Subsystem | 16-24 hours |
+| | **152-312 hours** (19-39 days) |
 
 ## Authors
 

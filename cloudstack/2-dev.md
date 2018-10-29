@@ -53,13 +53,13 @@ https://github.com/rhtyd/monkeybox
 
 | Topic | Effort |
 | ----- | ------ |
-| [API Development](hack/api.md) | 2-5 hours |
-| [UI Development](hack/ui.md) | 2-5 hours |
-| [Service Layer Development](hack/service.md) | 2-5 hours |
-| [DB Layer Development](hack/db.md) | 2-5 hours |
-| [IPC, Events and message bus](hack/ipc.md) | 2-5 hours |
-| [RPC and Agent Framework](hack/rpc.md) | 2-5 hours |
-| [Misc: Global Settings, Background Tasks](hack/misc.md) | 2-5 hours |
-| [Pluggable Framework and Plugin development](hack/framework.md) | 2-5 hours |
-| Upgrade Paths | 2-5 hours |
-
+| [Functional Spec](hack/spec.md) | 4-8 hours |
+| [API Development](hack/api.md) | 8-24 hours |
+| [UI Development](hack/ui.md) | 8-24 hours |
+| [Service Layer Development](hack/service.md) | 8-16 hours |
+| [DB Layer Development](hack/db.md) | 8-16 hours |
+| [Functional Testing](hack/testing.md) | 8-16 hours |
+| [IPC, Events and message bus](hack/ipc.md) | 4-8 hours |
+| [RPC and Agent Framework](hack/rpc.md) | 4-8 hours |
+| [Misc: Global Settings, Background Tasks](hack/misc.md) | 4-8 hours |
+| [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |

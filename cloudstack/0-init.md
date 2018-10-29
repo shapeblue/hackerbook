@@ -35,8 +35,10 @@ Reviewers:
 We assume you know:
 
 - Basic virtualization (try VirtualBox, VMware fusion, KVM etc)
-- Basic Java, Python, shell scripting, git, maven, networking
-- Linux adminstration and usage
+- Programming in Java 8+, Python 2.7, shell scripting
+- Development: git, maven3, IntelliJ IDEA, MySQL
+- Tools: ssh, wget, curl, telnet, ping, traceroute, iptables, tail, vi
+- Basic Linux adminstration and terminal usage
 
 ## What is CloudStack?
 
