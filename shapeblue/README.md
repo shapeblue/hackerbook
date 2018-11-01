@@ -46,16 +46,16 @@ https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/15269908/How+to+access
 ## Important Documents
 
 - [Company Policy Docs](https://shapeblue.sharepoint.com/Shared%20Documents/Consultant%20Info/Company%20Polices)
-- [CloudStack Bootcamp Slides](https://shapeblue.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?csf=1&e=tJdS1J&RootFolder=%2fShared%20Documents%2fTraining%2fBootcamps%2f2%20Day%20CloudStack%204%2e11%20Bootcamp&FolderCTID=0x012000885A31BE067616469D0B0A86CACD589D) by ShapeBlue
 - [HackerBook Tracksheet](https://shapeblue.atlassian.net/wiki/spaces/TRAIN/pages/816381954/HackerBook+Tracksheet)
-
-## Misc
-
-- ShapeBlue FR release process: https://shapeblue.atlassian.net/wiki/spaces/PT/pages/67343436/Release+Process
-- Contributing PR to ACS: https://shapeblue.atlassian.net/wiki/spaces/PT/pages/28377100/Contributing+PR+to+apache+cloudstack
-- How to build ACS packages: https://shapeblue.atlassian.net/wiki/spaces/PT/pages/15269899/Building+Packages+and+Repositories
-- SBLab setup: https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/9535502/Lab+Network+Overview+and+Design
+- [CloudStack Bootcamp Slides](https://shapeblue.sharepoint.com/Shared%20Documents/Forms/AllItems.aspx?csf=1&e=tJdS1J&RootFolder=%2fShared%20Documents%2fTraining%2fBootcamps%2f2%20Day%20CloudStack%204%2e11%20Bootcamp&FolderCTID=0x012000885A31BE067616469D0B0A86CACD589D) by ShapeBlue
+- [ShapeBlue FR Dev, Release Process](https://shapeblue.atlassian.net/wiki/spaces/PT/pages/67343436/Release+Process)
+- [Technical Document Guidelines](https://shapeblue.atlassian.net/wiki/spaces/PT/pages/88539137/Technical+documentation+guidelines)
+- [Contributing PR to ACS](https://shapeblue.atlassian.net/wiki/spaces/PT/pages/28377100/Contributing+PR+to+apache+cloudstack)
+- [CloudStack Packages Building](https://shapeblue.atlassian.net/wiki/spaces/PT/pages/15269899/Building+Packages+and+Repositories)
 - [Customer repository codenames](https://shapeblue.atlassian.net/wiki/spaces/PT/pages/65737759/packages.shapeblue.com+uploads+project+names)
+- [P1 Emergency Patch Process](https://shapeblue.atlassian.net/wiki/spaces/PT/pages/29949974/P1+Emergency+Patch+Process)
+- [CI/CD Pipeline](https://shapeblue.atlassian.net/wiki/spaces/PT/pages/36274181/CI+CD+Build+Pipeline)
+- [SBLab Overview and Design](https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/9535502/Lab+Network+Overview+and+Design)
 
 ## Guidelines: Working Remotely
 
