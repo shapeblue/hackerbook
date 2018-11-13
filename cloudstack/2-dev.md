@@ -124,6 +124,10 @@ To deploy an environment, you can use the deploy datacenter script as:
 
     $ python tools/marvin/marvin/deployDataCenter.py -i /path/to/config.cfg
 
+When needed, the usage server can be started using:
+
+    $ mvn -P usage -Drun -Dpid=$$ -pl usage
+
 ## Testing CloudStack
 
 - Unit tests
@@ -171,14 +175,28 @@ https://github.com/rhtyd/monkeybox
 
 ## Debugging and Instrumentation
 
+To debug any java process started by maven, you can export the following in
+your shell (or include this by default in zshrc or bashrc):
+
+    export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
+
+To remote-debug the KVM agent, put the following in
+`/etc/default/cloudstack-agent` in your monkeybox and restart cloudstack-agent:
+
+    JAVA=/usr/bin/java -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n
+
+This will then allow you to attach a remote debugger on port `8787` (or any
+other port you may have configured).
+
 TODO:
-- Logging
-- Remote debugging (with IntelliJ)
-- Debugging using Visual VM and MAT
+- Using logs
+- Debugging using IntelliJ
+- Tools: Visual VM, Eclipse MAT
 
 ## CloudStack Packaging
 
 TODO: how to build local packages
+https://hub.docker.com/u/bhaisaab/
 
 ## Contributing to CloudStack
 
