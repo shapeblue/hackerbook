@@ -5,10 +5,11 @@
 On your first day, work with the team to get access to Office365 (email,
 calendar, sharepoint etc), Slack (communication), JIRA (bug tracking),
 Confluence (wiki), ConnectWise (support, timesheets etc), Activity Timeline
-(scheduling), BrickFTP (file sharing), and PagerDuty (support/paging). Share
-your Github username with Rohit so you can be added to the github.com/shapeblue
-organisation. Ask Paul/Dag to help create your Active Directory (AD) account
-which will allow you access to SBLab, Jenkins, VPN etc.
+(scheduling), BrickFTP (file sharing), and PagerDuty (support/paging).
+
+Share your Github username with `Rohit/Daan` so you can be added to the
+github.com/shapeblue organisation. Ask `Paul/Dag` to help create your Active
+Directory (AD) account which will allow you access to SBLab, Jenkins, VPN etc.
 
 How to setup and access SBLab resources:
 https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/15269908/How+to+access+the+SBCloud2.0+lab

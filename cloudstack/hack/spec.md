@@ -65,7 +65,7 @@ consider, anticipate and think about:
 - Can your system show capacities and orders for the owner (think dashboard,
   capacities and usage)
 
-## CloudStack FS
+## CloudStack Functional Spec
 
 Your task now is to read and understand the FS for the above requirements and
 then proceed with the implementation.
