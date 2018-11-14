@@ -27,7 +27,7 @@ Rohit Yadav <rohit@apache.org>
 
 | Topic | Effort |
 | ----- | ------ |
-| [Automation](hack/automation.md) | 8-24 hours |
+| [Automation](hack/automation.md) | 16-32 hours |
 | [Functional Spec](hack/spec.md) | 4-8 hours |
 | [API Development](hack/api.md) | 8-24 hours |
 | [UI Development](hack/ui.md) | 8-24 hours |
@@ -44,7 +44,7 @@ Rohit Yadav <rohit@apache.org>
 | Hypervisor Subsystem | 16-24 hours |
 | Storage Subsystem | 16-24 hours |
 | Network Subsystem | 16-24 hours |
-| | **152-312 hours** (19-39 days) |
+| | **160-320 hours** (20-40 days) |
 
 ## How to Use
 
