@@ -2,14 +2,48 @@
 
 ## CloudStack Development 101
 
-TODO:
-- High level Overview
-- Architecture and Layers
-- System Design
+From an application setup and functioning perspective, a typical CloudStack
+deployment consists of the following:
 
-**Recommended Reference**:
+- CloudStack Management server(s)
+- CloudStack Agent (on KVM and HyperV)
+- CloudStack Usage server(s)
+
+The CloudStack management server is a monolith Java application that embeds
+the control plane, orchestrator and overall cloud controller.
+
+The management server (sometimes written as mgmt server) has three types of
+APIs:
+
+- Platform API (REST-like or query-based API for end users and admins)
+- Agent API (ServerResource based json/API that uses command-answer pattern
+  handled by an implementation that can talk to a hardware resource)
+- Plugin API (Set of Java interfaces and APIs to allow extension and
+  modification of CloudStack)
+
+The management server monolith has various layers:
+
+- Presentation or API: the layer that implements and handles REST-like or query
+  based APIs.
+- Service/Business/Orchestration layer: the layer that usually handles API
+  requests, manages business entities and participates in resource control.
+- DB/Data access: the data access layer implements set of building blocks to talk
+  to the database (MySQL).
+- Kernel: Provides building blocks, polling, IPC, message bus, implements
+  orchestration and controller for compute, network, storage, security etc.
+- Agent/Cluster management: the layer that handles distributed system of mgmt
+  server nodes and agents, and handles RPC mechanisms.
+
+![](https://cwiki.apache.org/confluence/download/attachments/29687953/image2012-4-27%2012-43-50.png)
+
+**Recommended Reading**:
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/Development+101
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/How+to+build+CloudStack
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+packages+and+dependencies
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Putting+CloudStack+together
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Data+Access+Layer
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Exceptions+and+logging
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Coding+conventions
 - http://docs.cloudstack.apache.org/en/latest/developersguide
 
 ## Setting up Development Environment
@@ -19,6 +53,9 @@ Linux 18.04+ is preferred. Run the following to install packages required for
 CloudStack development on Ubuntu:
 
     $ sudo apt-get install openjdk-8-jdk maven python-mysql.connector libmysql-java mysql-server mysql-client bzip2 nfs-common uuid-runtime python-setuptools ipmitool genisoimage nfs-kernel-server quota
+
+Older CloudStack versions may require older jdk/jre version, therefore setup,
+install and learn to use `jenv`: http://www.jenv.be
 
 The recommended setup is to run MySQL and NFS servers locally on your laptop
 and the hypervisor in a VM or an external host. The CloudStack management and
@@ -98,6 +135,20 @@ The following is one way to seed a systemvmtemplate:
           -m /export/testing/secondary -f systemvmtemplate-4.11.1-kvm.qcow2.bz2
           -h kvm -o localhost -r cloud -d cloud
 
+## Configure Environment
+
+Put the following in your `sudoers` file using visudo etc. to allow processes
+owned by your user (such as the CloudStack management server) to execute some
+privileged commands:
+
+    Cmnd_Alias CLOUDSTACK = /bin/mkdir, /bin/mount, /bin/umount, /bin/cp, /bin/chmod, /usr/bin/keytool, /bin/keytool
+
+    Defaults:username !requiretty
+
+    username ALL=(ALL) NOPASSWD:CLOUDSTACK
+
+Tip: replace `username` with your Linux username.
+
 ## Building CloudStack
 
 Noredist CloudStack builds requires additional jars that may be installed from:
@@ -130,22 +181,38 @@ When needed, the usage server can be started using:
 
 ## Testing CloudStack
 
-- Unit tests
-- Integration (Marvin) tests
+### Unit Testing
 
-## Configure Environment
+Unit tests in CloudStack are generally written with JUnit4 that also use
+mockito, powermock and sometimes wiremock. You may learn more about JUnit4 and
+usage of other libraries using existing unit tests (Ctrl+Shift+t in IntelliJ to
+see an existing Java class's unit test) or by using following references:
 
-Put the following in your `sudoers` file using visudo etc. to allow processes
-owned by your user (such as the CloudStack management server) to execute some
-privileged commands:
+- https://junit.org/junit4/faq.html
+- http://www.vogella.com/tutorials/JUnit/article.html
+- https://javacodehouse.com/blog/junit-tutorial
 
-    Cmnd_Alias CLOUDSTACK = /bin/mkdir, /bin/mount, /bin/umount, /bin/cp, /bin/chmod, /usr/bin/keytool, /bin/keytool
+### Functional Testing
 
-    Defaults:username !requiretty
+Functional or integration tests for CloudStack are written in Python 2.7 using
+the Marvin test library. At the core of it, these are basically Python
+`unittest` tests where the following test-probes are available:
 
-    username ALL=(ALL) NOPASSWD:CLOUDSTACK
+- API client: run and get result of CloudStack APIs
+- DB client: query MySQL database
+- SSH client: allow remote access into a host endpoint/port
 
-Tip: replace `username` with your Linux username.
+Typical integration tests are run using nose (a test runner), and an integration
+test basically is a Python class that extends `cloudstackTestCase` which are
+based on `unittest.case.TestCase`. The nature and mechanism of how these tests
+run, make them integration or functional tests.
+
+You may use following references to know more about using Python `unittest`
+framework:
+
+- https://docs.python.org/2/library/unittest.html
+- http://pythontesting.net/framework/unittest/unittest-introduction
+- https://www.geeksforgeeks.org/unit-testing-python-unittest
 
 ## Simulator Based Development
 
@@ -195,13 +262,56 @@ TODO:
 
 ## CloudStack Packaging
 
-TODO: how to build local packages
-https://hub.docker.com/u/bhaisaab/
+CloudStack is typically packages and shipped as a deb or rpm repository. The
+docker container images from https://hub.docker.com/u/bhaisaab can be used to
+build CloudStack for CentOS (rpm) and Ubuntu (rpm).
+
+The pre-requisite is that all the build and runtime dependencies are installed
+on a build system (CentOS or Debian based) along with any nonoss dependencies.
+
+Building on Debian/Ubuntu:
+
+    # Option 1: Building using commands
+    cd /root/of/the/cloudstack/repo
+    dpkg-buildpackage -uc -us -b
+
+    # Option 2: Building using script
+    cd /root/of/the/cloudstack/repo
+    bash -x packaging/build-deb.sh  # run with -h for help
+
+Building on CentOS:
+
+    # For el6/centos6
+    cd /root/of/the/cloudstack/repo
+    bash -x packaging/package.sh -p noredist -d centos63  # run with -h for help
+
+    # For el7/centos7
+    cd /root/of/the/cloudstack/repo
+    bash -x packaging/package.sh -p noredist -o rhel7 -d centos7  # run with -h for help
 
 ## Contributing to CloudStack
 
-Case study: Dynamic Roles
-https://markmail.org/message/kkn5ihttg65i76kl
+For bug reporting create an issue: https://github.com/apache/cloudstack/issues
+
+For any bugfix or improvement change(s) send a pull request: https://github.com/apache/cloudstack/pulls
+
+For feature submission the typical process is as follows:
+
+- Write a high level functional specification (FS).
+- Start a discussion on dev@ mailing list with reference to the FS and/or any
+  issues. Continue the discussion.
+- Complete the feature, send a pull request (PR).
+- Participate in code review, iterate implementation, request committers for
+  review and merging. Typically every PR will be reviewed and (regression)
+  tested. It is expected feature/bugfix PRs to have unit and integration tests.
+- Send documentation PR.
+
+**Case Study**: Dynamic Roles feature
+- Functional specification: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Dynamic+Role+Based+API+Access+Checker+for+CloudStack
+- Mailing list: https://markmail.org/message/kkn5ihttg65i76kl
+- Jira/bug ticket: https://issues.apache.org/jira/browse/CLOUDSTACK-8562
+- Pull request and reviews: https://github.com/apache/cloudstack/pull/1489
+- Documentation PR: https://github.com/apache/cloudstack-docs-admin/pull/37
 
 ## Basic Development Topics
 
