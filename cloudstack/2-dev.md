@@ -214,6 +214,9 @@ framework:
 - http://pythontesting.net/framework/unittest/unittest-introduction
 - https://www.geeksforgeeks.org/unit-testing-python-unittest
 
+TODO: brief pointers on writing marvin based tests, using marvin utilities,
+wrappers, building blocks etc.
+
 ## Simulator Based Development
 
 CloudStack has a mocked hypervisor called `simulator` that may be used for
