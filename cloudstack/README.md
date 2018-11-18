@@ -30,14 +30,14 @@ Rohit Yadav <rohit@apache.org>
 | [Automation](hack/automation.md) | 16-32 hours |
 | [Functional Spec](hack/spec.md) | 4-8 hours |
 | [API Development](hack/api.md) | 8-24 hours |
+| [Service Development](hack/service.md) | 8-16 hours |
+| [DB Development](hack/db.md) | 8-16 hours |
 | [UI Development](hack/ui.md) | 8-24 hours |
-| [Service Layer Development](hack/service.md) | 8-16 hours |
-| [DB Layer Development](hack/db.md) | 8-16 hours |
-| [Functional Testing](hack/testing.md) | 8-16 hours |
+| [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |
 | [IPC, Events and message bus](hack/ipc.md) | 4-8 hours |
 | [RPC and Agent Framework](hack/rpc.md) | 4-8 hours |
 | [Misc: Global Settings, Background Tasks](hack/misc.md) | 4-8 hours |
-| [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |
+| [Functional Testing](hack/testing.md) | 8-16 hours |
 | [Programming Patterns in CloudStack](hack/patterns.md) | 8-16 hours |
 | SystemVM and Agents | 8-16 hours |
 | Virtual Router | 16-40 hours |

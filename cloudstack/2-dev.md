@@ -76,6 +76,7 @@ You may create a personal workspace and clone the repository, for example:
 
 The recommended directory structure may look something like:
 
+```
         ~/lab/
         ├── cloudstack
         └── cloudmonkey
@@ -83,6 +84,7 @@ The recommended directory structure may look something like:
         └── shapeblue
             └── ... private repositories ...
         └── ... other projects ...
+```
 
 Reference and reading resources:
 - ProGit: https://git-scm.com/book/
@@ -186,7 +188,7 @@ When needed, the usage server can be started using:
 Unit tests in CloudStack are generally written with JUnit4 that also use
 mockito, powermock and sometimes wiremock. You may learn more about JUnit4 and
 usage of other libraries using existing unit tests (Ctrl+Shift+t in IntelliJ to
-see an existing Java class's unit test) or by using following references:
+see an existing class's unit test) or by using following references:
 
 - https://junit.org/junit4/faq.html
 - http://www.vogella.com/tutorials/JUnit/article.html
@@ -322,11 +324,11 @@ For feature submission the typical process is as follows:
 | ----- | ------ |
 | [Functional Spec](hack/spec.md) | 4-8 hours |
 | [API Development](hack/api.md) | 8-24 hours |
+| [Service Development](hack/service.md) | 8-16 hours |
+| [DB Development](hack/db.md) | 8-16 hours |
 | [UI Development](hack/ui.md) | 8-24 hours |
-| [Service Layer Development](hack/service.md) | 8-16 hours |
-| [DB Layer Development](hack/db.md) | 8-16 hours |
-| [Functional Testing](hack/testing.md) | 8-16 hours |
+| [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |
 | [IPC, Events and message bus](hack/ipc.md) | 4-8 hours |
 | [RPC and Agent Framework](hack/rpc.md) | 4-8 hours |
 | [Misc: Global Settings, Background Tasks](hack/misc.md) | 4-8 hours |
-| [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |
+| [Functional Testing](hack/testing.md) | 8-16 hours |
