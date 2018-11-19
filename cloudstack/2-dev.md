@@ -125,6 +125,10 @@ Start the IDE, configure as needed and import CloudStack as:
 - Select `Maven` as build system
 - Select options suitably and import!
 
+You may configure IDEA per your preference or use this [settings
+jar](https://github.com/rhtyd/dotfiles/tree/master/intellij) which you can import
+in IDEA as `File > Import Settings > select jar file`.
+
 ### Setup MySQL Server
 
 After installing MySQL server, configure the following settings in its config
