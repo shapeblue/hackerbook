@@ -167,7 +167,7 @@ Deploy CloudStack database using:
 
 Run management server using:
 
-    $ mvn -pl :cloud-client-ui jetty:run  -Dnoredist -Djava.net.preferIPv4Stack=true
+    $ mvn -pl :cloud-client-ui jetty:run -Dnoredist -Djava.net.preferIPv4Stack=true
 
 Install marvin:
 
@@ -180,6 +180,9 @@ To deploy an environment, you can use the deploy datacenter script as:
 When needed, the usage server can be started using:
 
     $ mvn -P usage -Drun -Dpid=$$ -pl usage
+
+Note: due to bug in `surefire` plugin that helps runs CloudStack's unit tests
+you may need to use `-Djdk.net.URLClassPath.disableClassPathURLCheck=true`.
 
 ## Testing CloudStack
 
