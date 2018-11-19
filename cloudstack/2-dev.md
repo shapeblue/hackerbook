@@ -198,6 +198,12 @@ Noredist CloudStack builds requires additional jars that may be installed from:
 
     https://github.com/rhtyd/cloudstack-nonoss
 
+Copy the additional jars to `deps` folder and install them:
+````
+    cd deps/
+    ./install-non-oss.sh
+````
+
 To build CloudStack with `noredist` (this include vmware plugins etc):
 
     $ mvn clean install -Dnoredist -Dsimulator -P developer,systemvm
