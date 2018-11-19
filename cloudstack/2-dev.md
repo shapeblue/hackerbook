@@ -89,6 +89,22 @@ Apache CloudStack source code can be cloned from the following remotes:
 - https://github.com/apache/cloudstack.git (Github, preferred)
 - https://gitbox.apache.org/repos/asf/cloudstack.git (Gitbox, ASF hosted)
 
+Create a Gitbub account in case you do not have one already: https://github.com/
+
+You may generate a public SSH key (if do not already have an existing one, mostly under: `~/.ssh/id_rsa.pub`):
+````
+    ssh-keygen -t rsa -b 4096 -C "user_email@shapeblue.com"
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+````
+
+Add your SSH key to you Github account:
+- Go to your Github account
+- Click on Settings and select SSH and GPG keys
+- Click on New SSH key
+- Add a title and paste the content of your key
+- Click Add SSH key
+
 You may create a personal workspace and clone the repository, for example:
 
     mkdir -p ~/lab/
