@@ -216,8 +216,10 @@ framework:
 - http://pythontesting.net/framework/unittest/unittest-introduction
 - https://www.geeksforgeeks.org/unit-testing-python-unittest
 
-TODO: brief pointers on writing marvin based tests, using marvin utilities,
-wrappers, building blocks etc.
+The [functional testing](hack/testing.md) exercise will cover in much detail
+how to write marvin based integration tests and use the utilities, probes and
+other building blocks of the Marvin library. As an example, you may look at the
+[test/integration/smoke/test_dynamicroles.py](https://github.com/apache/cloudstack/blob/master/test/integration/smoke/test_dynamicroles.py) marvin test.
 
 ## Simulator Based Development
 
@@ -245,7 +247,7 @@ Simulator based environment can be deployed using:
 Follow the MonkeyBox project for details:
 https://github.com/rhtyd/monkeybox
 
-## Debugging and Instrumentation
+## Debugging CloudStack
 
 To debug any java process started by maven, you can export the following in
 your shell (or include this by default in zshrc or bashrc):
@@ -260,10 +262,99 @@ To remote-debug the KVM agent, put the following in
 This will then allow you to attach a remote debugger on port `8787` (or any
 other port you may have configured).
 
-TODO:
-- Using logs
-- Debugging using IntelliJ
-- Tools: Visual VM, Eclipse MAT
+### Using Logs
+
+For a typical CloudStack installation, logs are found per service as follows:
+
+- cloudstack-management: `dir:/var/log/cloudstack/management/`
+- cloudstack-usage: `dir:/var/log/cloudstack/usage/`
+- cloudstack-agent: `dir:/var/log/cloudstack/agent/`
+
+However, when management server is launched using `maven` the logs will be in
+the root directory of your source directory:
+- vmops.log: the management server log
+- api.log: the API log
+
+Start the management server using `mvn` and try to read, follow and understand
+what may be happening when the management server starts. For example, the first
+thing you'll notice is that it:
+- Loads module context (`spring-bootstrap-context.xml`) and creates a hierarchy
+  of modules to load
+- It starts loading modules in a certain order and starts integrity checks
+- It configures various CloudStack components, instantiates registeries etc.
+- Discovers API, starts various CloudStack components
+- Finally the management server API service is available at port 8080 (default)
+  and log statement like the following are seen:
+```bash
+2018-10-27 00:53:06,417 INFO  [c.c.c.ClusterManagerImpl] (Cluster-Heartbeat-1:ctx-4108c094) (logid:505420fb) We are good, no orphan management server msid in host table is found
+2018-10-27 00:53:06,420 INFO  [c.c.c.ClusterManagerImpl] (Cluster-Heartbeat-1:ctx-4108c094) (logid:505420fb) No inactive management server node found
+2018-10-27 00:53:06,437 DEBUG [c.c.c.ClusterManagerImpl] (Cluster-Heartbeat-1:ctx-4108c094) (logid:505420fb) Detected management node joined, id:1, nodeIP:127.0.0.1
+```
+
+Tip: Several CloudStack operations are scheduled and executed by its job
+framework which gives such operations a unique job ID such as `job-123` and this
+makes it easier to grep and investigate logs of a passed/failed job using the
+management server logs of a multi-tenant (huge) CloudStack deployment.
+
+**Challenge**: Deploy a VM (either using Simulator or KVM/monkeybox) and tail
+through the logs and try to read and make sense of various steps that were
+performed between the API request to deploy a VM was initiated and when the VM
+came online.
+
+### Using IDE
+
+With the Java process (management server or agent) launched with above mentioned
+flags, in IntelliJ IDEA go to `Run > Debug... > Edit configuration > Add >
+Remote` and configure it suitably. Put breakpoint in code, start the debugger,
+and wait for code execution such as an API request to reach the breakpoint to
+debug.
+
+**Challenge**: Add a breakpoint at the `execute()` of the `DeployVMCmdByAdmin`
+class and step through the code to explore what gets executed when CloudStack
+deploys a VM. Reference you findings against what you learnt by going through
+the logs.
+
+### Instrumentation Tools
+
+Several instrumentation and debugging tools exists that may be used to debug a
+general Java/JVM application.
+
+To list Java processes on a host:
+
+    jps -l  # or ps aux | grep java
+
+To get the thread dump of a process:
+
+    jstack -l <pid>
+
+To get the heap dump of a process:
+
+    jmap -dump:format=b,file=heap.bin <pid>
+
+Few popular instrumentation tools:
+
+1. Visual VM
+
+- Good tool for monitoring Java process CPU performance and memory, visualize
+  threads, profile performance and memory usage, take and explore thread dumps,
+  take and browse heap dumps and analyze core dumps.
+- Download: https://visualvm.github.io/
+- https://visualvm.github.io/documentation.html
+- https://docs.oracle.com/javase/8/docs/technotes/guides/visualvm/
+
+**Case study**: https://github.com/apache/cloudstack/pull/2314
+
+2. Eclipse MAT
+
+- Memory Analyzer Tool (MAT) is great heap analyzer and useful for finding
+  memory leaks.
+- Download: https://www.eclipse.org/mat
+
+**Case study**: https://github.com/apache/cloudstack/pull/1729
+
+Other notable mentions:
+- Mission Control: https://www.oracle.com/technetwork/java/javaseproducts/mission-control/index.html
+- JProfiler: https://www.ej-technologies.com/products/jprofiler/overview.html
 
 ## CloudStack Packaging
 
