@@ -23,6 +23,10 @@
 
 ## CloudStack Development 101
 
+Overview video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-overview.mp4
+
+Guided walkthrough video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-guided-walkthrough.mp4
+
 From an application setup and functioning perspective, a typical CloudStack
 deployment consists of the following:
 
@@ -69,6 +73,8 @@ The management server monolith has various layers:
 
 ## Setting up Development Environment
 
+Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-chapter.mp4
+
 The recommended development environment is Linux based, in this course Ubuntu
 Linux 18.04+ is preferred. Run the following to install packages required for
 CloudStack development on Ubuntu:
@@ -113,7 +119,7 @@ You may create a personal workspace and clone the repository, for example:
 
 The recommended directory structure may look something like:
 
-```
+```bash
         ~/lab/
         ├── cloudstack
         └── cloudmonkey

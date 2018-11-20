@@ -37,6 +37,9 @@ using [Ubuntu](https://www.ubuntu.com/download/server) 18.04+ ISO with at least
 setting and tick `Copy host CPU configuration`. Start the VM and complete the
 installation.
 
+NOTE: DO NOT install or experiment anything from this chapter on your laptop,
+but in a VM.
+
 Next, find out the IP of the VM, ensure that you're able to SSH into the host.
 Ensure that you can SSH as `root` user with a known password. Also ensure
 that the `universe` *apt* repository is enabled.
