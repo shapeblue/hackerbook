@@ -128,6 +128,13 @@ Reference and reading resources:
 - Try Git: https://try.github.io/
 - Learn Git: https://www.codecademy.com/learn/learn-git
 
+Development tools to learn:
+- git, tig
+- maven
+- IntelliJ IDEA IDE, vim
+- java, javac, jps, jstack, jmap
+- IntelliJ remote debugger, VisualVM, MAT
+
 ### Setup IDE
 
 Setup IntelliJ IDEA (recommended) or any IDE of your choice. Get IntelliJ IDEA
@@ -205,7 +212,7 @@ Clone the above repository and execute the install script to install the noredis
 
 To build CloudStack with `noredist` (this include vmware plugins etc):
 
-    $ mvn clean install -Dnoredist -Dsimulator -P developer,systemvm
+    $ mvn clean install -Dnoredist -P developer,systemvm
 
 Deploy CloudStack database using:
 
@@ -323,6 +330,7 @@ However, when management server is launched using `maven` the logs will be in
 the root directory of your source directory:
 - vmops.log: the management server log
 - api.log: the API log
+- usage.log: the usage server log
 
 Start the management server using `mvn` and try to read, follow and understand
 what may be happening when the management server starts. For example, the first
