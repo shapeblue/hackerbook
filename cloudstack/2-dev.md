@@ -89,6 +89,22 @@ Apache CloudStack source code can be cloned from the following remotes:
 - https://github.com/apache/cloudstack.git (Github, preferred)
 - https://gitbox.apache.org/repos/asf/cloudstack.git (Gitbox, ASF hosted)
 
+Create a Gitbub account in case you do not have one already: https://github.com
+
+You may generate a public SSH key (if do not already have one at: `~/.ssh/id_rsa.pub`):
+````
+    ssh-keygen -t rsa -b 4096 -C "user_email@gmail.com"
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_rsa
+````
+
+Add your SSH key to you Github account:
+- Go to your `Github` account
+- Click on Settings and select SSH and GPG keys
+- Click on `New SSH` key
+- Add a title and paste the content of your key
+- Click `Add SSH` key
+
 You may create a personal workspace and clone the repository, for example:
 
     mkdir -p ~/lab/
@@ -181,6 +197,11 @@ Tip: replace `username` with your Linux username.
 Noredist CloudStack builds requires additional jars that may be installed from:
 
     https://github.com/rhtyd/cloudstack-nonoss
+
+Clone the above repository and execute the install script to install the noredist jar dependencies:
+
+    $ cd /path/to/cloudstack-nonoss/repo
+    $ bash -x install-non-oss.sh
 
 To build CloudStack with `noredist` (this include vmware plugins etc):
 
