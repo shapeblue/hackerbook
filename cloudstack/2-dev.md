@@ -234,8 +234,8 @@ When needed, the usage server can be started using:
 
     $ mvn -P usage -Drun -Dpid=$$ -pl usage
 
-Note: due to bug in `surefire` plugin that helps runs CloudStack's unit tests
-you may need to use `-Djdk.net.URLClassPath.disableClassPathURLCheck=true`.
+Note: due to bug in `surefire` plugin you may need to use
+`-Djdk.net.URLClassPath.disableClassPathURLCheck=true`.
 
 ## Testing CloudStack
 
@@ -317,6 +317,21 @@ To remote-debug the KVM agent, put the following in
 
 This will then allow you to attach a remote debugger on port `8787` (or any
 other port you may have configured).
+
+For reference, please keep in mind the various ports used by CloudStack:
+- 8080: Authenticated API service
+- 8096: Unauthenticated API service
+- 9090: Cloudstack Management server cluster
+- 45219: JMX console
+- 8250: Management server port for agents
+- 3922: SSH port for systemvms
+- 3306: MySQL server
+- 22: KVM, XenServer/XAPI
+- 443: XenServer, vCenter
+- 53: DNS
+- 111/2049: NFS service/communication port, secondary storage VM
+- 860/3260: iSCSI communication port for iSCSI software connector
+- 7080: AWS API server (deprecated in recent versions)
 
 ### Using Logs
 
@@ -410,7 +425,7 @@ Few popular instrumentation tools:
 **Case study**: https://github.com/apache/cloudstack/pull/1729
 
 Other notable mentions:
-- Mission Control: https://www.oracle.com/technetwork/java/javaseproducts/mission-control/index.html
+- Java Mission Control (jmc): https://www.oracle.com/technetwork/java/javaseproducts/mission-control/index.html
 - JProfiler: https://www.ej-technologies.com/products/jprofiler/overview.html
 
 ## CloudStack Packaging
