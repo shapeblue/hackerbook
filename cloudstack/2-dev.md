@@ -306,8 +306,11 @@ Simulator based environment can be deployed using:
 
 ## MonkeyBox Based Development
 
-Follow the MonkeyBox project for details:
-https://github.com/rhtyd/monkeybox
+MonkeyBox is a VM appliance that runs a hypervisor such as KVM/VMware/XenServer
+in a Intel-VTx/AMD-v enabled VM on KVM (your laptop). Follow the MonkeyBox
+project for details: https://github.com/rhtyd/monkeybox
+
+Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-monkeybox.mp4
 
 ## Debugging CloudStack
 
