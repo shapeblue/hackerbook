@@ -495,12 +495,12 @@ For feature submission the typical process is as follows:
 | Topic | Effort |
 | ----- | ------ |
 | [Functional Spec](hack/spec.md) | 4-8 hours |
-| [API Development](hack/api.md) | 8-24 hours |
-| [Service Development](hack/service.md) | 8-16 hours |
+| [API Development](hack/api.md) | 8-16 hours |
+| [Service Development](hack/service.md) | 4-8 hours |
 | [DB Development](hack/db.md) | 8-16 hours |
-| [UI Development](hack/ui.md) | 8-24 hours |
+| [UI Development](hack/ui.md) | 8-16 hours |
+| [Misc Topics](hack/misc.md) | 8-16 hours |
 | [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |
-| [IPC, Events and message bus](hack/ipc.md) | 4-8 hours |
-| [RPC and Agent Framework](hack/rpc.md) | 4-8 hours |
-| [Misc: Global Settings, Background Tasks](hack/misc.md) | 4-8 hours |
+| [IPC](hack/ipc.md) | 4-8 hours |
+| [RPC](hack/rpc.md) | 4-8 hours |
 | [Functional Testing](hack/testing.md) | 8-16 hours |
