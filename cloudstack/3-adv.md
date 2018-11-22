@@ -1,6 +1,7 @@
 # Advanced CloudStack Development
 
 - Packages and modules
+- API discovery, handling etc.
 - Design and Architecture
   - Modules and Components
   - Kernel and building blocks
