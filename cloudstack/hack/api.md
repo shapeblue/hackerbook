@@ -129,6 +129,9 @@ with its name same or similar to the API name. For example, for the API
 `createCoffee` you may create a CreateCoffeeCmd.java, and for `listCoffees`
 ListCoffeesCmd.java etc.
 
+Every API is based on two classes (sometimes reusable): a request class and a
+response class.
+
 Each API class needs to have an `APICommand` annotation on the class that is
 used to export metadata about the API such as the `name`, `description` etc.
 Each API class needs to also declare an API response class which is a class that
@@ -149,8 +152,125 @@ Example API code:
             authorized = {RoleType.Admin, RoleType.ResourceAdmin, RoleType.DomainAdmin, RoleType.User})
 public class MyAPICmd extends BaseCmd {
     public static final String APINAME = "myAPI";
+
 ```
 
+Next, API can have parameters that can be defined using the `Parameter`
+annotation that can defined several attributes of an API parameter such as the
+parameter `name`, `description`, `required` etc. Please explore the `Parameter`
+interface for full list of attributes.
+
+Example parameter code:
+
+```java
+    /////////////////////////////////////////////////////
+    //////////////// API parameters /////////////////////
+    /////////////////////////////////////////////////////
+
+    @Parameter(name = ApiConstants.ID,
+               type = CommandType.UUID,
+               required = false,
+               entityType = MyAPIResponse.class,
+               description = "ID of my resource")
+    private Long id;
+```
+
+`CommandType` defines the type of the API parameter. The API layer uses this
+annotation and declared metadata to validate an API request, for example when
+the `type` is BOOLEAN it may try to convert the argument input to a `boolean`
+value etc. The following API command types are supported per the
+`BaseCmd::CommandType` enum:
+
+```java
+CommandType {
+    BOOLEAN, DATE, FLOAT, DOUBLE, INTEGER, SHORT, LIST, LONG, OBJECT, MAP, STRING, TZDATE, UUID
+}
+```
+
+Just like an API, an API `Parameter` may also declare its own `authorized`
+field. The API parameters can also define `validations` to use one of the
+commonly used API validators, for example:
+
+```java
+validations = {ApiArgValidator.NotNullOrEmpty}
+validations = {ApiArgValidator.PositiveNumber}
+```
+
+Next, the API can define accessors (getters usually) for the parameters. For
+example:
+
+```java
+    /////////////////////////////////////////////////////
+    /////////////////// Accessors ///////////////////////
+    /////////////////////////////////////////////////////
+
+    public Long getId() {
+        return id;
+    }
+```
+
+Finally, the API implementation exports the API name, the account ID of the
+resource owner on which the API is acted up and the `execute()` method that
+handles the API request. For example:
+
+```java
+    /////////////////////////////////////////////////////
+    /////////////// API Implementation///////////////////
+    /////////////////////////////////////////////////////
+
+    @Override
+    public String getCommandName() {
+        return APINAME.toLowerCase() + BaseCmd.RESPONSE_SUFFIX;
+    }
+
+    @Override
+    public long getEntityOwnerId() {
+        return Account.ACCOUNT_ID_SYSTEM;
+    }
+
+    @Override
+    public void execute() {
+        // logic to handle API request
+
+        final MyAPIResponse response = new MyAPIResponse();
+        // logic to setup the API response object
+        response.setResponseName(getCommandName());
+        response.setObjectName("object-name");
+        setResponseObject(response);
+    }
+```
+
+Finally, the API response class needs to created. A typical response class may
+represent a CloudStack resource and therefore such a response class may be
+typically reused by a resource's list, create and update APIs. In the class,
+declare API response parameters and their setters (sometimes getters). For
+example:
+
+```
+@EntityReference(value = MyResource.class)
+public class MyAPIResponse extends BaseResponse {
+    @SerializedName(ApiConstants.ID)
+    @Param(description = "the ID of my resource")
+    private String id;
+
+    public void setId(String id) {
+        this.id = id;
+    }
+```
+
+### API UUID Translation
+
+Most CloudStack resources/objects have a unique uuid (40-char string), and in
+the database they also have a `bigint` ID. The UUID command type allows APIs
+with both integer and uuid (string) IDs to be translated and validated to a
+CloudStack resource and set that resource's ID to the `Long` field. This
+translation is done with help of the `@Parameter` `entityType` field
+which generally is a `Response` class having an `@EntityReference` annotation
+that declares an interface class which typically implements a `VO` (view object)
+class declaring a `@Table`. This way, for each parameter the API layer can
+try to find the resource from a database table by the passed `uuid` value and
+perform the translation and validation. We'll revisit how API layer work in
+detail in future chapters.
 
 ## Challenges
 
