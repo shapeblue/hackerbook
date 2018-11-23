@@ -236,12 +236,32 @@ To deploy an environment, you can use the deploy datacenter script as:
 
     $ python tools/marvin/marvin/deployDataCenter.py -i /path/to/config.cfg
 
+Example of how to run a marvin based integration test: (change parameters suitably)
+
+    $ nosetests --with-xunit --xunit-file=results.xml --with-marvin --marvin-config=/path/to/config.cfg -s -a tags=advanced --hypervisor=KVM test/integration/smoke/test_vm_life_cycle.py
+
 When needed, the usage server can be started using:
 
     $ mvn -P usage -Drun -Dpid=$$ -pl usage
 
 Note: due to bug in `surefire` plugin you may need to use
 `-Djdk.net.URLClassPath.disableClassPathURLCheck=true`.
+
+Build tips:
+
+- For an iterative styled development and code building, you may use the mvn
+`-pl` or `--projects` flag to which you can pass comma separate list of maven
+projects or paths you've changed and the `client` (which builds a fatjar based
+on all other projects), for example if you only changed `api` and `vmware`:
+
+    $ mvn clean install -Dnoredist -P developer,systemvm -pl api,plugins/hypervisor/vmware,client
+
+- You may skip unit tests and even build with parallel threads:
+
+    $ mvn clean install -Dnoredist -P developer,systemvm -DskipTests -T8
+
+- You will need to build and install/update marvin library every time you change
+  a major CloudStack branch and/or if you add/remove/modify CloudStack APIs.
 
 ## Testing CloudStack
 
@@ -504,3 +524,4 @@ For feature submission the typical process is as follows:
 | [IPC](hack/ipc.md) | 4-8 hours |
 | [RPC](hack/rpc.md) | 4-8 hours |
 | [Functional Testing](hack/testing.md) | 8-16 hours |
+| [Packaging](hack/packaging.md) | 4-8 hours |

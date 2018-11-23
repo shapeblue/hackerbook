@@ -84,15 +84,19 @@ the following hierarchy:
         ├── target  # build directory
         └── src
             └── main
-                └── java # contains Java source code and packages
-                    └── org.apache.cloudstack.feature
-                └── resources # contains resouces
+                └── java
+                    └── org.apache.cloudstack
+                        └── api
+                            └── command  # for API command classes
+                            └── response # for API response classes
+                        └── feature      # for feature classes
+                └── resources
                     └── resources/META-INF/cloudstack/feature
                         └── module.properties
                         └── spring-feature-context.xml
             └── test
-                └── java # contains Java unit tests
-                    └── org.apache.cloudstack.feature
+                └── java
+                    └── org.apache.cloudstack.feature # for feature unit tests
 ```
 
 The spring module skeleton and setup will be discussed in the next exercise.
@@ -118,6 +122,9 @@ CloudStack has two types of (REST-like, query-based end-user/admin) APIs:
   - Extends `BaseAsyncCmd` or `BaseAsyncCreateCmd` class or a child class.
   - Creates an async job and returns a job ID. The API response can be checked
     by pollable the `queryAsyncJobResult` API providing it the `jobid`.
+
+A CloudStack API is a class that encapsulates an API request parameters, a
+common pattern in CloudStack is to pass an API object to business/service layer.
 
 **Suggested API examples**:
 https://github.com/apache/cloudstack/tree/master/api/src/main/java/org/apache/cloudstack/api/command/admin/acl
@@ -151,6 +158,7 @@ Example API code:
             requestHasSensitiveInfo = false, responseHasSensitiveInfo = false,
             authorized = {RoleType.Admin, RoleType.ResourceAdmin, RoleType.DomainAdmin, RoleType.User})
 public class MyAPICmd extends BaseCmd {
+    public static final Logger LOG = Logger.getLogger(MyAPICmd.class);
     public static final String APINAME = "myAPI";
 
 ```
@@ -209,9 +217,15 @@ example:
     }
 ```
 
-Finally, the API implementation exports the API name, the account ID of the
-resource owner on which the API is acted up and the `execute()` method that
-handles the API request. For example:
+The API implementation is a group of methods that exports the API name
+(`getCommandName`), the account ID of the resource owner on which the API is
+acted up (`getEntityOwnerId`) and the `execute()` method that handles the API
+request. The `getEntityOwnerId()` method can also make use of `CallContext`
+utility to get information about the current thread/execution context. For
+example, get the account ID that made the API request by using
+`CallContext.current().getCallingAccountId()`.
+
+Example API implementation:
 
 ```java
     /////////////////////////////////////////////////////
@@ -240,11 +254,53 @@ handles the API request. For example:
     }
 ```
 
-Finally, the API response class needs to created. A typical response class may
-represent a CloudStack resource and therefore such a response class may be
-typically reused by a resource's list, create and update APIs. In the class,
-declare API response parameters and their setters (sometimes getters). For
-example:
+Asynchronous APIs in CloudStack also need to export the event type (also see
+`EventTypes` class) and description information. Such APIs generally have three
+phases: API request is received, API execution is asynchronously started by the
+job framework, and the API execution finishes and the response is saved. They
+typically need to implement these methods:
+
+```java
+
+    @Override
+    public String getEventType() {
+        return EventTypes.EVENT_XYZ;
+    }
+
+    @Override
+    public String getEventDescription() {
+        return "string description usually with action details and entity ids";
+    }
+```
+
+An asynchronous API extending the `BaseAsyncCreateCmd` or child class usually
+also implements a `create()` method which is run before the `execute()` and
+allows creation of an resource entity (usually in the database) before the API
+executes. Have a look at the `BaseAsyncCmd` and `BaseAsyncCreateCmd` classes
+for overridable methods.
+
+```java
+    @Override
+    public void create() {
+        Resources res = someService.createResource(this);
+        if (res != null) {
+            this.setEntityId(res.getId());
+            this.setEntityUuid(res.getUuid());
+        }
+        ...
+```
+
+## API response implementation
+
+An API response class typically extends `BaseResponse` and contains response
+attributes with `@Param` and `@SerializedName` annotations that define the
+serialized attribute/key name and their description. This metadata is used
+by CloudStack build system to generate `apidocs` (see in tools/apidocs). The
+class may sometimes have a `@EntityReference` annotation to mark the type of
+resource the response class represents.
+
+An API response class may typically be reused by a resource's list/create/update
+APIs and generally contains setters (and sometimes getters). For example:
 
 ```
 @EntityReference(value = MyResource.class)
@@ -260,7 +316,7 @@ public class MyAPIResponse extends BaseResponse {
 
 ### API UUID Translation
 
-Most CloudStack resources/objects have a unique uuid (40-char string), and in
+Most CloudStack resources/objects have a unique uuid (string), and in
 the database they also have a `bigint` ID. The UUID command type allows APIs
 with both integer and uuid (string) IDs to be translated and validated to a
 CloudStack resource and set that resource's ID to the `Long` field. This
@@ -272,7 +328,20 @@ try to find the resource from a database table by the passed `uuid` value and
 perform the translation and validation. We'll revisit how API layer work in
 detail in future chapters.
 
-## Challenges
+## Exercises
 
-Attempt and fix any upstream CloudStack API related issue(s):
+1. Implement the following APIs based on the spec, under
+   `org.apache.cloudstack.api.command` package:
+- createCoffee (extend BaseAsyncCreateCmd)
+- listCoffee (extend BaseListCmd)
+- updateCoffee (extend BaseAsyncCmd)
+- removeCoffee (extend BaseAsyncCmd, use SuccessResponse as response class)
+
+2. Implement API response class `CoffeeResponse` that represents a Coffee
+   resource under `org.apache.cloudstack.api.response` package.
+
+3. Write basic unit tests for the classes. (IntelliJ: Ctrl+Shift+t to
+   create/browse unit test of a java class)
+
+4. Attempt and fix any upstream CloudStack API related issue(s):
 https://github.com/apache/cloudstack/issues?q=is%3Aissue+is%3Aopen+label%3Aapi
