@@ -343,5 +343,5 @@ detail in future chapters.
 3. Write basic unit tests for the classes. (IntelliJ: Ctrl+Shift+t to
    create/browse unit test of a java class)
 
-4. Attempt and fix any upstream CloudStack API related issue(s):
+Challenge: Attempt and fix any upstream CloudStack API related issue(s):
 https://github.com/apache/cloudstack/issues?q=is%3Aissue+is%3Aopen+label%3Aapi
