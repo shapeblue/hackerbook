@@ -303,6 +303,18 @@ how to write marvin based integration tests and use the utilities, probes and
 other building blocks of the Marvin library. As an example, you may look at the
 [test/integration/smoke/test_dynamicroles.py](https://github.com/apache/cloudstack/blob/master/test/integration/smoke/test_dynamicroles.py) marvin test.
 
+For developing and debuging Marvin tests you may want to use a python IDE, for example PyCharm (https://www.jetbrains.com/pycharm/download/) and its community edition. 
+
+Once installed PyCharm, you'll need to configure the project interpreter into its preferences. When the  
+interpreter is set, Marvin lib shouold appear in the available packages
+
+In order to execute a marvin test you'll need to setup a Run Configuration
+   - In PyCharm, click Run -> Edit Configurations -> add new python test configuration (nosetest) 
+   -  Then add the following line into Additional Configurations `--with-marvin --marvin-config=[path-to-config-file] -s -a tags=advanced --hypervisor=[xenserver|kvm|vmware] --zone=[zone-id]`
+   - Target -> Script Path and select the particular test file you want to execute for example:  `test/integration/smoke/test_dynamicroles.py`
+Now you should be able to run/debug any Marvin test 
+
+
 ## Simulator Based Development
 
 CloudStack has a mocked hypervisor called `simulator` that may be used for
