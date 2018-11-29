@@ -179,7 +179,7 @@ public interface Coffee extends InternalIdentity, Identity  {
         Espresso, Cappuccino, Mocha, Latte
     }
 
-    // Define other enum, constants etc.
+    // Define other enum, constants, events, fsm etc.
 
     String getName();
     String getDescription();
@@ -260,11 +260,10 @@ public class ListCoffeesCmd extends BaseListCmd {
 Ensure that the API is exported by the service layer class:
 
 ```java
-     @Override
-     public List<Class<?>> getCommands() {
-         final List<Class<?>> cmdList = new ArrayList<>();
-+        cmdList.add(ListCoffeesCmd.class);
-         return cmdList;
+public List<Class<?>> getCommands() {
+    final List<Class<?>> cmdList = new ArrayList<>();
+    cmdList.add(ListCoffeesCmd.class);
+    ...
 ```
 
 ## Global Settings
