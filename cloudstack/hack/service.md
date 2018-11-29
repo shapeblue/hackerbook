@@ -59,6 +59,17 @@ in the `module.properties` file.
 
 ```
 
+The `Spring` framework is widely used in CloudStack primarily for dependency
+injection, context, AOP and web (servlet).
+
+Reference readings:
+- https://docs.spring.io/spring/docs/5.1.3.RELEASE/spring-framework-reference/
+- https://dzone.com/articles/how-dependency-injection-di-works-in-spring-java-a
+- https://www.journaldev.com/2410/spring-dependency-injection
+- https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
+- https://www.tutorialspoint.com/spring
+- https://www.javatpoint.com/spring-tutorial
+
 ## Manager Implementation
 
 In CloudStack each implementation has a separate API contract class which is
@@ -66,7 +77,8 @@ typically a Java interface (and sometimes an abstract class) and separates
 how an entity/object/resource is declared and defined.
 
 For the manager, implement a `CoffeeManager` interface that defines a contract
-of methods etc. that the implementation class should implement. For example:
+of methods and fields that the implementation class should implement. For
+example:
 
 ```java
 package org.apache.cloudstack.api;
@@ -141,10 +153,127 @@ public class CoffeeManagerImpl extends ManagerBase implements CoffeeManager, Con
 }
 ```
 
+Naming convention: depending on the use-case, whether the service/business class
+is managing an object or providing a service its name may either have `Manager`
+or `Service`. For example, `CoffeeService` and `CoffeeManager`, and their
+implementing class may be named `CoffeeServiceImpl` or `CoffeeManagerImpl`. For
+the exercise, since the service layer class will be managing the resource
+`Coffee` the advice is to use the names `CoffeeManager/CoffeeManagerImpl`.
+
+## Defining Resource Interface
+
+The main resource/object for the feature is `Coffee`, define an interface
+that can be used to export contract (methods, enums, constants etc) for that
+resource. For example:
+
+```java
+
+package org.apache.cloudstack.api;
+public interface Coffee extends InternalIdentity, Identity  {
+
+    enum Size {
+        SMALL, MEDIUM, LARGE
+    }
+
+    enum Offering {
+        Espresso, Cappuccino, Mocha, Latte
+    }
+
+    // Define other enum, constants etc.
+
+    String getName();
+    String getDescription();
+    // Define other methods
+}
+```
+
+Ensure that you've also used the resource interface to annotate the response
+class such as:
+
+```java
+@EntityReference(value = Coffee.class)
+public class CoffeeResponse extends BaseResponse {
+```
+
+We do this to make it easier for the API layer for the id->uuid translation
+that we'll discuss in the DB exercise.
+
 ## API Request Handling
 
-TODO:
+The typical handler implementation can be to inject the manager in the API
+command and in the API's execute() call that dependency (manager/service)
+to handle the request by passing arguments or the `cmd` object. For example:
 
+Define the handler in the manager/service interface:
+
+```java
+public interface CoffeeManager {
+    List<Coffee> listCoffees(ListCoffeesCmd cmd);
+    // Other definitions
+}
+```
+
+The implementation can implement it, such as:
+
+```java
+public class CoffeeManagerImpl extends ManagerBase implements CoffeeManager, Configurable, PluggableService {
+     // ... code redacted ...
+    @Override
+    public List<Coffee> listCoffees(ListCoffeesCmd cmd) {
+        // Gather inputs from cmd and validate them
+        // Search DB based on input params
+        // Returned paginated list
+        return Collections.emptyList();
+    }
+```
+
+In the API command, inject the manager/service and use its methods:
+```java
+public class ListCoffeesCmd extends BaseListCmd {
+    // ... redacted code ...
+    @Inject
+    private CoffeeManager coffeeManager;
+
+    // ... redacted code ...
+    @Override
+    public void execute() {
+        final List<Coffee> coffees = coffeeManager.listCoffees(this);
+
+        // Validate coffee list here
+
+        // Create response, for example in-line or in separate method
+        final List<CoffeeResponse> responseList = new ArrayList<>();
+        for (final Coffee coffee : coffees) {
+            CoffeeResponse response = new CoffeeResponse();
+            response.setId(coffee.getUuid());
+            response.setName(coffee.getName());
+            // other setters etc.
+        }
+        final ListResponse<CoffeeResponse> coffeeResponses = new ListResponse<>();
+        coffeeResponses.setObjectName("coffee");
+        coffeeResponses.setResponses(responseList);
+        coffeeResponses.setResponseName(getCommandName());
+        setResponseObject(coffeeResponses);
+    }
+```
+
+Ensure that the API is exported by the service layer class:
+
+```java
+     @Override
+     public List<Class<?>> getCommands() {
+         final List<Class<?>> cmdList = new ArrayList<>();
++        cmdList.add(ListCoffeesCmd.class);
+         return cmdList;
+```
+
+## Global Settings
+
+ConfigKey usage here...
+
+## Background Tasks
+
+Background Tasks here...
 
 ## Exercises
 
@@ -152,5 +281,8 @@ TODO:
 
 2. Add APIs from previous exercise, build and run the management server and
    verify that you're able to call those APIs using `cmk`.
+
+3. Define a Coffee resource interface and handlers for the APIs in the service
+   class.
 
 Challenge: Attempt to find and fix service layer issue(s) from: https://github.com/apache/cloudstack/issues?q=is%3Aissue+is%3Aopen+label%3Abug

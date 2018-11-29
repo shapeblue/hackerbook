@@ -531,7 +531,6 @@ For feature submission the typical process is as follows:
 | [Service Development](hack/service.md) | 4-8 hours |
 | [DB Development](hack/db.md) | 8-16 hours |
 | [UI Development](hack/ui.md) | 8-16 hours |
-| [Misc Topics](hack/misc.md) | 8-16 hours |
 | [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |
 | [IPC](hack/ipc.md) | 4-8 hours |
 | [RPC](hack/rpc.md) | 4-8 hours |
