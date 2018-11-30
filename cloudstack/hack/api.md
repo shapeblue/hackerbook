@@ -254,6 +254,8 @@ Example API implementation:
     }
 ```
 
+### Asynchronous APIs
+
 Asynchronous APIs in CloudStack also need to export the event type (also see
 `EventTypes` class) and description information. Such APIs generally have three
 phases: API request is received, API execution is asynchronously started by the
@@ -289,6 +291,25 @@ for overridable methods.
         }
         ...
 ```
+
+CloudStack async APIs can also export events that usually describe the state
+of execution (Created, Scheduled, Started, Completed). For this, the async API
+implementation's `getEventType` and `getEventDescription` are used by the event
+framework to publish these events on the event bus. The handler method defined
+in the service/manager class can also define an annotation `@ActionEvent` to
+export event type and description metadata that gets captured by the
+`ActionEventInterceptor` class by means of `spring-aop`.
+
+```java
+    @Override
+    @ActionEvent(eventType = EventTypes.EVENT_COFFEE_CREATE, eventDescription = "creating coffee", async = true)
+    public Coffee createCoffee(CreateCoffeeCmd createCoffeeCmd) {
+        // Logic to create coffee
+```
+
+Reference reading:
+- http://docs.cloudstack.apache.org/en/4.11.2.0/adminguide/events.html
+- https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop
 
 ## API response implementation
 

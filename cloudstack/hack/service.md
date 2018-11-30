@@ -64,6 +64,7 @@ injection, context, AOP and web (servlet).
 
 Reference readings:
 - https://docs.spring.io/spring/docs/5.1.3.RELEASE/spring-framework-reference/
+- https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop
 - https://dzone.com/articles/how-dependency-injection-di-works-in-spring-java-a
 - https://www.journaldev.com/2410/spring-dependency-injection
 - https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
