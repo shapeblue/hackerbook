@@ -225,6 +225,8 @@ utility to get information about the current thread/execution context. For
 example, get the account ID that made the API request by using
 `CallContext.current().getCallingAccountId()`.
 
+Reference reading: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Using+CallContext
+
 Example API implementation:
 
 ```java

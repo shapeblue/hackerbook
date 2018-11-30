@@ -36,6 +36,8 @@ that discovers and constructs the hierarchy of CloudStack module based on the
 module.properties file (defined in most CloudStack maven projects). It is
 initialized via the `CloudStackContextLoaderListener`.
 
+https://cwiki.apache.org/confluence/display/CLOUDSTACK/Putting+CloudStack+together
+
 ## API Layer
 
 Study and refer to following classes that implement the API layer and handle
@@ -47,9 +49,23 @@ Async API scheduling:
 
     ApiDispatcher, ApiAsyncJobDispatcher, APIChecker, ApiResponseSerializer
 
+CallContext: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Using+CallContext
+
 ## Job Framework?
 
     AsyncJobManager
+
+Misc:
+https://cwiki.apache.org/confluence/display/CLOUDSTACK/VM+Deployment+Planning+and+Resource+Allocation
+
+## Orchestration
+
+https://cwiki.apache.org/confluence/display/CLOUDSTACK/201+-+Orchestration+and+Plugins
+https://cwiki.apache.org/confluence/display/CLOUDSTACK/Alex%27s+Architecture+Notes
+
+## HA
+
+https://cwiki.apache.org/confluence/display/CLOUDSTACK/High+Availability+Developer%27s+Guide
 
 
 ## Advanced Development Topics

@@ -1,8 +1,13 @@
 # CloudStack DB Layer
 
+Reference reading: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Data+Access+Layer
 
 ## Upgrade Paths?
 
+
+## DB Transactions
+
+Reference reading: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Database+Transactions
 
 ## Details tables and scoped settings
 
