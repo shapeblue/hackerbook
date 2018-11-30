@@ -351,6 +351,26 @@ try to find the resource from a database table by the passed `uuid` value and
 perform the translation and validation. We'll revisit how API layer work in
 detail in future chapters.
 
+### API Docs
+
+When adding a new set of APIs around a resource, the build around `apidocs`
+may fail. This is because API docs may not know how to categorize those new
+APIs. For this, add a the resource name (for example `Coffee`):
+
+```python
+--- a/tools/apidoc/gen_toc.py
++++ b/tools/apidoc/gen_toc.py
+@@ -190,7 +190,8 @@ known_categories = {
+     'Sioc' : 'Sioc',
+-    'Diagnostics': 'Diagnostics'
++    'Diagnostics': 'Diagnostics',
++    'Coffee': 'Coffee'
+     }
+```
+
+When you build CloudStack, API docs are generated at
+`tools/apidoc/target/xmldoc/html`.
+
 ## Exercises
 
 1. Implement the following APIs based on the spec, under
