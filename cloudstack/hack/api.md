@@ -302,7 +302,7 @@ resource the response class represents.
 An API response class may typically be reused by a resource's list/create/update
 APIs and generally contains setters (and sometimes getters). For example:
 
-```
+```java
 @EntityReference(value = MyResource.class)
 public class MyAPIResponse extends BaseResponse {
     @SerializedName(ApiConstants.ID)

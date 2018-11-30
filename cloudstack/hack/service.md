@@ -111,7 +111,7 @@ package org.apache.cloudstack.feature;
 
 public class CoffeeManagerImpl extends ManagerBase implements CoffeeManager, Configurable, PluggableService {
 
-    private Logger LOGGER = Logger.getLogger(getClass());
+    private static Logger LOGGER = Logger.getLogger(CoffeeManagerImpl.class);
 
     @Override
     public boolean configure(String name, Map<String, Object> params) throws ConfigurationException {
@@ -268,11 +268,95 @@ public List<Class<?>> getCommands() {
 
 ## Global Settings
 
-ConfigKey usage here...
+The `cloud-framework-config` provides means of configuration for various
+parts of CloudStack that an admin/user can tune. Depending on the use-case,
+a `ConfigKey` can be defined in the service layer implementation class (to keep
+access restricted) or the service/manager interface (to allow external access).
+A `ConfigKey` defines a setting that has a category, type (string, long, int
+etc), name, default value, description, if it's dynamic. In addition, it can
+have a scope and a multipler.
+
+**Recommended reading**: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Configuration
+
+The following is one example to add a zone-level (global) setting:
+
+```java
+ public class CoffeeManagerImpl extends ManagerBase implements CoffeeManager, Configurable, PluggableService {
+    // ... code redacted ...
+    private static final ConfigKey<Long> CoffeeTTLInterval = new ConfigKey<Long>("Advanced", Long.class,
+            "coffee.ttl.interval", "600",
+            "The max time in seconds after which coffee becomes stale.",
+            true, ConfigKey.Scope.Zone);
+
+    // ... code redacted ...
+    public ConfigKey<?>[] getConfigKeys() {
+        return new ConfigKey[]{
+               CoffeeTTLInterval,
+        };
+    }
+```
+
+To access the setting you can use `CoffeeTTLInterval.value()` or
+`CoffeeTTLInterval.valueIn(zoneId)`.
 
 ## Background Tasks
 
-Background Tasks here...
+You can create a class that extends `ManagedContextRunnable` and implements
+`BackgroundPollTask` to create a background task. Such a background task
+is scheduled to run continuously using the `scheduleWithFixedDelay` method
+that the background polling task manager implementation uses on an executor
+service.
+
+Reference reading:
+- https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html
+- http://tutorials.jenkov.com/java-util-concurrent/executorservice.html
+- https://www.baeldung.com/java-executor-service-tutorial
+
+Here is an example of how you may declare a background task:
+
+```java
+    private static final class CoffeeGCTask extends ManagedContextRunnable implements BackgroundPollTask {
+        private CoffeeManager coffeeManager;
+
+        private CoffeeGCTask(final CoffeeManager coffeeManager) {
+            this.coffeeManager = coffeeManager;
+        }
+
+        @Override
+        protected void runInContext() {
+            try {
+                if (LOGGER.isTraceEnabled()) {
+                    LOGGER.trace("Coffee GC task is running...");
+                }
+                // Code to do based on Coffee TTL
+                final Long ttl = CoffeeTTLInterval.value();
+
+            } catch (final Throwable t) {
+                LOGGER.error("Error trying to run Coffee GC task", t);
+            }
+        }
+
+        @Override
+        public Long getDelay() {
+            return CoffeeGCInterval.value();
+        }
+    }
+```
+
+Finally, submit an instance of the background task to the BackgroundPollManager
+in the `configure` of your service/manager class:
+
+```java
+    @Inject
+    private BackgroundPollManager backgroundPollManager;
+
+    // ... code redacted ...
+    public boolean configure(String name, Map<String, Object> params) throws ConfigurationException {
+        super.configure(name, params);
+        backgroundPollManager.submitTask(new CoffeeGCTask(this));
+        return true;
+    }
+```
 
 ## Exercises
 
@@ -283,5 +367,9 @@ Background Tasks here...
 
 3. Define a Coffee resource interface and handlers for the APIs in the service
    class.
+
+4. Define the global settings for the feature.
+
+5. Define the logic for the GC task.
 
 Challenge: Attempt to find and fix service layer issue(s) from: https://github.com/apache/cloudstack/issues?q=is%3Aissue+is%3Aopen+label%3Abug
