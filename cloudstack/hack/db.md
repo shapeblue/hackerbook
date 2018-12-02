@@ -165,7 +165,7 @@ and can be injected in the service layer class. For example:
         xsi:schemaLocation="http://www.springframework.org/schema/beans
                        http://www.springframework.org/schema/beans/spring-beans.xsd">
      <bean id="coffeeManager" class="org.apache.cloudstack.feature.CoffeeManagerImpl" />
-+    <bean id="coffeeDaoImpl" class="org.apache.cloudstack.feature.dao.CoffeeDaoImpl" />
++    <bean id="coffeeDao" class="org.apache.cloudstack.feature.dao.CoffeeDaoImpl" />
 ```
 
 Now, the `DaoImpl` class can be injected and used by the service/manager class.
