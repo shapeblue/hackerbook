@@ -180,6 +180,10 @@ public interface Coffee extends InternalIdentity, Identity  {
         Espresso, Cappuccino, Mocha, Latte
     }
 
+    enum CoffeeState {
+        Created, Brewing, Brewed, Ready, Removed, Discarded;
+    }
+
     // Define other enum, constants, events, fsm etc.
 
     String getName();

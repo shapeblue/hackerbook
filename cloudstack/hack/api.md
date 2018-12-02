@@ -90,6 +90,7 @@ the following hierarchy:
                             └── command  # for API command classes
                             └── response # for API response classes
                         └── feature      # for feature classes
+                            └── dao      # for feature DAO classes
                 └── resources
                     └── resources/META-INF/cloudstack/feature
                         └── module.properties

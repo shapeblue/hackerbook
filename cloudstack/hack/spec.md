@@ -70,7 +70,7 @@ and usage of plugins.
 
 Following tables should be added with appropriate DAO and VO classes:
 
-- coffee_orders:
+- coffee:
   - id: auto_increment ID for the table
   - uuid: the UUID for a coffee order
   - name: name on the coffee order
@@ -83,7 +83,7 @@ Following tables should be added with appropriate DAO and VO classes:
   - removed: the removal timestamp
 
 - coffee_details:
-  - cid: the coffee ID
+  - coffee_id: the coffee ID
   - key: the string key
   - value: the string value
 
