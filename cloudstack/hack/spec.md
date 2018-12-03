@@ -103,7 +103,7 @@ Global settings:
   stale, default 600 seconds.
 - `coffee.gc.interval`: The interval in seconds for the GC thread to run,
   default 10s.
-- `coffee.plugin`: The name of coffee plugin, default is `default`.
+- `coffee.machine.plugin`: The name of coffee machine plugin, default is `inbuilt`.
 
 Background task: Run based on GC interval and scan coffees across all accounts
 and remove coffee that have exceeded the coffee TTL interval.

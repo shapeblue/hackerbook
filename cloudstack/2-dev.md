@@ -88,6 +88,8 @@ The recommended setup is to run MySQL and NFS servers locally on your laptop
 and the hypervisor in a VM or an external host. The CloudStack management and
 usage server can be run using maven or via an IDE.
 
+Tip: get the latest maven from https://maven.apache.org/download.cgi
+
 ### Getting the source code
 
 Apache CloudStack source code can be cloned from the following remotes:
@@ -528,10 +530,10 @@ For feature submission the typical process is as follows:
 | ----- | ------ |
 | [Functional Spec](hack/spec.md) | 4-8 hours |
 | [API Development](hack/api.md) | 8-16 hours |
-| [Service Development](hack/service.md) | 4-8 hours |
+| [Service Development](hack/service.md) | 8-16 hours |
 | [DB Development](hack/db.md) | 8-16 hours |
-| [UI Development](hack/ui.md) | 8-16 hours |
-| [IPC/RPC](hack/com.md) | 8-16 hours |
 | [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |
+| [IPC/RPC](hack/com.md) | 8-16 hours |
+| [UI Development](hack/ui.md) | 8-16 hours |
 | [Functional Testing](hack/testing.md) | 8-16 hours |
 | [Packaging](hack/packaging.md) | 4-8 hours |
