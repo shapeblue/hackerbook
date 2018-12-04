@@ -155,7 +155,8 @@ Reference examples of features that implement framework and plugins:
 ## Exercises
 
 1. Implement at least two `CoffeeMachine` plugins, with at least one of them
-   implemented as a separate maven project. Implement the `ConfigKey` for the
+   implemented as a separate maven project in whose module.properties your
+   feature should be the parent. Implement the `ConfigKey` for the
    coffee machine plugin name and use it to drive brewing operations.
 
 2. Write unit tests for the classes.

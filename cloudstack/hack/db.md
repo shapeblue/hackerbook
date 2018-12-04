@@ -219,7 +219,88 @@ utility. For example:
 
 ## FSM
 
-TODO:
+A Finite State Machine or
+[FSM](https://en.wikipedia.org/wiki/Finite-state_machine) defines a transition
+table that takes in a state and an event to transition to a new state. In
+CloudStack FSM is used to implement state machine and restrict how state of a
+resource such as a VM, volume, network etc. transition given an event occurs.
+The resource state and events are both defined as `enum`, usually in the
+resource interface. The resource interface need to extend the `StateObject<S>`
+interface. For example:
+
+```java
+public interface Coffee extends InternalIdentity, Identity, StateObject<Coffee.CoffeeState> {
+    // .. code redacted ..
+    enum Event {
+        OrderReceived,
+        OrderReady,
+        OrderDiscarded
+    }
+
+    enum CoffeeState {
+        Created, Brewing, Brewed, Discarded;
+
+        private final static StateMachine2<CoffeeState, Event, Coffee> FSM = new StateMachine2<>();
+        static {
+            FSM.addTransition(Created, Event.OrderReceived, Brewing);
+            FSM.addTransition(Brewing, Event.OrderReady, Brewed);
+            FSM.addTransitionFromStates(Event.OrderDiscarded, Discarded, Created, Brewing, Brewed);
+        }
+
+        public static StateMachine2<CoffeeState, Event, Coffee> getStateMachine() {
+            return FSM;
+        }
+    }
+
+    // .. code redacted ..
+    CoffeeState getState();
+```
+
+The resource specific `Dao` class needs to handle state transitions, Daos of
+resources that are `StateObject` can extend/implement `StateDao<S, E, V>`.
+
+```java
+public interface CoffeeDao extends GenericDao<CoffeeVO, Long>, StateDao<Coffee.CoffeeState, Coffee.Event, Coffee> {
+    // .. code redacted ..
+```
+
+The `DaoImpl` can implement `updateState`. For example:
+
+```java
+public class CoffeeDaoImpl extends GenericDaoBase<CoffeeVO, Long> implements CoffeeDao {
+
+    @Override
+    public boolean updateState(Coffee.CoffeeState currentState, Coffee.Event event, Coffee.CoffeeState nextState, Coffee vo, Object data) {
+        // Update logic/check here
+        // May use an update_counter from the vo for lock-free update
+        vo.setState(nextState);
+        return update(vo.getId(), (CoffeeVO) vo);
+    }
+```
+
+Tip: due to several threads of execution and multiple management server, it may
+be possible that for the same resource object (VO instance) its `state` may get
+updated. For this purpose, in several CloudStack VOs an `update_counter` may be
+defined that ties up with the updates of its `State`. This provides a lock-free
+mechanism of updating a resource state, where the logic is simply enforced using
+a `SearchBuilder` that updates a `VO` object based on its previous update
+counter value and its previous state. For example, see `VolumeVO` and
+`VolumeDaoImpl`.
+
+With the FSM implemented and DAO made state-aware, the FSM can be then used to
+transit to a state based on an event which can automatically handle any DB
+updates. This can be done by having a utility method that uses FSM's `transitTo`
+method. For example, the following method in the service/manager impl class:
+
+```java
+    private boolean stateTransitTo(Coffee coffee, Coffee.Event event) throws NoTransitionException {
+        return Coffee.CoffeeState.getStateMachine().transitTo(coffee, event, null, coffeeDao);
+    }
+```
+
+You can also add a listener of state changes to a CloudStack FSM using
+`registerListener()`, the listener could be any class that implements the
+`StateListener<S, E, V>` interface.
 
 ## Exercises
 

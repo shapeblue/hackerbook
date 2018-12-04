@@ -181,7 +181,7 @@ public interface Coffee extends InternalIdentity, Identity  {
     }
 
     enum CoffeeState {
-        Created, Brewing, Brewed, Ready, Removed, Discarded;
+        Created, Brewing, Brewed, Discarded;
     }
 
     // Define other enum, constants, events, fsm etc.
