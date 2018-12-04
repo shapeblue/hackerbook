@@ -321,7 +321,8 @@ attributes with `@Param` and `@SerializedName` annotations that define the
 serialized attribute/key name and their description. This metadata is used
 by CloudStack build system to generate `apidocs` (see in tools/apidocs). The
 class may sometimes have a `@EntityReference` annotation to mark the type of
-resource the response class represents.
+resource the response class represents. Use this annotation when you've a VO
+class in future exercise, that implements the resource interface.
 
 An API response class may typically be reused by a resource's list/create/update
 APIs and generally contains setters (and sometimes getters). For example:
