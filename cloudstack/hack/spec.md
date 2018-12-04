@@ -59,13 +59,6 @@ The following sections document high-level implementation details.
 The details are string->string map of any arbitrary key/value to note any
 details of each coffee order.
 
-### Service Changes
-
-The feature would require a new service/business layer class that handles
-various API requests along with exports APIs, global settings and schedules
-background task(s). This may also implement the framework and support discovery
-and usage of plugins.
-
 ### DB Schema
 
 Following tables should be added with appropriate DAO and VO classes:
@@ -83,19 +76,18 @@ Following tables should be added with appropriate DAO and VO classes:
   - removed: the removal timestamp
 
 - coffee_details:
+  - id: auto_increment ID for the table
   - coffee_id: the coffee ID
-  - key: the string key
+  - name: the string key
   - value: the string value
+  - display: whether to show/hide the detail in the API response
 
-### UI
+### Service Changes
 
-The feature should be implemented as a UI plugin which shows up as a new
-`coffee` tab in the UI. In the tab, users should see a table of coffee orders
-with name, offering, size and state. On clicking a coffee, it should show a
-details tab. The UI should provide appropriate buttons to create, update and
-remove coffee.
-
-### Misc: Global Setting, Background Task and Usage records
+The feature would require a new service/business layer class that handles
+various API requests along with exports APIs, global settings and schedules
+background task(s). This may also implement the framework and support discovery
+and usage of plugins.
 
 Global settings:
 
@@ -108,26 +100,36 @@ Global settings:
 Background task: Run based on GC interval and scan coffees across all accounts
 and remove coffee that have exceeded the coffee TTL interval.
 
-Usage record:
-- Introduce a new coffee usage record type
-- Create usage records for coffee per account, introduce a new helper table
-- The usage record should have the coffee quantity per account aggregate by
-  offering with start/end datetime
+### Pluggable CoffeeMaker
 
-### Framework and Brewing Plugins
+Implement a framework that allows plugin creation based on a `CoffeeMaker`
+interface that implements a `brew()` method. Implement two plugins with at least
+one as a separate maven project.
 
-The framework should create a `CoffeeMaker` interface that implements a `brew()`
-method. The plugins can be implemented
-
-### IPC
+### IPC and RPC
 
 On creation of any new CloudStack account, a fresh default coffee must be
 created and on removal of an account all coffees of that account must be purged.
 On coffee creation and removal, events must be emitted.
 
-### RPC
+TODO: use of message bus
 
-KVM plugin?
+RPC: KVM plugin?
+
+### Coffee Usage
+
+- Introduce a new coffee usage record type
+- Create usage records for coffee per account, introduce a new helper table
+- The usage record should have the coffee quantity per account aggregate by
+  offering with start/end datetime
+
+### UI
+
+The feature should be implemented as a UI plugin which shows up as a new
+`coffee` tab in the UI. In the tab, users should see a table of coffee orders
+with name, offering, size and state. On clicking a coffee, it should show a
+details tab. The UI should provide appropriate buttons to create, update and
+remove coffee.
 
 ### Testing
 

@@ -34,6 +34,7 @@ Rohit Yadav <rohit@apache.org>
 | [DB Development](hack/db.md) | 8-16 hours |
 | [Pluggable Framework and Plugin development](hack/framework.md) | 8-16 hours |
 | [IPC/RPC](hack/com.md) | 8-16 hours |
+| [Usage Development](hack/usage.md) | 8-16 hours |
 | [UI Development](hack/ui.md) | 8-16 hours |
 | [Functional Testing](hack/testing.md) | 8-16 hours |
 | [Packaging](hack/packaging.md) | 4-8 hours |
