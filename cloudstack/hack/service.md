@@ -63,6 +63,7 @@ The `Spring` framework is widely used in CloudStack primarily for dependency
 injection, context, AOP and web (servlet).
 
 Reference readings:
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Using+Spring+in+CloudStack
 - https://docs.spring.io/spring/docs/5.1.3.RELEASE/spring-framework-reference/
 - https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop
 - https://dzone.com/articles/how-dependency-injection-di-works-in-spring-java-a

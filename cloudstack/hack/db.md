@@ -16,6 +16,7 @@ References:
 - https://www.w3schools.com/sql/
 - https://www.tutorialspoint.com/sql/
 - http://www.mysqltutorial.org/
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/DB+Upgrade+in+CloudStack
 
 CloudStack has following databases:
 - `cloud`: the main database where most of CloudStack tables are

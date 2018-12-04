@@ -130,6 +130,9 @@ common pattern in CloudStack is to pass an API object to business/service layer.
 **Suggested API examples**:
 https://github.com/apache/cloudstack/tree/master/api/src/main/java/org/apache/cloudstack/api/command/admin/acl
 
+References:
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+API+Development
+
 ## API implementation
 
 Depending on the type of API you want to implement, create an API class
