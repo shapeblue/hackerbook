@@ -14,6 +14,11 @@ available through UI.
 Your task now is to read and understand the above requirements and then proceed
 with the implementation based on a functional specification.
 
+References:
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Adding+new+features+and+design+documents
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Design+Document+Template
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Design
+
 FS references and examples:
 - CloudStack Design docs (FS): https://cwiki.apache.org/confluence/display/CLOUDSTACK/Design
 - FS case study (Dynamic Roles): https://cwiki.apache.org/confluence/display/CLOUDSTACK/Dynamic+Role+Based+API+Access+Checker+for+CloudStack

@@ -131,8 +131,14 @@ common pattern in CloudStack is to pass an API object to business/service layer.
 https://github.com/apache/cloudstack/tree/master/api/src/main/java/org/apache/cloudstack/api/command/admin/acl
 
 References:
+- http://cloudstack.apache.org/api.html
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+API+Development
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Annotations+use+in+the+API
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+API+Coding+Guidelines
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/How+To+Generate+CloudStack+API+Documentation
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/List*+API+commands+rules
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+IAM+guidelines+for+API+and+Service+Layer
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Coding+conventions
 
 ## API implementation
 

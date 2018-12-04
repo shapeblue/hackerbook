@@ -461,4 +461,4 @@ Troubleshooting references:
   deploy a fresh virtual machine with a new network, read and try to understand
   all the steps that happen during VM deployment.
 - Attempt CloudStack [Automation](hack/automation.md) challenge using
-  CloudMonkey and Ansible.
+  CloudMonkey and Ansible. (16-24 hours)
