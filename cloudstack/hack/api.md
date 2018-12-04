@@ -132,6 +132,7 @@ https://github.com/apache/cloudstack/tree/master/api/src/main/java/org/apache/cl
 
 References:
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+API+Development
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/How+To+Generate+CloudStack+API+Documentation
 
 ## API implementation
 

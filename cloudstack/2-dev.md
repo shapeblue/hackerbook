@@ -353,6 +353,9 @@ your shell (or include this by default in zshrc or bashrc):
 
     export MAVEN_OPTS="$MAVEN_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n"
 
+For installed CloudStack management server, you can change its `JAVA_DEBUG` in
+the `/etc/default/cloudstack-management` ([see PR](https://github.com/apache/cloudstack/pull/2535/files)).
+
 To remote-debug the KVM agent, put the following in
 `/etc/default/cloudstack-agent` in your monkeybox and restart cloudstack-agent:
 
