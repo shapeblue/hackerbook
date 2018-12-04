@@ -65,7 +65,7 @@ Tips:
 - For performance gains use `views` instead of simply the `tables`, the general
   use case could be to speed up list API execution
 
-## Writing DAO classes
+## Resource DAO
 
 **Recommended reading**: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Data+Access+Layer
 
@@ -217,6 +217,23 @@ utility. For example:
     });
 ```
 
+## Resource Details Dao
+
+For any resource, a details table can be designed as well. The VOs and Daos
+can be implemented in the same way. Typically a `_details` table will have
+following columns:
+- `id`: the auto increment internal DB ID (bigint)
+- `resource_id`: the (bigint) ID of the resource
+- `name`: the name/key of the detail (string)
+- `value`: the value of the detail (string)
+- `display`: boolean (int:1) to show/hide that detail
+
+The `VO` class for the resource detail table can implement `ResourceDetail`
+interface. The `Dao` interface can extend the `ResourceDetailsDao<R>` interface
+and the `DaoImpl` class can extend the `ResourceDetailsDaoBase<RVO>` abstract
+class. Using this pattern, your resource's `DetailsDao` can be used to
+list/add/remove/save details.
+
 ## FSM
 
 A Finite State Machine or
@@ -321,44 +338,3 @@ You can also add a listener of state changes to a CloudStack FSM using
 
 Challenge: Attempt and fix any upstream CloudStack DB related issue(s):
 https://github.com/apache/cloudstack/issues
-
-## Details tables and scoped settings
-
-List of `_details` tables in CloudStack:
-
-    **account_details**
-    autoscale_vmgroup_details
-    autoscale_vmprofile_details
-    **cluster_details**
-    **data_center_details**
-    disk_offering_details
-    domain_details
-    firewall_rule_details
-    guest_os_details
-    **host_details**
-    image_store_details
-    load_balancer_healthcheck_policy_details
-    load_balancer_stickiness_policy_details
-    network_acl_details
-    network_acl_item_details
-    network_details
-    network_offering_details
-    nic_details
-    remote_access_vpn_details
-    s2s_customer_gateway_details
-    s2s_vpn_connection_details
-    s2s_vpn_gateway_details
-    service_offering_details
-    snapshot_details
-    snapshot_policy_details
-    storage_pool_details
-    usage_event_details
-    user_details
-    user_ip_address_details
-    **user_vm_details**
-    vlan_details
-    vm_snapshot_details
-    vm_template_details
-    volume_details
-    vpc_details
-    vpc_gateway_details
