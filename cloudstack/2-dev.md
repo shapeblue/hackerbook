@@ -534,12 +534,11 @@ For feature submission the typical process is as follows:
 | [Functional Spec](hack/spec.md) | 8 hours |
 | [API Development](hack/api.md) | 16 hours |
 | [DB Development](hack/db.md) | 16 hours |
-| [Service Development](hack/service.md) | 16 hours |
+| [Service Development](hack/service.md) | 24 hours |
 | [Pluggable Framework and Plugin development](hack/framework.md) | 8 hours |
 | [IPC/RPC](hack/com.md) | 8 hours |
 | [Usage Development](hack/usage.md) | 8 hours |
 | [UI Development](hack/ui.md) | 16 hours |
 | [Functional Testing](hack/testing.md) | 8 hours |
 | [Packaging](hack/packaging.md) | 8 hours |
-| [Programming Patterns in CloudStack](hack/patterns.md) | 8 hours |
 | | **120 hours** (15 days) |
