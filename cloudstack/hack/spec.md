@@ -108,33 +108,33 @@ and remove coffee that have exceeded the coffee TTL interval.
 ### Pluggable CoffeeMaker
 
 Implement a framework that allows plugin creation based on a `CoffeeMaker`
-interface that implements a `brew()` method. Implement two plugins with at least
-one as a separate maven project.
+interface that implements a `brew()` method. Implement two plugins, an inbuilt
+default coffeemaker that performs no-operation (maybe just log) and a separate
+maven project based lazy coffeemaker that randomly sleeps in `brew()`.
 
-### IPC and RPC
+### Message Passing: IPC and RPC
 
 On creation of any new CloudStack account, a fresh default coffee must be
 created and on removal of an account all coffees of that account must be purged.
-On coffee creation and removal, events must be emitted.
+On coffee creation and removal, publish event on the message bus. On coffee
+discarded by GC thread, send an alert.
 
-TODO: use of message bus
+Create a `CoffeeMachine` plugin that brews coffee via a random agent such as the
+CPVM/SSVM agent or the KVM agent.
 
-RPC: KVM plugin?
+### Coffee Usage Records
 
-### Coffee Usage
-
-- Introduce a new coffee usage record type
-- Create usage records for coffee per account, introduce a new helper table
-- The usage record should have the coffee quantity per account aggregate by
-  offering with start/end datetime
+Introduce a new coffee usage record type and implement usage parser for the
+coffee resource that generates usage records aggregated per account by the
+number of coffees ordered.
 
 ### UI
 
 The feature should be implemented as a UI plugin which shows up as a new
 `coffee` tab in the UI. In the tab, users should see a table of coffee orders
-with name, offering, size and state. On clicking a coffee, it should show a
-details tab. The UI should provide appropriate buttons to create, update and
-remove coffee.
+with name, offering, size, state and account. On clicking a coffee, it should
+show a details tab that lists the attributes of the coffee. The UI should
+provide appropriate buttons to create, update and remove coffee.
 
 ### Testing
 
@@ -147,3 +147,8 @@ Marvin test will be written with following cases:
   - Remove coffee
 - Create coffee and see if GC thread garbage collects it based on global setting
 - Change brewing plugin and validate brewing process
+
+### Packaging
+
+Make the coffee feature and any of its plugins packaged separately as a separate
+rpm/deb package.

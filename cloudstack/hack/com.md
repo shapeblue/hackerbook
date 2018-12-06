@@ -35,6 +35,8 @@ project.
 
 EventBus (Kafka, RabbitMQ, In-memory)
 
+Send alerts?
+
 # Agent Framework based RPC
 
 Command-Answer

@@ -1,5 +1,7 @@
 # Advanced CloudStack Development
 
+## Maven Build System Overview
+
 ## CloudStack Put Together
 
 Deployment descriptor: WEB-INF/web.xml
@@ -111,6 +113,8 @@ References and readings:
 ### Auth Plugin
 
 ### Allocator Plugin
+
+Planners, acls
 
 Etc...
 

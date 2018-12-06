@@ -48,7 +48,6 @@ CREATE TABLE IF NOT EXISTS `cloud`.`coffee` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `uuid` varchar(40) UNIQUE,
   `name` varchar(255) NOT NULL,
-  `description` varchar(1024) NULL,
   `state` varchar(40) NOT NULL,
   `account_id` bigint unsigned NOT NULL,
   `created` datetime NOT NULL COMMENT 'date of creation',
@@ -102,9 +101,6 @@ public class CoffeeVO implements Coffee {
 
     @Column(name = "name")
     private String name;
-
-    @Column(name = "description")
-    private String description;
 
     @Column(name = "state", nullable = false)
     @Enumerated(value = EnumType.STRING)
@@ -213,7 +209,7 @@ utility. For example:
     return Transaction.execute(new TransactionCallback<CoffeeVO>() {
         @Override
         public CoffeeVO doInTransaction(TransactionStatus status) {
-            return coffeeDao.persist(new CoffeeVO(name, description, accountId));
+            return coffeeDao.persist(new CoffeeVO(name, accountId));
         }
     });
 ```

@@ -1,9 +1,10 @@
 # Hacking Networking
 
   - Overview
-  - Networks: L2, Shared, Isolated, VPC
-  - Isolation: SG, VLAN etc.
-  - Virtual Routers
+  - Basic Vs Advanced Zone
+  - Network Models: L2, Shared, Isolated, VPC
+  - Isolation: SG, VLAN, VXLAN etc.
+  - Virtual Router
   - Network tools, usage and debugging
 
 Tools: ping, traceroute, telnet, iptables, iproute2, ebtables, netstat
