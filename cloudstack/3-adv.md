@@ -57,6 +57,13 @@ Frameworks: DB, IPC, CA, Cluster, Events, Security, Spring, Jobs, Managed Contex
 
 CloudStack Engine: api, component-api, orchestartion, network, schema, service, storage
 
+### Certificate Authority Framework
+
+References:
+- TLS Connection: https://tls.ulfheim.net/
+- TLS 1.3: https://tls13.ulfheim.net/
+
+
 ## CloudStack Agent
 
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/Agents+Framework
@@ -85,6 +92,19 @@ VR python codebase
   - Reconciliation, eventual consistency
 
 CloudStack clustering, agent LB etc. Agent/Cluster manager
+
+References and readings:
+- System Design Primer: https://github.com/donnemartin/system-design-primer/blob/master/README.md
+- Distributed Systems for Fun and Profit: http://book.mixu.net/distsys/single-page.html
+- Consistency models: https://jepsen.io/consistency
+- Jepsen Analyses: https://jepsen.io/analyses
+- CAP and network partition: https://drive.google.com/file/d/15nxAaVXZwNFnJNVvgtKonNbzxNgTUCxP/view
+- Further readings:
+  - http://henryr.github.io/distributed-systems-readings/
+  - http://christophermeiklejohn.com/distributed/systems/2013/07/12/readings-in-distributed-systems.html
+  - High Scalability Blog: http://highscalability.com
+  - AOSA: http://aosabook.org/en/index.html
+  - Fun: https://github.com/danistefanovic/build-your-own-x/blob/master/README.md#build-your-own-operating-system
 
 ## Specialized Plugins
 
