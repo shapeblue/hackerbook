@@ -2,6 +2,12 @@
 
 ## Maven Build System Overview
 
+- Basic commands
+- Structure
+- Profiles
+- Flags
+- Assembler: systemvm.iso
+
 ## CloudStack Put Together
 
 Deployment descriptor: WEB-INF/web.xml
@@ -38,52 +44,89 @@ Async API scheduling:
 
 CallContext: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Using+CallContext
 
+## Service Layer
+
+### Resource Tags and Metadata
+
+CloudStack supports adding tags and metadata (details) on resources. This can be
+done by the create/list/delete tags APIs and the add/list/remove details APIs.
+Resource tag is defined by the `ResourceTag` interface, and tags saved in the
+`cloud`.`resource_tags` table.
+
+Other related definitions to look at: `Resource`, `Resource.ResourceType`,
+`ResourceMetaDataService`, `ResourceDetail`.
+
 ## Orchestration Layer
+
+Core, Utils, APIs, Server
 
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/201+-+Orchestration+and+Plugins
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/Alex%27s+Architecture+Notes
 
-
 Misc:
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/VM+Deployment+Planning+and+Resource+Allocation
-
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/High+Availability+Developer%27s+Guide
 
-### Job Framework
+Engine vs framework
+
+### Framework: db, Engine: engine-schema
+
+### Framework: jobs
 
 AsyncJobManager
 
-Core, Utils, APIs, Server
-
-Frameworks: DB, IPC, CA, Cluster, Events, Security, Spring, Jobs, Managed Context
-
-CloudStack Engine: api, component-api, orchestartion, network, schema, service, storage
-
-### Certificate Authority Framework
+### Framework: ca
 
 References:
 - TLS Connection: https://tls.ulfheim.net/
 - TLS 1.3: https://tls13.ulfheim.net/
 
+### Framework: cluster
+
+### Framework: spring, managed-context
+
+### Engine: api, component-api
+
+### Engine: service
+
+### Engine: orchestration
+
+### Engine: network
+
+### Engine: storage
 
 ## CloudStack Agent
 
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/Agents+Framework
 
-## SystemVM Template
+## SystemVMs
+
+### SystemVM Template
 
 Packer, build etc.
 
-## SystemVMs: CPVM, SSVM
+### CPVM
+
+### SSVM
 
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/SystemVm.iso
 
-## Virtual Routers
+### Virtual Routers
 
 How it builds, programs etc.
 VR python codebase
 
-# Distributed Systems
+## Specialized Plugins
+
+### Auth Plugin
+
+### Allocator Plugin
+
+Planners, acls
+
+Etc...
+
+## Distributed Systems
 
   - Scalability, Availability
   - Latency, fault tolerance, performance
@@ -107,16 +150,6 @@ References and readings:
   - High Scalability Blog: http://highscalability.com
   - AOSA: http://aosabook.org/en/index.html
   - Fun: https://github.com/danistefanovic/build-your-own-x/blob/master/README.md#build-your-own-operating-system
-
-## Specialized Plugins
-
-### Auth Plugin
-
-### Allocator Plugin
-
-Planners, acls
-
-Etc...
 
 ## Appendix: Programming Patterns in CloudStack
 

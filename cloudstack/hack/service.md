@@ -364,8 +364,6 @@ in the `configure` of your service/manager class:
     }
 ```
 
-TODO: ResourceTag, Resource, ResourceType?
-
 ## Exercises
 
 1. Implement the manager module, interface and impl class.
