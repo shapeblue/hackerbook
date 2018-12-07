@@ -164,7 +164,7 @@ returned back.
 
 Tip: CPVM/SSVM/KVM agents work as indirect or connected agents.
 
-The `cloud-engine-orchestartion` implements `AgentManagerImpl` that manages
+The `cloud-engine-orchestration` implements `AgentManagerImpl` that manages
 agents by means of `AgentAttache`.
 
 CloudStack management server supports two kinds of agents:
@@ -239,3 +239,14 @@ public final class CoffeeCommandWrapper extends CommandWrapper<CoffeeBrewCommand
     }
 }
 ```
+
+## Exercises
+
+1. Implement the create coffee method with `async` callbacks.
+
+2. Write messagebus handler to create/remove coffee when account is
+   create/removed. Send alerts to the admin when a coffee is discarded by the GC
+   background task.
+
+3. Refactor one of the `CoffeeMachine` plugins to brew coffee remotely on a
+   `ServerResource` using command-answer pattern. You can use KVM or simulator.
