@@ -3,7 +3,7 @@
 The CloudStack UI is a single page legacy-styled static JavaScript app based on
 jQuery.
 
-References:
+Javascript, jQuery references:
 - https://www.w3schools.com/js/
 - https://www.geeksforgeeks.org/javascript-tutorial/
 - https://learn.jquery.com/
@@ -28,6 +28,8 @@ the following tree shows the UI codebase filesystem:
     ├── ...
     └── index.html    # Main html file
 ```
+
+Case study: CloudStack Metrics Views https://github.com/apache/cloudstack/pull/1038
 
 ## Development
 
