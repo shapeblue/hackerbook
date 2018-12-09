@@ -33,10 +33,9 @@ coffee machine plugins:
 
 A `Coffee` should follow a finite-state-machine (FSM) with following states:
 
+- Created: Coffee order created
 - Brewing: Coffee is order is sent
 - Brewed: Coffee is brewed
-- Ready: Coffee is ready for serving
-- Removed: Coffee is removed
 - Discarded: Coffee is put in trash
 
 The `size` of coffee can be as follows:
@@ -138,15 +137,7 @@ provide appropriate buttons to create, update and remove coffee.
 
 ### Testing
 
-Marvin test will be written with following cases:
-
-- CRUD tests:
-  - Create coffee
-  - List coffee
-  - Update coffee
-  - Remove coffee
-- Create coffee and see if GC thread garbage collects it based on global setting
-- Change brewing plugin and validate brewing process
+Create Marvin test for the API and features.
 
 ### Packaging
 
