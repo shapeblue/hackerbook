@@ -175,6 +175,11 @@ file such as at `/etc/mysql/mysql.conf.d/mysqld.cnf` and restart mysql-server:
     log-bin=mysql-bin
     binlog-format = 'ROW'
 
+Tip: ensure that your mysql server only listens on `127.0.0.1` and reset the
+mysql root password to blank to get CloudStack db-deployment using `mvn` work
+out of the box, run `sudo mysql -u root -e "ALTER USER 'root'@'localhost'
+IDENTIFIED WITH mysql_native_password BY ''"` (tested with mysql 5.7+).
+
 ### Setup NFS storage
 
 After installing nfs server, configure the exports:
@@ -224,7 +229,7 @@ To build CloudStack with `noredist` (this include vmware plugins etc):
 
 Deploy CloudStack database using:
 
-    $ mvn -q -Pdeveloper -pl developer -Ddeploydb
+    $ mvn -Pdeveloper -pl developer -Ddeploydb
 
 Run management server using:
 
@@ -314,8 +319,7 @@ In order to execute a marvin test you'll need to setup a Run Configuration
    - In PyCharm, click Run -> Edit Configurations -> add new python test configuration (nosetest) 
    -  Then add the following line into Additional Configurations `--with-marvin --marvin-config=[path-to-config-file] -s -a tags=advanced --hypervisor=[xenserver|kvm|vmware] --zone=[zone-id]`
    - Target -> Script Path and select the particular test file you want to execute for example:  `test/integration/smoke/test_dynamicroles.py`
-Now you should be able to run/debug any Marvin test 
-
+Now you should be able to run/debug any Marvin test.
 
 ## Simulator Based Development
 
@@ -328,7 +332,8 @@ You can use the `simulator` flag to build the simulator hypervisor plugin as:
 
 Note in addition to deploying database the following must be run:
 
-    $ mvn -q -Pdeveloper -pl developer -Ddeploydb-simulator
+    $ mvn -Pdeveloper -pl developer -Ddeploydb
+    $ mvn -Pdeveloper -pl developer -Ddeploydb-simulator
 
 Run the management server using the `simulator` flag as well:
 
