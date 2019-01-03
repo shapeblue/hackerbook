@@ -158,9 +158,9 @@ that provides a building block for creating service VMs in CloudStack such as
 the SSVM, CPVM, virtual routers etc. Seed the systemvm template on secondary
 storage:
 
-    wget http://packages.shapeblue.com/systemvmtemplate/4.11/systemvmtemplate-4.11.1-kvm.qcow2.bz2
+    wget http://packages.shapeblue.com/systemvmtemplate/4.11/systemvmtemplate-4.11.2-kvm.qcow2.bz2
     /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
-              -m /export/secondary -f systemvmtemplate-4.11.1-kvm.qcow2.bz2 -h kvm \
+              -m /export/secondary -f systemvmtemplate-4.11.2-kvm.qcow2.bz2 -h kvm \
               -o localhost -r cloud -d cloud
 
 ### KVM Setup
