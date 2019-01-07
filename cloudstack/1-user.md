@@ -270,6 +270,8 @@ Add your default/first host:
     Username - root
     Password - <password for root user>
 
+Note: please check/enable ssh for `root` user in `sshd_config`
+
 Add primary storage:
 
     Name - any name
