@@ -18,6 +18,9 @@ CloudStack management server creates usage jobs in `cloud_usage.usage_job` table
 based on the `usage.stats.job.aggregation.range` global setting. To create an
 adhoc usage job, the API `generateUsageRecords` can be called.
 
+Note: to enable `DEBUG` logging, copy and edit
+`usage/target/transformed/log4j-cloud_usage.xml` to `usage/target/classes`.
+
 In this exercise you'll learn how to add usage parsing and processing for a new
 resource, `Coffee`. First define the usage type for the new resource in
 `UsageTypes` and confirm it in the `listUsageTypes` response:
