@@ -42,7 +42,7 @@ https://shapeblue.atlassian.net/wiki/spaces/SBCLOUD/pages/15269908/How+to+access
 - [Calendar (web)](https://outlook.office.com/owa/?realm=shapeblue.com&path=/calendar/view/Week)
 - [SharePoint](https://shapeblue.sharepoint.com)
 - [ShapeBlue Blog Login](https://www.shapeblue.com/wpssadmin/)
-- [Team Holiday List 2018](https://shapeblue.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7B00932368-56FB-4034-9F02-E761E31E7CBA%7D&file=Holiday%20calendar%202018.xls&action=default&mobileredirect=true)
+- [Team Holiday List 2019](https://shapeblue.sharepoint.com/:x:/r/_layouts/15/Doc.aspx?sourcedoc=%7B0A50F242-68B4-4232-A333-7E34BEC29FBA%7D&file=Holiday%20calendar%202019.xlsx&action=default&mobileredirect=true)
 
 ## Important Documents
 
