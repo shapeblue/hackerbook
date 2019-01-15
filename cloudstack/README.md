@@ -13,14 +13,14 @@ Rohit Yadav <rohit@apache.org>
 
 | Chapter | Topic | Est |
 | ------- | ----- | --- |
-| #1 | [Getting Started](0-init.md) | 16 hours |
-| #2 | [Test Drive CloudStack](1-user.md) | 64 hours |
-| #3 | [Basic CloudStack Development](2-dev.md) | 160 hours |
-| #4 | [Advanced CloudStack Development](3-adv.md) | 120 hours |
+| #1 | [Getting Started](0-init.md) | 10 hours |
+| #2 | [Test Drive CloudStack](1-user.md) | 50 hours |
+| #3 | [Basic CloudStack Development](2-dev.md) | 150 hours |
+| #4 | [Advanced CloudStack Development](3-adv.md) | 80 hours |
 | #5 | [Hypervisor](4-hypervisor.md) | 40 hours |
-| #6 | [Storage](5-storage.md) | 40 hours |
-| #7 | [Networking](6-network.md) | 40 hours |
-| | | **480 hours** (60 days) |
+| #6 | [Storage](5-storage.md) | 20 hours |
+| #7 | [Networking](6-network.md) | 50 hours |
+| | | **400 hours** (50 days) |
 
 ## How to Use
 
@@ -36,5 +36,5 @@ Mentee responsibility:
 Mentor responsibility:
 - Mentor should review mentee's work and do daily short syncups and washups
 - Follow daily logs and updates, answer questions and unblock early
-- Mentor should update the [ShapeBlue Tracksheet](https://shapeblue.atlassian.net/wiki/spaces/TRAIN/pages/816381954/HackerBook+Tracksheet)
+- Mentor and mentee should update the [tracksheets](https://shapeblue.atlassian.net/wiki/spaces/TRAIN/)
 

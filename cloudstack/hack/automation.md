@@ -65,5 +65,4 @@ Tools to use:
 - bash
 
 **Challenges**:
-- Deploy a VM in a VPC with two tiers
-- Deploy a basic zone (KVM+Monkeybox or simulator based environment)
+- Deploy a VM in an isolated network or a VPC with two tiers
