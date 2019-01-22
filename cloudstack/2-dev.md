@@ -150,6 +150,10 @@ community edition from:
 
     https://www.jetbrains.com/idea/download/#section=linux
 
+Or you can install then using snap: (preferred)
+
+    sudo snap install intellij-idea-community --classic
+
 Start the IDE, configure as needed and import CloudStack as:
 - Click on import project
 - Select the cloned `cloudstack` directory
