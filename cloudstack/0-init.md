@@ -138,8 +138,11 @@ Laptop spec/build criteria:
 - Does laptop have good input devices, ports, extensionabilty?
 
 Laptop vendor criteria:
-- Does laptop have a 3-year (on-site) hardware support and accidental insurance for the laptop?
-- Does laptop vendor provide good after-sales (local) hardware support services? Reference: https://www.laptopmag.com/articles/tech-support-showdown
+- Must have at least standard 3 year warranty.
+- If possible, ascertain what it would cost to upgrade to 3 year (on-site)
+  warranty and accidental damage and advise approver.
+- Does laptop vendor provide good after-sales (local) hardware support services?
+  Reference: https://www.laptopmag.com/articles/tech-support-showdown
 
 Setup your workstation with Ubuntu 18.04+ and install following:
 
