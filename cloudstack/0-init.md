@@ -115,21 +115,31 @@ http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/index.html
 
 ## Workstation Setup
 
-Recommended laptop setup:
-- Intel x64 i7/i9 with VTx/VTd enabled
-- 32GB RAM, 1TB SSD
-- OS: Ubuntu 18.04+ (recommended), Fedora 25+
-
-Minimum laptop setup:
+Minimum laptop spec:
 - Intel x64 i5 with HT and VTx/VTd enabled or equivalent AMD processor with AMD-V enabled
 - 16GB RAM, 256GB hard disk
 - OS: Ubuntu 18.04+ (recommended), Fedora 25+
 
-Good laptop models:
-- Thinkpad P1 or P51/52s, X1 Carbon Extreme
-- Dell XPS 15
-- Alienware m15
+Recommended laptop spec:
+- Intel x64 i7/i9 with VTx/VTd enabled
+- 32GB RAM, 1TB SSD
+- OS: Ubuntu 18.04+ (recommended), Fedora 25+
+
+Reference laptop models:
+- Dell XPS 13/15 series
+- HP Spectre or ZBook/Elite series
+- Thinkpad P1/X1 Carbon Extreme
 - Any high spec gaming laptop
+
+Laptop spec/build criteria:
+- Does laptop meet development standard? Benchmark reference: https://browser.geekbench.com/v4/cpu/11716190
+- Does laptop have at least 4 cores (>3Ghz/core), 16GB RAM, 512GB SSD/HDD?
+- Does laptop have sturdy hinges, flex-resistant screen and keyboard?
+- Does laptop have good input devices, ports, extensionabilty?
+
+Laptop vendor criteria:
+- Does laptop have a 3-year (on-site) hardware support and accidental insurance for the laptop?
+- Does laptop vendor provide good after-sales (local) hardware support services? Reference: https://www.laptopmag.com/articles/tech-support-showdown
 
 Setup your workstation with Ubuntu 18.04+ and install following:
 
