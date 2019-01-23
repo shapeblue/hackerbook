@@ -202,6 +202,9 @@ The following is one way to seed a systemvmtemplate:
           -m /export/testing/secondary -f systemvmtemplate-4.11.1-kvm.qcow2.bz2
           -h kvm -o localhost -r cloud -d cloud
 
+Note: Deploy the systemvm template after deploying the CloudStack database,
+refer to the `Building CloudStack` section below.
+
 ## Configure Environment
 
 Put the following in your `sudoers` file using visudo etc. to allow processes
