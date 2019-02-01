@@ -20,6 +20,7 @@ Rohit Yadav <rohit@apache.org>
 | #5 | [Hypervisor](4-hypervisor.md) | 40 hours |
 | #6 | [Storage](5-storage.md) | 20 hours |
 | #7 | [Networking](6-network.md) | 50 hours |
+| #A | [Appendix: Tools Primer](tools/tools.md) | |
 | | | **400 hours** (50 days) |
 
 ## How to Use
