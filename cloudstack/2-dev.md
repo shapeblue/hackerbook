@@ -199,7 +199,7 @@ The following is one way to seed a systemvmtemplate:
 
     wget http://packages.shapeblue.com/systemvmtemplate/4.11/systemvmtemplate-4.11.2-kvm.qcow2.bz2
     ./scripts/storage/secondary/cloud-install-sys-tmplt \
-          -m /export/testing/secondary -f systemvmtemplate-4.11.2-kvm.qcow2.bz2
+          -m /export/testing/secondary -f systemvmtemplate-4.11.2-kvm.qcow2.bz2 \
           -h kvm -o localhost -r cloud -d cloud
 
 Note: Deploy the systemvm template after deploying the CloudStack database,
