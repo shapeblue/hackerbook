@@ -123,7 +123,7 @@ Minimum laptop spec:
 Recommended laptop spec:
 - Intel x64 i7/i9 with VTx/VTd enabled
 - 32GB RAM, 1TB SSD
-- OS: Ubuntu 18.04+ (recommended), Fedora 25+
+- OS: Ubuntu 18.10+ (recommended), Fedora 29+
 
 Reference laptop models:
 - Dell XPS 13/15 series
@@ -144,14 +144,14 @@ Laptop vendor criteria:
 - Does laptop vendor provide good after-sales (local) hardware support services?
   Reference: https://www.laptopmag.com/articles/tech-support-showdown
 
-Setup your workstation with Ubuntu 18.04+ and install following:
+Setup your workstation with Ubuntu 18.10+ and install following:
 
     apt-get update
     apt-get dist-upgrade
     # general packages
     apt-get install vim git subversion mercurial patch rsync curl wget sed openssh-client gpg gnupg2 build-essential gzip bzip2 zip unzip p7zip-full p7zip-rar
     # cloudstack related development
-    apt-get install openjdk-8-jdk maven mysql-client mysql-server libmysql-java nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-bin virt-manager ipmitool jq uuid uuid-runtime python python-dev python-libvirt python-mysql.connector python-netaddr python-pip python-setuptools libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
+    apt-get install openjdk-8-jdk maven mysql-client mysql-server libmysql-java nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python python-dev python-libvirt python-mysql.connector python-netaddr python-pip python-setuptools libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
     # security
     apt-get install microcode.ctl intel-microcode amd64-microcode ca-certificates
     # opinionated development env (optional)
