@@ -103,6 +103,13 @@ public class CoffeeManagerImpl extends ManagerBase implements CoffeeManager, Con
     }
 ```
 
+Note: in case of implementing an external plugin, the
+`org.apache.cloudstack.spring.lifecycle.registry.RegistryLifecycle` bean may be
+re-defined on the plugin's context xml for the bean to get discovered and
+injected in the manager class. Alternatively, you can define a hierarical plugin
+dependency mechanism that will be a cleaner approach, see the
+`OutOfBandManagementDriver` and the plugins as an example.
+
 The framework could read a `ConfigKey` that defines the plugin selected for a
 scope (global, zone, cluster etc) and use the configured plugin to carry out
 an action (mechanism), while it can implement the policy. For finding the plugin

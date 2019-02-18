@@ -142,7 +142,10 @@ public class CoffeeUsageParser {
 ## Exercises
 
 1. Implement the Coffee usage resource, its parser, helper tables, VO and Dao
-   classes.
+   classes. To avoid maven/spring dependency hell, you may either implement a
+   a new maven project `coffee-schema` and use that as dependency for your
+   feature and the usage server, or simply add the schema related classes in the
+   engine-schema project.
 
 2. Validate that usage records are created by scheduled job or adhoc job created
    using `generateUsageRecords` API. Verify the usage records in the
