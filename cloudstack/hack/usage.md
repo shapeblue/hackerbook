@@ -94,6 +94,12 @@ In `UsageManagerImpl`, write the parser and handlers such as:
      }
 ```
 
+Note:
+- The UsageCoffeeDao would need to only interact with the `cloud_usage` database.
+- Transaction.execute can be used to ensure your db logic only gets executed
+  against the `cloud_usage` db, see `QuotaUsageDaoImpl` as a modern example and
+  `UsageVMInstanceDaoImpl` as an old-styled example.
+
 Finally, you'll need to add a `CoffeeUsageParser` that will aggegrate coffee
 usage by the account and persist usage record. For example:
 
