@@ -11,4 +11,4 @@ Focus on NFS, how SSVM+NFS works, mount/unmount/copy/delete etc, use of apache2
 
 ## Storage Plugin
 
-Dummy storage plugin?
+Dummy storage plugin? engine-storage plugin/framework?

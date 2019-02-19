@@ -8,6 +8,12 @@
 - Flags
 - Assembler: systemvm.iso
 
+## Core CloudStack Building Blocks
+
+### Framework: spring, managed-context
+
+### Engine: api, component-api
+
 ## CloudStack Put Together
 
 Deployment descriptor: WEB-INF/web.xml
@@ -81,19 +87,11 @@ References:
 - TLS Connection: https://tls.ulfheim.net/
 - TLS 1.3: https://tls13.ulfheim.net/
 
-### Framework: cluster
-
-### Framework: spring, managed-context
-
-### Engine: api, component-api
-
 ### Engine: service
 
 ### Engine: orchestration
 
-### Engine: network
-
-### Engine: storage
+### Framework: cluster
 
 ## CloudStack Agent
 
@@ -126,7 +124,7 @@ Planners, acls
 
 Etc...
 
-## Distributed Systems
+# Distributed Systems Primer
 
   - Scalability, Availability
   - Latency, fault tolerance, performance

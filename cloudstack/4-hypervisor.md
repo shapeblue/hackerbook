@@ -16,4 +16,4 @@ TOs (transfer objects), service layer -> hypervisor (serverresource)
 
 ## Hypervisor Plugin
 
-Short writeup, hello world
+Short writeup, hello worldj, server resource framework?

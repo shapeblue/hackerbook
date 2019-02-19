@@ -67,4 +67,4 @@ tcpdump, telnet, iptables, ebtables, nftables
 
 ## Network Provider Plugin
 
-Dummy provider plugin?
+Dummy provider plugin? network provider + framework etc?
