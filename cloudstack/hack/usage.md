@@ -35,6 +35,10 @@ resource, `Coffee`. First define the usage type for the new resource in
     responseList.add(new UsageTypeResponse(COFFEE, "Coffee usage"));
 ```
 
+Ensure that usage events are emitted by your service layer code when (for
+example) a resource is created/removed etc. using
+`UsageEventUtils::publishUsageEvent`.
+
 Define a helper table such as `cloud_usage.usage_coffee` where you store the
 `coffee_id`, `accountId`, `created` and `removed`, and any additional metadata
 you want to export in the `listUsageRecords` response. Implement appropriate VO
