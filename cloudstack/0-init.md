@@ -163,11 +163,18 @@ Install python packages:
 
 (Preferred) Install software using `snap`:
 
-    sudo snap install chromium
-    sudo snap install intellij-idea-community --classic
-    sudo snap install pycharm-community --classic
-    sudo snap install vscode --classic
     sudo snap install slack --classic
+    sudo snap install intellij-idea-community --classic
+    sudo snap install vscode --classic
+    sudo snap install pycharm-community --classic
+
+(Optional) Gnome extensions:
+
+    https://extensions.gnome.org/extension/1060/timezone/
+    https://extensions.gnome.org/extension/1497/topicons-redux/
+    https://extensions.gnome.org/extension/120/system-monitor/
+    https://extensions.gnome.org/extension/841/freon/
+    https://extensions.gnome.org/extension/1082/cpufreq/
 
 Productivity recommendations:
 - Develop muscle memory for git, maven, vi/vim and IntelliJ IDEA.
