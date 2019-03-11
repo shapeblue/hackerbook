@@ -1,3 +1,0 @@
-# Maven Build System
-
-
