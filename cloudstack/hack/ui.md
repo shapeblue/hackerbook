@@ -371,6 +371,9 @@ tabs: {
 Tip: `$(window).trigger('cloudStack.fullRefresh')` can be used in any of the
 dataProviders or action handlers to force UI item/view refresh.
 
+UI plugin developer guide:
+http://docs.cloudstack.apache.org/en/latest/developersguide/plugins.html#third-party-ui-plugins
+
 ## Exercises
 
 1. Implement the Coffee UI plugin

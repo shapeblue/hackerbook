@@ -1,6 +1,13 @@
 # Advanced CloudStack Development
 
-## Spring and CloudStack Put Together
+* [CloudStack Bootstrapping](#cloudstack-bootstrapping)
+* [Jobs Framework](#jobs-framework)
+* [RPC Framework](#rpc-framework)
+  * [Agent Framework](#agent-framework)
+* [SystemVMs](#systemvms)
+* [Self Study](#self-study)
+
+## CloudStack Bootstrapping
 
 Building blocks: spring, managed-context, api, component-api
 
@@ -25,82 +32,52 @@ initialized via the `CloudStackContextLoaderListener`.
 
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/Putting+CloudStack+together
 
-## API Layer
-
-Study and refer to following classes that implement the API layer and handle
-an API request:
-
-    ApiServlet, ApiServerService, ApiServer, APIAuthenticationManager
-
-Async API scheduling:
-
-    ApiDispatcher, ApiAsyncJobDispatcher, APIChecker, ApiResponseSerializer
-
-CallContext: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Using+CallContext
-
-## Orchestration Layer
-
-Core, Utils, APIs, Server
-
-https://cwiki.apache.org/confluence/display/CLOUDSTACK/201+-+Orchestration+and+Plugins
-https://cwiki.apache.org/confluence/display/CLOUDSTACK/Alex%27s+Architecture+Notes
-
-Misc:
-https://cwiki.apache.org/confluence/display/CLOUDSTACK/VM+Deployment+Planning+and+Resource+Allocation
-https://cwiki.apache.org/confluence/display/CLOUDSTACK/High+Availability+Developer%27s+Guide
-
-### DB Framework
-
-Topics: engine-schema, genericdaobase
-
-### Jobs Framework
+## Jobs Framework
 
 AsyncJobManager
 
-### CA Framework
-
-References:
-- TLS Connection: https://tls.ulfheim.net/
-- TLS 1.3: https://tls13.ulfheim.net/
-
-### Engine: service
-
-### Engine: orchestration
-
-### RPC Framework
+## RPC Framework
 
 Cluster and Agent framework
 CloudStack clustering, agent LB etc. Agent/Cluster manager
 
-## CloudStack Agent
+### Agent Framework
 
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/Agents+Framework
 
 ## SystemVMs
 
-### SystemVM Template
+### SystemVM Template and systemvm.iso
 
 Packer, build etc.
-
-### CPVM
-
-### SSVM
-
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/SystemVm.iso
+
+### CPVM and SSVM
 
 ### Virtual Routers
 
 How it builds, programs etc.
 VR python codebase
 
-## Specialized Plugins
+## Self Study
 
-### Auth Plugin
+- API framework:
+  - API handling and execution: ApiServlet, ApiServer/ApiServerService, DispatchWorker, DispatchTask, ApiResponseSerializer
+  - API jobs execution: ApiDispatcher, ApiAsyncJobDispatcher
+  - API security: APIAuthenticationManager, APIAuthenticator, UserAuthenticator, APIChecker
+  - Misc: [CallContext](https://cwiki.apache.org/confluence/display/CLOUDSTACK/Using+CallContext), LogContext, ManagedContext, ManagedThreadLocal
+- DB framework: GenericDao, GenericDaoBase, TransactionCallback, TransactionLegacy, StateMachine, GenericQueryBuilder, GenericSearchBuilder, Filter, EntityManagerImpl
+- CA framework: CAProvider, RootCAProvider, Link, [TLS v1.2](https://tls.ulfheim.net), [TLS v1.3](https://tls13.ulfheim.net/)
+- Orchestration engine:
+  - Agent related: AgentAttache, ConnectedAgentAttache, DirectAgentAttache, ClusteredAgentAttache, ClusteredDirectAgentAttache, AgentManagerImpl, ClusteredAgentManagerImpl
+  - Cluster related: ClusterBasedAgentLoadBalancerPlanner, ClusteredAgentRebalanceService
+  - VM related: ClusteredVirtualMachineManagerImpl, VirtualMachineManagerImpl, VirtualMachinePowerStateSyncImpl, VmWork (cloud-engine-components-api)
+- Misc Plugin Development:
+  - Host and Storage pool allocator plugin: http://docs.cloudstack.apache.org/en/latest/developersguide/alloc.html
+  - Storage plugin: http://docs.cloudstack.apache.org/en/latest/developersguide/plugins.html#storage-plugins
 
-### Allocator Plugin
-
-Planners, acls
-
-Etc...
-
-
+Misc links:
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/201+-+Orchestration+and+Plugins
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/Alex%27s+Architecture+Notes
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/VM+Deployment+Planning+and+Resource+Allocation
+- https://cwiki.apache.org/confluence/display/CLOUDSTACK/High+Availability+Developer%27s+Guide
