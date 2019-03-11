@@ -11,6 +11,12 @@
 
 Building blocks: spring, managed-context, api, component-api
 
+Manager, ManagerBase
+Adapter, AdapterBase
+ComponentLifecycle, ComponentLifecycleBase,
+ComponentContext
+
+
 Deployment descriptor: WEB-INF/web.xml
 
 The `web.xml` has:

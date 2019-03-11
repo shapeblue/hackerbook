@@ -15,11 +15,10 @@ Rohit Yadav <rohit@apache.org>
 | ------- | ----- | --- |
 | #1 | [Getting Started](0-init.md) | 10 hours |
 | #2 | [Test Drive CloudStack](1-user.md) | 50 hours |
-| #3 | [Basic CloudStack Development](2-dev.md) | 150 hours |
-| #4 | [Advanced CloudStack Development](3-adv.md) | 80 hours |
-| #5 | [Hypervisor](4-hypervisor.md) | 40 hours |
-| #6 | [Storage](5-storage.md) | 20 hours |
-| #7 | [Networking](6-network.md) | 50 hours |
+| #3 | [Basic CloudStack Development](2-dev.md) | 160 hours |
+| #4 | [Advanced CloudStack Development](3-adv.md) | 60 hours |
+| #5 | [Hypervisor and Storage](4-compute-storage.md) | 80 hours |
+| #6 | [Networking](6-network.md) | 40 hours |
 | #A | [Appendix: Primers](primer/index.md) | |
 | | | **400 hours** (50 days) |
 
