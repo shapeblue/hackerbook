@@ -27,18 +27,15 @@ are recommended:
 Authors:
 - Rohit Yadav <rohit@apache.org>
 
-Reviewers:
-- None
-
 ## Prerequisites
 
 We assume you know:
 
-- Basic virtualization (try VirtualBox, VMware fusion, KVM etc)
+- Basic Linux adminstration and terminal usage
 - Programming in Java 8+, Python 2.7, shell scripting
 - Development: git, maven3, IntelliJ IDEA, MySQL
-- Tools: ssh, wget, curl, telnet, ping, traceroute, iptables, tail, vi
-- Basic Linux adminstration and terminal usage
+- Tools: bash/zsh, ssh, scp, vi/emacs, wget/curl, tmux
+- Basic virtualization (try VirtualBox, VMware fusion, KVM etc)
 
 ## What is CloudStack?
 
