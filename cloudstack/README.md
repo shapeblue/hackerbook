@@ -18,8 +18,8 @@ Rohit Yadav <rohit@apache.org>
 | #3 | [Basic CloudStack Development](2-dev.md) | 160 hours |
 | #4 | [Advanced CloudStack Development](3-adv.md) | 60 hours |
 | #5 | [Hypervisor and Storage](4-compute-storage.md) | 80 hours |
-| #6 | [Networking](6-network.md) | 40 hours |
-| #A | [Appendix: Primers](primer/index.md) | |
+| #6 | [Networking](5-network.md) | 40 hours |
+|    | [Appendix: Primers](primer/index.md) | |
 | | | **400 hours** (50 days) |
 
 ## How to Use
