@@ -31,6 +31,8 @@ The CloudStartupServlet's init() runs
 `ComponentContext.initComponentsLifeCycle()` that kickstart the management
 server module/component loading, registration, configuration and start.
 
+(Related: see how usage server starts in `UsageServer.java`)
+
 The `framework/spring/module` implements a spring based module framework
 that discovers and constructs the hierarchy of CloudStack module based on the
 module.properties file (defined in most CloudStack maven projects). It is
