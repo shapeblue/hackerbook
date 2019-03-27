@@ -59,6 +59,18 @@ Clone repo:
 
     git pull <optinal|--rebase [branch name]>
 
+## Forward Merging
+
+    # Checkout base branch and get the changes
+    git checkout <base branch>
+    git pull --rebase origin <branch>
+    # Checkout the next branch and update it before forward merging changes
+    git checkout <next branch>
+    git pull --rebase origin <next branch>
+    git merge origin/<base branch>
+    # Fix conflicts, merge/commit changes and then push the changes
+    git push origin <next branch>
+
 ## Stashing
 
     git stash
