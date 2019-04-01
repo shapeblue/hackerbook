@@ -65,3 +65,4 @@ ports
 tools: iproute2, netstat, ifconfig, ping/ping6, traceroute/6, nslookup, arp,
 tcpdump, telnet, iptables, ebtables, nftables
 
+https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+Advanced+Network+Tutorial+-+Step+by+Step
