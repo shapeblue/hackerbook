@@ -13,6 +13,7 @@ Reading list:
 - NAT, DNAT, SNAT: https://www.practicalnetworking.net/series/nat/nat/
 - VLAN: https://www.practicalnetworking.net/stand-alone/vlans/
 - Linux Virtual Networking 101: https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking/
+- https://www.shapeblue.com/a-beginners-guide-to-cloudstack-networking/
 
 Video List:
 - CloudStack Networking series by Chiradeep: https://www.youtube.com/playlist?list=PLDF5F6BBB1C3A7CDD
@@ -43,12 +44,10 @@ Session 2:
 Session 3:
 - CloudStack SystemVM building, patching, init
 - CloudStack agent framework, CPVM/SSVM use-cases
-- Practical network part 1
-- CloudStack VR programming part 1
 
 Session 4:
-- Practical network part 2
-- CloudStack VR programming part 2
+- Practical network
+- CloudStack VR programming part
 - Implement X: Wrap up, end to end demo and walkthrough
 - Debug, find/extend feature etc.
 
