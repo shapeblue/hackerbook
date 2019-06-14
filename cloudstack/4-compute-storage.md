@@ -41,8 +41,6 @@ SecondaryStorageDiscoverer
 
 Focus on NFS, how SSVM+NFS works, mount/unmount/copy/delete etc, use of apache2
 
-## Ceph
-
 # Case Study: Simulator
 
 AgentRoutingResource
