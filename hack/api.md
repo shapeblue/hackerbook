@@ -37,6 +37,8 @@ To the `feature` directory, add a maven project `pom.xml` file:
 </project>
 ```
 
+Note: please change the version suitably as per the base-branch you're using.
+
 The pom.xml has `cloud-api` and `cloud-utils` artifacts as dependencies to
 use/extend/implementing API interfaces and use any CloudStack utility classes.
 
