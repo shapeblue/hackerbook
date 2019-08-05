@@ -240,6 +240,8 @@ public final class CoffeeCommandWrapper extends CommandWrapper<CoffeeBrewCommand
 }
 ```
 
+Note: Scp/copy the agent/kvm jars to the KVM host(s).
+
 ## Exercises
 
 1. Implement the create coffee method with `async` callbacks.
