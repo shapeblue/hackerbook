@@ -93,6 +93,16 @@ Clone repo:
     git grep <string to search across tracked files>
     git grep -i <insensitive string>
 
+## Squashing Changes
+
+To squash all the changes in your branch against a target branch say `master`
+you can do the following:
+
+    git checkout your-branch
+    git reset $(git merge-base master your-branch)
+    git add -A
+    git commit -s # add pretty commit message and description
+
 ## Rebasing Branch
 
 This is the most common and challenging task that requires say a PR branch to
