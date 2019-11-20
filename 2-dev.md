@@ -195,15 +195,19 @@ Tip: You may want to have separate secondary storage for each version of
 CloudStack. Rename and add more directories to the `/export/testing` path as and
 when required.
 
-The following is one way to seed a systemvmtemplate:
+The following is one way to seed a systemvmtemplate, for example for the 4.11/4.11.3.0:
 
-    wget http://packages.shapeblue.com/systemvmtemplate/4.11/systemvmtemplate-4.11.2-kvm.qcow2.bz2
+    wget http://packages.shapeblue.com/systemvmtemplate/4.11/systemvmtemplate-4.11.3-kvm.qcow2.bz2
     ./scripts/storage/secondary/cloud-install-sys-tmplt \
-          -m /export/testing/secondary -f systemvmtemplate-4.11.2-kvm.qcow2.bz2 \
+          -m /export/testing/secondary -f systemvmtemplate-4.11.3-kvm.qcow2.bz2 \
           -h kvm -o localhost -r cloud -d cloud
 
-Note: Deploy the systemvm template after deploying the CloudStack database,
-refer to the `Building CloudStack` section below.
+Notes:
+- Please check the branch you're building/working against, and use the suitable
+systemvmtemplate version for your branch. For `master`, use the latest systemvmtemplate
+or build your own using packer, in the source see `tools/appliance/README.md` for details.
+- Deploy the systemvm template after deploying the CloudStack database, refer to the
+`Building CloudStack` section below.
 
 ## Configure Environment
 
