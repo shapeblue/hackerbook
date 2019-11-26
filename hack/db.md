@@ -145,7 +145,6 @@ Define the `DaoImpl`, for example:
 ```java
 package org.apache.cloudstack.feature.dao;
 
-@Component
 public class CoffeeDaoImpl extends GenericDaoBase<CoffeeVO, Long> implements CoffeeDao {
     // method implementations here
 }
