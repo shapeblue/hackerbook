@@ -154,7 +154,7 @@ Setup your workstation with Ubuntu 18.10+ and install following:
     # opinionated development env (optional)
     apt-get install zsh guake kazam ipython pv sshpass htop tmux tig vlc xchat irssi mutt bc cmake cmus cowsay dia gcc g++ wireshark openvpn network-manager-openvpn flashplugin-installer clisp
 
-Note: If you're using Ubuntu 19.04+, [libmysql-java](https://packages.ubuntu.com/cosmic/all/libmysql-java/filelist) package is missing and please manually install the latest mysql-connector-java manually at `/usr/share/java/` path.
+Note: If you're using Ubuntu 19.04+, [libmysql-java](https://packages.ubuntu.com/bionic/all/libmysql-java/filelist) package is missing and please manually install the latest mysql-connector-java manually at `/usr/share/java/` path.
 
 Install python packages:
 
