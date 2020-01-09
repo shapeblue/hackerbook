@@ -141,6 +141,8 @@ Laptop vendor criteria:
 - Does laptop vendor provide good after-sales (local) hardware support services?
   Reference: https://www.laptopmag.com/articles/tech-support-showdown
 
+### Software Setup
+
 Setup your workstation with Ubuntu 19.10+ and install following:
 
     apt-get update
