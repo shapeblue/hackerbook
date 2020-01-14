@@ -71,6 +71,10 @@ The management server monolith has various layers:
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/Coding+conventions
 - http://docs.cloudstack.apache.org/en/latest/developersguide
 
+Old videos:
+- https://www.youtube.com/watch?v=D1K_8rvDhic
+- https://www.youtube.com/watch?v=uSwisRfJVdM
+
 ## Setting up Development Environment
 
 Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-chapter.mp4
