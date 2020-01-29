@@ -533,7 +533,8 @@ For feature submission the typical process is as follows:
 
 - Write a high level functional specification (FS).
 - Start a discussion on dev@ mailing list with reference to the FS and/or any
-  issues. Continue the discussion.
+  issues. You can use `[DISCUSS]` in the email subject. Continue the discussion
+  and engage with the community if anyone posts any feedback or has a question.
 - Complete the feature, send a pull request (PR).
 - Participate in code review, iterate implementation, request committers for
   review and merging. Typically every PR will be reviewed and (regression)
