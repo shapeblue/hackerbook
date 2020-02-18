@@ -49,10 +49,6 @@ AsyncJobManager
 Cluster and Agent framework
 CloudStack clustering, agent LB etc. Agent/Cluster manager
 
-### Agent Framework
-
-https://cwiki.apache.org/confluence/display/CLOUDSTACK/Agents+Framework
-
 ## SystemVMs
 
 ### SystemVM Template and systemvm.iso
