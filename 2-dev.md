@@ -86,7 +86,8 @@ CloudStack development on Ubuntu:
     $ sudo apt-get install openjdk-8-jdk maven python-mysql.connector libmysql-java mysql-server mysql-client bzip2 nfs-common uuid-runtime python-setuptools ipmitool genisoimage nfs-kernel-server quota
 
 Older CloudStack versions may require older jdk/jre version, therefore setup,
-install and learn to use `jenv`: http://www.jenv.be
+install and learn to use `jenv`: http://www.jenv.be and also run `jenv
+enable-plugin maven`.
 
 The recommended setup is to run MySQL and NFS servers locally on your laptop
 and the hypervisor in a VM or an external host. The CloudStack management and
