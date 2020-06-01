@@ -481,6 +481,13 @@ Few popular instrumentation tools:
 - https://visualvm.github.io/documentation.html
 - https://docs.oracle.com/javase/8/docs/technotes/guides/visualvm/
 
+Debugging remotely:
+
+    - Setup socks proxy to the remote server: ssh -v -D 9696 root@<path>
+    - Configure VisualVM to use this as SOCKS proxy in Tools->Options->Network
+    - Run CloudStack management server with option: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false
+    - Add remote host IP and add JMX connection on it on port 1099
+
 **Case study**: https://github.com/apache/cloudstack/pull/2314
 
 2. Eclipse MAT
