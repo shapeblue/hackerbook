@@ -196,6 +196,14 @@ Read the DAO wiki article to know various building blocks and utilities you can
 use to create custom methods for searching and querying (for example, the
 `SearchBuilder`).
 
+### NOTE :
+> The ORM uses interceptors to track which fields of a VO have changed to construct the SQL query.
+It determines the field / column to be searched or updated from the getter or setter used.
+Therefore it is important to name the getters and setters properly.
+eg: A variable "abc" should have the appropriate getter "getAbc()" and setter "setAbc()".
+It is safer to allow the IDE to create the getters / setters. Be especially careful with boolean variables,
+which need to follow the same get / set prefix for thier getters and setters rather than is / enable / disable.
+
 ## DB Transactions
 
 **Recommended reading**: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Database+Transactions
