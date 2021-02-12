@@ -24,18 +24,15 @@ are recommended:
 - Use Stackoverflow and Google for terms, concepts, programming questions
 - Learn to ask the smart way: http://www.catb.org/esr/faqs/smart-questions.html
 
-Authors:
-- Rohit Yadav <rohit@apache.org>
-
 ## Prerequisites
 
 We assume you know:
 
 - Basic Linux adminstration and terminal usage
-- Programming in Java 8+, Python 2.7, shell scripting
+- Programming in Java, Python, shell scripting
 - Development: git, maven3, IntelliJ IDEA, MySQL
 - Tools: bash/zsh, ssh, scp, vi/emacs, wget/curl, tmux
-- Basic virtualization (try VirtualBox, VMware fusion, KVM etc)
+- Basic virtualization (try KVM, VirtualBox, VMware fusion/workstation etc)
 
 ## What is CloudStack?
 
@@ -120,12 +117,12 @@ Minimum laptop spec:
 Recommended laptop spec:
 - Intel x64 i7/i9 with VTx/VTd enabled
 - 32GB RAM, 1TB SSD
-- OS: Ubuntu 18.10+ (recommended), Fedora 29+
+- OS: Ubuntu 20.04 (recommended)
 
 Reference laptop models:
 - Dell XPS 13/15 series
 - HP Spectre or ZBook/Elite series
-- Thinkpad P1/X1 Carbon Extreme
+- Thinkpad P/X Extreme Series
 - Any high spec gaming laptop
 
 Laptop spec/build criteria:
@@ -143,14 +140,14 @@ Laptop vendor criteria:
 
 ### Software Setup
 
-Setup your workstation with Ubuntu 19.10+ and install following:
+Setup your workstation with Ubuntu 20.04 and install following:
 
     apt-get update
     apt-get dist-upgrade
     # general packages
     apt-get install vim git subversion mercurial patch rsync curl wget sed openssh-client gpg gnupg2 build-essential gzip bzip2 zip unzip p7zip-full p7zip-rar
     # cloudstack related development
-    apt-get install openjdk-8-jdk maven mysql-client mariadb-client mariadb-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python python-dev python-libvirt python-mysql.connector python-netaddr python-pip python-setuptools libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
+    apt-get install openjdk-11-jdk maven mysql-client mariadb-client mariadb-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python python-dev python-libvirt python-mysql.connector python-netaddr python-pip python-setuptools libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
     # security
     apt-get install microcode.ctl intel-microcode amd64-microcode ca-certificates
     # opinionated development env (optional)
