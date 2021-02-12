@@ -1,19 +1,11 @@
 # CloudStack HackerBook
 
-
-Rapid learning framework for CloudStack hackers!
-
-- [CloudStack Awesome List](https://github.com/resmo/awesome-cloudstack)
-- [CloudStack Docs](http://docs.cloudstack.apache.org/en/4.11.1.0/)
-
-## Authors
-
-Rohit Yadav <rohit@apache.org>
+Hackerbook is a rapid learning framework for new CloudStack developers.
 
 ## Contents
 
-| Chapter | Topic | Est |
-| ------- | ----- | --- |
+| Chapter | Topic | Est. Effort |
+| ------- | ----- | ----------- |
 | #1 | [Getting Started](0-init.md) | 10 hours |
 | #2 | [Test Drive CloudStack](1-user.md) | 40 hours |
 | #3 | [Basic CloudStack Development](2-dev.md) | 150 hours |
@@ -21,21 +13,13 @@ Rohit Yadav <rohit@apache.org>
 | #5 | [Hypervisor and Storage](4-compute-storage.md) | 40 hours |
 | #6 | [Networking](5-network.md) | 40 hours |
 |    | [Appendix: Primers](primer/index.md) | |
-| | | **320 hours** (40 days) |
+| | | **320 hours** (6-8 weeks) |
 
-## How to Use
+## Bookmarks
 
-Mentee responsibility:
-- Go through the chapters one by one
-- Watch video for sections of a chapter
-- Follow and read recommended and reference articles (but don't go too deep)
-- Watch the amount spent on chapters and hacking exercises against estimates
-- Attempt to solve recommended exercises and challenges
-- Send a brief update (email) to their mentor every work day, summarising what
-  they completed, any issues/questions/blockers and what they will do next
+- [CloudStack Awesome List](https://github.com/resmo/awesome-cloudstack)
+- [CloudStack Docs](http://docs.cloudstack.apache.org/en/latest/)
 
-Mentor responsibility:
-- Mentor should review mentee's work and do daily short syncups and washups
-- Follow daily logs and updates, answer questions and unblock early
-- Mentor and mentee should update the [tracksheets](https://shapeblue.atlassian.net/wiki/spaces/TRAIN/)
+## Authors
 
+Rohit Yadav <rohit@apache.org>
