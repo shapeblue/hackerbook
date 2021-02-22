@@ -4,7 +4,7 @@ For the modern UI, starting 4.15, refer to the following:
 - https://github.com/apache/cloudstack/tree/master/ui#development
 - https://github.com/apache/cloudstack/blob/master/ui/docs/development.md
 
-The CloudStack legacy UI (up to version 4.15) is a single page legacy-styled static
+**NOTE**: The CloudStack legacy UI (up to version 4.15) is a single page legacy-styled static
 JavaScript app based on jQuery. This is only valid for CloudStack versions upto 4.15.
 Since 4.16, the legacy UI has been deprecated and removed.
 
