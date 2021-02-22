@@ -80,10 +80,10 @@ Old videos:
 Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-chapter.mp4
 
 The recommended development environment is Linux based, in this course Ubuntu
-Linux 18.04+ is preferred. Run the following to install packages required for
-CloudStack development on Ubuntu:
+Linux 20.04+ is preferred. Run the following to install packages required for
+CloudStack development on Ubuntu: (see first chapter on software installation)
 
-    $ sudo apt-get install openjdk-8-jdk maven python-mysql.connector libmysql-java mysql-server mysql-client bzip2 nfs-common uuid-runtime python-setuptools ipmitool genisoimage nfs-kernel-server quota
+    $ sudo apt-get install openjdk-11-jdk maven mysql-server mysql-client bzip2 nfs-common uuid-runtime python2 python2-dev python-setuptools ipmitool genisoimage nfs-kernel-server quota
 
 Older CloudStack versions may require older jdk/jre version, therefore setup,
 install and learn to use `jenv`: http://www.jenv.be and also run `jenv
@@ -130,7 +130,6 @@ The recommended directory structure may look something like:
         ~/lab/
         ├── cloudstack
         └── cloudmonkey
-        └── monkeybox
         └── shapeblue
             └── ... private repositories ...
         └── ... other projects ...
@@ -200,11 +199,11 @@ Tip: You may want to have separate secondary storage for each version of
 CloudStack. Rename and add more directories to the `/export/testing` path as and
 when required.
 
-The following is one way to seed a systemvmtemplate, for example for the 4.11/4.11.3.0:
+The following is one way to seed a systemvmtemplate, for example for the 4.15:
 
-    wget http://packages.shapeblue.com/systemvmtemplate/4.11/systemvmtemplate-4.11.3-kvm.qcow2.bz2
+    wget http://packages.shapeblue.com/systemvmtemplate/4.15/systemvmtemplate-4.15.0-kvm.qcow2.bz2
     ./scripts/storage/secondary/cloud-install-sys-tmplt \
-          -m /export/testing/secondary -f systemvmtemplate-4.11.3-kvm.qcow2.bz2 \
+          -m /export/testing/secondary -f systemvmtemplate-4.15.0-kvm.qcow2.bz2 \
           -h kvm -o localhost -r cloud -d cloud
 
 Notes:
@@ -232,7 +231,7 @@ Tip: replace `username` with your Linux username.
 
 Noredist CloudStack builds requires additional jars that may be installed from:
 
-    https://github.com/rhtyd/cloudstack-nonoss
+    https://github.com/shapeblue/cloudstack-nonoss
 
 Clone the above repository and execute the install script to install the noredist jar dependencies:
 
@@ -359,13 +358,14 @@ Simulator based environment can be deployed using:
 
     $ python tools/marvin/marvin/deployDataCenter.py -i setup/dev/advanced.cfg
 
-## MonkeyBox Based Development
+## MBX Based Development
 
-MonkeyBox is a VM appliance that runs a hypervisor such as KVM/VMware/XenServer
+`mbx` (MonkeyBox) is a VM appliance that runs a hypervisor such as KVM/VMware/XenServer
 in a Intel-VTx/AMD-v enabled VM on KVM (your laptop). Follow the MonkeyBox
-project for details: https://github.com/rhtyd/monkeybox
+project for details: https://github.com/shapeblue/mbx
 
-Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-monkeybox.mp4
+Old Video for older monkeybox tool: (please refer to the above repo for latest `mbx` usage)
+https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-monkeybox.mp4
 
 ## Debugging CloudStack
 
