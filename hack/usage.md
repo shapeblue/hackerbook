@@ -7,8 +7,8 @@ hold metadata about a resource, it's usage information and added/removed
 timestamps.
 
 Related references:
-- http://docs.cloudstack.apache.org/en/4.11.2.0/adminguide/usage.html
-- http://docs.cloudstack.apache.org/en/4.11.2.0/plugins/quota.html
+- http://docs.cloudstack.apache.org/en/4.15.0.0/adminguide/usage.html
+- http://docs.cloudstack.apache.org/en/4.15.0.0/plugins/quota.html
 
 The usage server can be started using maven using:
 
