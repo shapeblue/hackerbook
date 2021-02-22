@@ -23,4 +23,5 @@ Hackerbook is a rapid learning framework for new CloudStack developers.
 ## Changelog
 
 22 Feb 2021 - repository made public and updated against Ubuntu 20.04 as dev platform
+
 15 Oct 2018 - hackerbook started by Rohit Yadav to train new engineers at ShapeBlue
