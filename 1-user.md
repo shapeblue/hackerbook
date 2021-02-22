@@ -48,7 +48,7 @@ Next, we'll be building a local all-in-a-box cloud using CloudStack. You may
 optionally refer to the CentOS based quick installation guide here:
 http://docs.cloudstack.apache.org/en/latest/quickinstallationguide/qig.html
 
-You'll use the Ubuntu 18.04 host you've created to install CloudStack. This
+You'll use the `Ubuntu 18.04` host you've created to install CloudStack. This
 guide assumes that the VM is on a 192.168.122.0/24 network, can run KVM on it.
 
 Reference:
@@ -111,7 +111,7 @@ Note that now your VM should be accessible on the address 192.168.122.10. SSH
 into it and install CloudStack management server and all other packages:
 
     apt-key adv --keyserver keys.gnupg.net --recv-keys 584DF93F
-    echo deb http://packages.shapeblue.com/cloudstack/upstream/debian/4.11 / > /etc/apt/sources.list.d/cloudstack.list
+    echo deb http://packages.shapeblue.com/cloudstack/upstream/debian/4.15 / > /etc/apt/sources.list.d/cloudstack.list
     apt-get update -y
     apt-get install cloudstack-management cloudstack-usage cloudstack-agent mysql-server nfs-kernel-server quota qemu-kvm
 
@@ -158,9 +158,9 @@ that provides a building block for creating service VMs in CloudStack such as
 the SSVM, CPVM, virtual routers etc. Seed the systemvm template on secondary
 storage:
 
-    wget http://packages.shapeblue.com/systemvmtemplate/4.11/systemvmtemplate-4.11.3-kvm.qcow2.bz2
+    wget http://packages.shapeblue.com/systemvmtemplate/4.15/systemvmtemplate-4.15.0-kvm.qcow2.bz2
     /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
-              -m /export/secondary -f systemvmtemplate-4.11.3-kvm.qcow2.bz2 -h kvm \
+              -m /export/secondary -f systemvmtemplate-4.15.0-kvm.qcow2.bz2 -h kvm \
               -o localhost -r cloud -d cloud
 
 ### KVM Setup
@@ -178,6 +178,12 @@ Enable libvirtd in listen mode and configure non-TLS setup:
     echo 'mdns_adv = 0' >> /etc/libvirt/libvirtd.conf
     echo 'auth_tcp = "none"' >> /etc/libvirt/libvirtd.conf
     systemctl restart libvirtd
+    
+Note: while adding KVM host (default, via ssh) it may fail on newer distros which has OpenSSH version 7+ which has deprecated some legacy algorithms. To fix that the sshd_config on the KVM host may temporarily be changed to following before adding the KVM host in CloudStack:
+
+    PubkeyAcceptedKeyTypes=+ssh-dss
+    HostKeyAlgorithms=+ssh-dss
+    KexAlgorithms=+diffie-hellman-group1-sha1
 
 ### Security Configuration
 
