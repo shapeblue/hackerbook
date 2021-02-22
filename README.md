@@ -1,6 +1,6 @@
 # CloudStack HackerBook
 
-Hackerbook is a rapid learning framework for new CloudStack developers.
+Hackerbook is a rapid learning framework for training new CloudStack developers in about 6-8 weeks.
 
 ## Contents
 
