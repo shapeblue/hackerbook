@@ -20,8 +20,14 @@ Hackerbook is a rapid learning framework for new CloudStack developers.
 - [CloudStack Awesome List](https://github.com/resmo/awesome-cloudstack)
 - [CloudStack Docs](http://docs.cloudstack.apache.org/en/latest/)
 
+## Contribution and Getting Help
+
+Raise a pull request to contribute changes to the course documentation. We may not
+be able to work on any reported issue and offer individual help to the reader.
+We encourage readers to join and ask questions on the Apache CloudStack dev/user
+mailing lists: http://cloudstack.apache.org/mailing-lists.html
+
 ## Changelog
 
-22 Feb 2021 - repository made public and updated against Ubuntu 20.04 as dev platform
-
-15 Oct 2018 - hackerbook started by Rohit Yadav to train new engineers at ShapeBlue
+- 22 Feb 2021 - repository updated against Ubuntu 20.04 as dev platform
+- 15 Oct 2018 - hackerbook started by Rohit Yadav to train new engineers at ShapeBlue
