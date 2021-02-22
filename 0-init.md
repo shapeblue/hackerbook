@@ -142,22 +142,26 @@ Laptop vendor criteria:
 
 Setup your workstation with Ubuntu 20.04 and install following:
 
+    add-apt-repository universe
     apt-get update
     apt-get dist-upgrade
     # general packages
     apt-get install vim git subversion mercurial patch rsync curl wget sed openssh-client gpg gnupg2 build-essential gzip bzip2 zip unzip p7zip-full p7zip-rar
     # cloudstack related development
-    apt-get install openjdk-11-jdk maven mysql-client mariadb-client mariadb-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python python-dev python-libvirt python-mysql.connector python-netaddr python-pip python-setuptools libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
+    apt-get install openjdk-11-jdk maven mariadb-client mariadb-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python2 python2-dev python-setuptools python-openssl python-dev libffi-dev build-essential libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
     # security
     apt-get install microcode.ctl intel-microcode amd64-microcode ca-certificates
     # opinionated development env (optional)
-    apt-get install zsh guake kazam ipython pv sshpass htop tmux tig vlc xchat irssi mutt bc cmake cmus cowsay dia gcc g++ wireshark openvpn network-manager-openvpn flashplugin-installer clisp
+    apt-get install zsh guake kazam ipython3 pv sshpass htop tmux tig vlc xchat irssi mutt bc cmake cmus cowsay dia gcc g++ wireshark openvpn network-manager-openvpn flashplugin-installer clisp
 
-Note: If you're using Ubuntu 19.04+, [libmysql-java](https://packages.ubuntu.com/bionic/all/libmysql-java/filelist) package is missing and please manually install the latest mysql-connector-java manually at `/usr/share/java/` path.
+Note: If you're using Ubuntu 19.04+, [libmysql-java](https://packages.ubuntu.com/bionic/all/libmysql-java/filelist) package is missing and please manually install the latest mysql-connector-java manually at `/usr/share/java/` path. This is only needed when building/running older CloudStack versions.
 
-Install python packages:
+Install pip and related packages on Ubuntu 20.04:
 
-    pip install --upgrade cloudmonkey ansible pip
+    curl https://bootstrap.pypa.io/2.7/get-pip.py --output get-pip.py
+    sudo python2 get-pip.py
+    sudo pip2 install --upgrade http://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.0.4.zip#md5=3df394d89300db95163f17c843ef49df
+    sudo pip2 install ansible
 
 (Preferred) Install software using `snap`:
 
@@ -168,7 +172,7 @@ Install python packages:
 
 (Optional) Gnome extensions:
 
-    https://extensions.gnome.org/extension/1060/timezone/
+    https://extensions.gnome.org/extension/1060/timezone/ (useful extension to track team around the world)
     https://extensions.gnome.org/extension/1497/topicons-redux/
     https://extensions.gnome.org/extension/120/system-monitor/
     https://extensions.gnome.org/extension/841/freon/
