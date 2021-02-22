@@ -19,7 +19,7 @@ To the `feature` directory, add a maven project `pom.xml` file:
     <parent>
         <groupId>org.apache.cloudstack</groupId>
         <artifactId>cloudstack-plugins</artifactId>
-        <version>4.12.0.0-SNAPSHOT</version>
+        <version>4.15.1.0-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
     <dependencies>
