@@ -1,6 +1,27 @@
 # CloudStack HackerBook
 
-Hackerbook is a rapid learning framework for training new CloudStack developers in about 6-8 weeks.
+Hackerbook is a rapid learning framework for onboarding and training new
+CloudStack developers. This learn by doing yourself course is aimed at anybody
+who wants to learn how to develop a feature for [Apache
+CloudStack](http://cloudstack.apache.org/) and can be completed in about 6-8
+weeks.
+
+In this course, each chapter has some short videos and suggested exercises which
+the new developer can work on to learn by doing them, hence the name
+`hackerbook`. The course starts with chapter 1 on general guideline on getting
+started, and then encourages the developer to learn CloudStack as a user
+in chapter 2 where they are asked to install, use and work with CloudStack
+using the API, UI and have `cmk` (CLI) and ansible-based automation exercises.
+Next, in chapter 3 the developer is asked to work on a fictious feature which
+helps them learn about various aspect of building parts of a feature such as
+creating an API, handling API via a service layer manager, DB handling, UI etc.
+Rest of the remaining chapters encourage self learning and exploration with
+recommended reading and references around advanced CloudStack topics.
+
+ShapeBlue started `hackerbook` course material internally in late 2018 to onboard
+and train new engineers to work on Apache CloudStack. After successfully
+onboarding and training a bunch of new engineers and improving hackerbook,
+ShapeBlue opensourced `hackerbook` for the Apache CloudStack community in 2021.
 
 ## Contents
 
@@ -31,3 +52,12 @@ mailing lists: http://cloudstack.apache.org/mailing-lists.html
 
 - 22 Feb 2021 - repository updated against Ubuntu 20.04 as dev platform
 - 15 Oct 2018 - hackerbook started by Rohit Yadav to train new engineers at ShapeBlue
+
+## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img
+alt="Creative Commons License" style="border-width:0"
+src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work
+is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+Attribution-ShareAlike 4.0 International License</a>.
