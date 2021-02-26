@@ -50,6 +50,7 @@ mailing lists: http://cloudstack.apache.org/mailing-lists.html
 
 ## Changelog
 
+- 26 Feb 2021 - hackerbook opensourced
 - 22 Feb 2021 - repository updated against Ubuntu 20.04 as dev platform
 - 15 Oct 2018 - hackerbook started by Rohit Yadav to train new engineers at ShapeBlue
 
