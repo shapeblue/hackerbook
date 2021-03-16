@@ -3,8 +3,8 @@
 Hackerbook is a rapid learning framework for onboarding and training new
 CloudStack developers. This learn by doing yourself course is aimed at anybody
 who wants to learn how to develop a feature for [Apache
-CloudStack](http://cloudstack.apache.org/) and can be completed in about 6-8
-weeks.
+CloudStack](http://cloudstack.apache.org/). The basic course can be completed in
+4-5 weeks and overall it can be completed in about 6-8 weeks.
 
 In this course, each chapter has some short videos and suggested exercises which
 the new developer can work on to learn by doing them, hence the name
