@@ -250,13 +250,15 @@ Run management server using:
 
     $ mvn -pl :cloud-client-ui jetty:run -Dnoredist -Djava.net.preferIPv4Stack=true
 
-Install marvin:
+Install marvin: (note until codebase is migrated to Python3, please use the specific pip2 version)
 
-    $ sudo pip install --upgrade tools/marvin/dist/Marvin*.tar.gz
+    $ sudo pip2 install pip==20.2.4
+    $ sudo pip2 install --upgrade http://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.0.4.zip#md5=3df394d89300db95163f17c843ef49df
+    $ sudo pip2 install --upgrade tools/marvin/dist/Marvin*.tar.gz
 
 To deploy an environment, you can use the deploy datacenter script as:
 
-    $ python tools/marvin/marvin/deployDataCenter.py -i /path/to/config.cfg
+    $ python2 tools/marvin/marvin/deployDataCenter.py -i /path/to/config.cfg
 
 Example of how to run a marvin based integration test: (change parameters suitably)
 
@@ -356,7 +358,7 @@ Run the management server using the `simulator` flag as well:
 
 Simulator based environment can be deployed using:
 
-    $ python tools/marvin/marvin/deployDataCenter.py -i setup/dev/advanced.cfg
+    $ python2 tools/marvin/marvin/deployDataCenter.py -i setup/dev/advanced.cfg
 
 ## MBX Based Development
 
