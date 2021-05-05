@@ -252,6 +252,7 @@ Run management server using:
 
 Install marvin: (note until codebase is migrated to Python3, please use the specific pip2 version)
 
+    $ sudo apt-get install build-essential
     $ sudo pip2 install pip==20.2.4
     $ sudo pip2 install --upgrade http://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.0.4.zip#md5=3df394d89300db95163f17c843ef49df
     $ sudo pip2 install --upgrade tools/marvin/dist/Marvin*.tar.gz
