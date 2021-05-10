@@ -131,13 +131,6 @@ Laptop spec/build criteria:
 - Does laptop have sturdy hinges, flex-resistant screen and keyboard?
 - Does laptop have good input devices, ports, extensionabilty?
 
-Laptop vendor criteria:
-- Must have at least standard 3 year warranty.
-- If possible, ascertain what it would cost to upgrade to 3 year (on-site)
-  warranty and accidental damage and advise approver.
-- Does laptop vendor provide good after-sales (local) hardware support services?
-  Reference: https://www.laptopmag.com/articles/tech-support-showdown
-
 ### Software Setup
 
 Setup your workstation with Ubuntu 20.04 and install following:
