@@ -87,7 +87,7 @@ the following hierarchy:
         └── src
             └── main
                 └── java
-                    └── org.apache.cloudstack
+                    └── org/apache/cloudstack
                         └── api
                             └── command  # for API command classes
                             └── response # for API response classes
