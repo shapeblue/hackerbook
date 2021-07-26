@@ -53,10 +53,12 @@ Session 4:
 - Implement X: Wrap up, end to end demo and walkthrough
 - Debug, find/extend feature etc.
 
-Misc wiki reading:
+Misc:
+- Extending CloudStack networking: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Extending+CloudStack+Networking
+- Understanding CloudStack network implementation: https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=31823180
+- Adv network tutorial: https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+Advanced+Network+Tutorial+-+Step+by+Step
 
-https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+Advanced+Network+Tutorial+-+Step+by+Step
-
+Implementation specific:
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/Network+Manager+refactoring
 
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/Refactoring+Redundant+Virtual+Router+Implementation
