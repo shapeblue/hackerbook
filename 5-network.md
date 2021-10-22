@@ -22,6 +22,10 @@ Recommended learning:
 - Inside CloudStack VR by Rohit: https://docs.google.com/presentation/d/1fTfOaur4BNTStd_NCuwNEGGJ3E4xbf-aTFIP0nqGCiY/edit#slide=id.g38be540065_6_22
 - [Networking Refresh by Dag](primer/networking-refresh.pdf)
 
+Video Series:
+- CloudStack Networking Models - A Step-by-step Guide - Part 1 https://www.youtube.com/watch?v=XQwqqcPWDbE
+- CloudStack Networking Models - A Step-by-step Guide - Part 2 https://www.youtube.com/watch?v=hSfl2QfSJMg
+
 ### Sessions
 
 The following session structure (self-learning or with a colleague/mentor) can be used:
