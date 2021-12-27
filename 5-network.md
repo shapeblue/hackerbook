@@ -9,6 +9,10 @@ Outline: (self-study, refer docs http://docs.cloudstack.apache.org/)
   - Virtual Router
   - Network tools, usage and debugging
 
+101:
+- Networking 101: https://iximiuz.com/en/posts/computer-networking-101/
+- Networking Fundamentals 101 video modules: https://www.youtube.com/watch?v=bj-Yfakjllc&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=2
+
 Reading list:
 - Switching and Routing: https://www.practicalnetworking.net/series/packet-traveling/packet-traveling/
 - ARP: https://www.practicalnetworking.net/series/arp/address-resolution-protocol/
