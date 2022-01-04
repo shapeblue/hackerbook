@@ -182,6 +182,8 @@ file such as at `/etc/mysql/mysql.conf.d/mysqld.cnf` and restart mysql-server:
     max_connections=1000
     log-bin=mysql-bin
     binlog-format = 'ROW'
+    # add the following for MySQL 8.x
+    default-authentication-plugin=mysql_native_password
 
 Tip: ensure that your mysql server only listens on `127.0.0.1` and reset the
 mysql root password to blank to get CloudStack db-deployment using `mvn` work
