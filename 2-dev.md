@@ -83,7 +83,7 @@ The recommended development environment is Linux based, in this course Ubuntu
 Linux 20.04+ is preferred. Run the following to install packages required for
 CloudStack development on Ubuntu: (see first chapter on software installation)
 
-    $ sudo apt-get install openjdk-11-jdk maven mysql-server mysql-client bzip2 nfs-common uuid-runtime python2 python2-dev python-setuptools ipmitool genisoimage nfs-kernel-server quota
+    $ sudo apt-get install openjdk-11-jdk maven mysql-server mysql-client bzip2 nfs-common uuid-runtime python-setuptools ipmitool genisoimage nfs-kernel-server quota
 
 Older CloudStack versions may require older jdk/jre version, therefore setup,
 install and learn to use `jenv`: http://www.jenv.be and also run `jenv
@@ -251,17 +251,13 @@ Deploy CloudStack database using:
 Run management server using:
 
     $ mvn -pl :cloud-client-ui jetty:run -Dnoredist -Djava.net.preferIPv4Stack=true
-
-Install marvin: (note until codebase is migrated to Python3, please use the specific pip2 version)
-
-    $ sudo apt-get install build-essential
-    $ sudo pip2 install pip==20.2.4
-    $ sudo pip2 install --upgrade http://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.0.4.zip#md5=3df394d89300db95163f17c843ef49df
-    $ sudo pip2 install --upgrade tools/marvin/dist/Marvin*.tar.gz
+    
 
 To deploy an environment, you can use the deploy datacenter script as:
 
-    $ python2 tools/marvin/marvin/deployDataCenter.py -i /path/to/config.cfg
+    $ python3 tools/marvin/marvin/deployDataCenter.py -i /path/to/config.cfg
+
+Note: Use pip3 to install/upgrade any dependencies for Marvin 
 
 Example of how to run a marvin based integration test: (change parameters suitably)
 
