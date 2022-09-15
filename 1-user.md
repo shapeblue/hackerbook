@@ -32,7 +32,7 @@ http://docs.cloudstack.apache.org/en/latest/installguide/
 
 On your workstation, with KVM enabled and installed, using the
 [virt-manager](https://virt-manager.org/) create a new VM
-using [Ubuntu](https://www.ubuntu.com/download/server) 18.04+ ISO with at least
+using [Ubuntu](https://www.ubuntu.com/download/server) 20.04+ ISO with at least
 20GB disk, 2 CPUs and 4GB RAM. Before starting the VM, go to the VM's
 setting and tick `Copy host CPU configuration`. Start the VM and complete the
 installation.
@@ -48,7 +48,7 @@ Next, we'll be building a local all-in-a-box cloud using CloudStack. You may
 optionally refer to the CentOS based quick installation guide here:
 http://docs.cloudstack.apache.org/en/latest/quickinstallationguide/qig.html
 
-You'll use the `Ubuntu 18.04` host you've created to install CloudStack. This
+You'll use the `Ubuntu 20.04` host you've created to install CloudStack. This
 guide assumes that the VM is on a 192.168.122.0/24 network, can run KVM on it.
 
 Reference:
@@ -110,8 +110,8 @@ Your connection will break since the VM's IP has changed, SSH again:
 Note that now your VM should be accessible on the address 192.168.122.10. SSH
 into it and install CloudStack management server and all other packages:
 
-    apt-key adv --keyserver keys.gnupg.net --recv-keys 584DF93F
-    echo deb http://packages.shapeblue.com/cloudstack/upstream/debian/4.15 / > /etc/apt/sources.list.d/cloudstack.list
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BDF0E176584DF93F
+    echo deb http://packages.shapeblue.com/cloudstack/upstream/debian/4.17 / > /etc/apt/sources.list.d/cloudstack.list
     apt-get update -y
     apt-get install cloudstack-management cloudstack-usage cloudstack-agent mysql-server nfs-kernel-server quota qemu-kvm
 
@@ -155,8 +155,11 @@ Configure and restart NFS server:
 
 CloudStack systemvm template is a special purpose guest template based on Debian
 that provides a building block for creating service VMs in CloudStack such as
-the SSVM, CPVM, virtual routers etc. Seed the systemvm template on secondary
-storage:
+the SSVM, CPVM, virtual routers etc.
+
+Note: From ACS 4.16 onwards, this is automatically seeded and you don't need to do anything.
+
+For 4.15 and older versions, something like the following are needed.
 
     wget http://packages.shapeblue.com/systemvmtemplate/4.15/systemvmtemplate-4.15.0-kvm.qcow2.bz2
     /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt \
