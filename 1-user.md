@@ -468,7 +468,7 @@ Troubleshooting references:
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/SSVM%2C+templates%2C+Secondary+storage+troubleshooting
 
 **Recommended Exercises**:
-- Repeat fresh installation and deployment with a CentOS environment
+- Repeat fresh installation and deployment with a CentOS environment https://www.youtube.com/watch?v=9gXEmWbgX2o
 - Learn to read the CloudStack management server logs, `tail -f` the logs and
   deploy a fresh virtual machine with a new network, read and try to understand
   all the steps that happen during VM deployment.
