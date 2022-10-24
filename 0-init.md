@@ -141,20 +141,19 @@ Setup your workstation with Ubuntu 20.04 and install following:
     # general packages
     apt-get install vim git subversion mercurial patch rsync curl wget sed openssh-client gpg gnupg2 build-essential gzip bzip2 zip unzip p7zip-full p7zip-rar
     # cloudstack related development
-    apt-get install openjdk-11-jdk maven mariadb-client mariadb-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python2 python2-dev python-setuptools python-openssl python-dev libffi-dev build-essential libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
+    apt-get install openjdk-11-jdk maven mysql-client mysql-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python2 python2-dev python-setuptools python-openssl python-dev libffi-dev build-essential libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
     # security
     apt-get install microcode.ctl intel-microcode amd64-microcode ca-certificates
     # opinionated development env (optional)
-    apt-get install zsh guake kazam ipython3 pv sshpass htop tmux tig vlc xchat irssi mutt bc cmake cmus cowsay dia gcc g++ wireshark openvpn network-manager-openvpn flashplugin-installer clisp
+    apt-get install zsh guake kazam ipython3 pv sshpass htop tmux tig vlc xchat irssi mutt bc cmake cmus cowsay dia gcc g++ wireshark openvpn network-manager-openvpn clisp
 
 Note: If you're using Ubuntu 19.04+, [libmysql-java](https://packages.ubuntu.com/bionic/all/libmysql-java/filelist) package is missing and please manually install the latest mysql-connector-java manually at `/usr/share/java/` path. This is only needed when building/running older CloudStack versions.
 
 Install pip and related packages on Ubuntu 20.04:
 
-    curl https://bootstrap.pypa.io/2.7/get-pip.py --output get-pip.py
+    curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
     sudo python2 get-pip.py
-    sudo pip2 install --upgrade http://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.0.4.zip#md5=3df394d89300db95163f17c843ef49df
-    sudo pip2 install ansible
+    sudo pip2 install --upgrade mysql-connector-python    
 
 (Preferred) Install software using `snap`:
 
@@ -162,6 +161,8 @@ Install pip and related packages on Ubuntu 20.04:
     sudo snap install intellij-idea-community --classic
     sudo snap install vscode --classic
     sudo snap install pycharm-community --classic
+
+Note: Intellij IDEA is the preferred and recommended IDE for developing CloudStack
 
 (Optional) Gnome extensions:
 
@@ -174,7 +175,7 @@ Install pip and related packages on Ubuntu 20.04:
 Productivity recommendations:
 - Develop muscle memory for git, maven, vi/vim and IntelliJ IDEA.
 - Create and maintain a `dotfiles` repo for your env configuration. For example,
-  see https://github.com/rhtyd/dotfiles.
+  see https://github.com/rohityadavcloud/dotfiles.
 - Learn to touch type faster.
 
 ## References: Additional Books and Readings  List
