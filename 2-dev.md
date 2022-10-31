@@ -365,6 +365,8 @@ Simulator based environment can be deployed using:
 in a Intel-VTx/AMD-v enabled VM on KVM (your laptop). Follow the MonkeyBox
 project for details: https://github.com/shapeblue/mbx
 
+Video - https://www.youtube.com/watch?v=a8xuWHrzw88
+
 Old Video for older monkeybox tool: (please refer to the above repo for latest `mbx` usage)
 https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-monkeybox.mp4
 
