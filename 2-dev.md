@@ -257,7 +257,9 @@ To deploy an environment, you can use the deploy datacenter script as:
 
     $ python3 tools/marvin/marvin/deployDataCenter.py -i /path/to/config.cfg
 
-Note: Use pip3 to install/upgrade any dependencies for Marvin 
+Note: Use pip3 to install/upgrade any dependencies for Marvin
+
+    $ pip3 install --upgrade tools/marvin/dist/Marvin-*.tar.gz
 
 Example of how to run a marvin based integration test: (change parameters suitably)
 
@@ -357,7 +359,8 @@ Run the management server using the `simulator` flag as well:
 
 Simulator based environment can be deployed using:
 
-    $ python2 tools/marvin/marvin/deployDataCenter.py -i setup/dev/advanced.cfg
+    $ pip3 install --upgrade tools/marvin/dist/Marvin-*.tar.gz
+    $ python3 tools/marvin/marvin/deployDataCenter.py -i setup/dev/advanced.cfg
 
 ## MBX Based Development
 
