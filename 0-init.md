@@ -104,6 +104,8 @@ Lastly, CloudStack has several features including events and customizations via
 compute, network, storage/disk, system offerings, and limits/thresholds/settings
 for various resources.
 
+CloudStack architecture overview: https://www.youtube.com/watch?v=FLRtAzp_YuM
+
 **Recommended reading**:
 http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/index.html
 
