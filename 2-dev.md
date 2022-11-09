@@ -511,7 +511,7 @@ Other notable mentions:
 ## CloudStack Packaging
 
 CloudStack is typically packages and shipped as a deb or rpm repository. The
-docker container images from https://hub.docker.com/u/bhaisaab can be used to
+docker container images from https://hub.docker.com/u/shapeblue can be used to
 build CloudStack for CentOS (rpm) and Ubuntu (rpm).
 
 The pre-requisite is that all the build and runtime dependencies are installed
