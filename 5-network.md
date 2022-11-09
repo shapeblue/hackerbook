@@ -12,6 +12,7 @@ Outline: (self-study, refer docs http://docs.cloudstack.apache.org/)
 101:
 - Networking 101: https://iximiuz.com/en/posts/computer-networking-101/
 - Networking Fundamentals 101 video modules: https://www.youtube.com/watch?v=bj-Yfakjllc&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=2
+- Networking in CloudStack https://www.youtube.com/watch?v=FBG7ko8z3o8
 
 Reading list:
 - Switching and Routing: https://www.practicalnetworking.net/series/packet-traveling/packet-traveling/
