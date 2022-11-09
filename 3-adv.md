@@ -79,6 +79,9 @@ VR python codebase
 - Misc Plugin Development:
   - Host and Storage pool allocator plugin: http://docs.cloudstack.apache.org/en/latest/developersguide/alloc.html
   - Storage plugin: http://docs.cloudstack.apache.org/en/latest/developersguide/plugins.html#storage-plugins
+- Misc videos:
+  - State of Cloud https://www.youtube.com/watch?v=RJMSUDTl6Ds
+  - Scalability in CloudStack https://www.youtube.com/watch?v=JqktvtVKnX8 (first half)
 
 Misc links:
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/201+-+Orchestration+and+Plugins
