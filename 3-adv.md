@@ -82,6 +82,10 @@ VR python codebase
 - Misc videos:
   - State of Cloud https://www.youtube.com/watch?v=RJMSUDTl6Ds
   - Scalability in CloudStack https://www.youtube.com/watch?v=JqktvtVKnX8 (first half)
+- Misc reading:
+  - https://cloudierthanthou.wordpress.com/2017/02/22/design-patterns-in-orchestrators-part-1/
+  - https://cloudierthanthou.wordpress.com/2017/02/23/design-patterns-in-orchestrators-part-2/
+  - https://cloudierthanthou.wordpress.com/2017/06/22/design-patterns-in-orchestrators-transfer-of-desired-state-part-3n/
 
 Misc links:
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/201+-+Orchestration+and+Plugins
