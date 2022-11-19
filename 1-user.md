@@ -86,7 +86,9 @@ any yaml file at /etc/netplan: (change interface names, ip ranges accordingly)
        bridges:
          cloudbr0:
            addresses: [192.168.122.10/24]
-           gateway4: 192.168.122.1
+           routes:
+             - to: default
+               from: 192.168.122.1
            nameservers:
              addresses: [1.1.1.1,8.8.8.8]
            interfaces: [ens3]
