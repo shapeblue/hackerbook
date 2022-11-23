@@ -401,4 +401,4 @@ When you build CloudStack, API docs are generated at
    create/browse unit test of a java class)
 
 Challenge: Attempt and fix any upstream CloudStack API related issue(s):
-https://github.com/apache/cloudstack/issues?q=is%3Aissue+is%3Aopen+label%3Aapi
+https://github.com/apache/cloudstack/labels/component%3Aapi
