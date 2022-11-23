@@ -378,4 +378,4 @@ in the `configure` of your service/manager class:
 
 5. Define the logic for the GC task.
 
-Challenge: Attempt to find and fix service layer issue(s) from: https://github.com/apache/cloudstack/issues?q=is%3Aissue+is%3Aopen+label%3Abug
+Challenge: Attempt to find and fix service layer issue(s) from: https://github.com/apache/cloudstack/issues?q=is%3Aissue+is%3Aopen+label%3Atype%3Abug+
