@@ -14,6 +14,9 @@ Outline: (self-study, refer docs http://docs.cloudstack.apache.org/)
 - Networking Fundamentals 101 video modules: https://www.youtube.com/watch?v=bj-Yfakjllc&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&index=2
 - Networking in CloudStack https://www.youtube.com/watch?v=FBG7ko8z3o8
 
+201:
+- Professional Networking: https://www.youtube.com/watch?v=MancoYQcxh8&list=PLHh55M_Kq4OCZOAxs2KZyCawhX38YR154
+
 Reading list:
 - Switching and Routing: https://www.practicalnetworking.net/series/packet-traveling/packet-traveling/
 - ARP: https://www.practicalnetworking.net/series/arp/address-resolution-protocol/
