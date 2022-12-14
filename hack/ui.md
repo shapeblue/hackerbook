@@ -11,4 +11,4 @@ For the modern UI, starting 4.15, refer to the following:
 2. Implement list and details views along with CRUD action for all the APIs
 
 Challenge: Attempt and fix CloudStack UI issue(s)
-https://github.com/apache/cloudstack/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3Aui
+https://github.com/apache/cloudstack/issues?q=is%3Aissue+is%3Aopen+label%3Acomponent%3AUI
