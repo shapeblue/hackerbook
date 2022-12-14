@@ -1,8 +1,9 @@
 # CloudStack UI Development
 
 For the modern UI, starting 4.15, refer to the following:
-- https://github.com/apache/cloudstack/tree/master/ui#development
-- https://github.com/apache/cloudstack/blob/master/ui/docs/development.md
+- https://github.com/apache/cloudstack/tree/main/ui#development
+- https://github.com/apache/cloudstack/blob/main/ui/docs/development.md
+- (Optional) https://github.com/apache/cloudstack/blob/main/ui/docs/customize.md
 
 ## Exercises
 
