@@ -92,7 +92,7 @@ any yaml file at /etc/netplan: (change interface names, ip ranges accordingly)
            nameservers:
              addresses: [1.1.1.1,8.8.8.8]
            interfaces: [ens3]
-           dhcp4: true
+           dhcp4: false
            dhcp6: false
            parameters:
              stp: false
