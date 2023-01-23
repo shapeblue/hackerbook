@@ -88,7 +88,7 @@ any yaml file at /etc/netplan: (change interface names, ip ranges accordingly)
            addresses: [192.168.122.10/24]
            routes:
              - to: default
-               from: 192.168.122.1
+               via: 192.168.122.1
            nameservers:
              addresses: [1.1.1.1,8.8.8.8]
            interfaces: [ens3]
@@ -112,7 +112,8 @@ Your connection will break since the VM's IP has changed, SSH again:
 Note that now your VM should be accessible on the address 192.168.122.10. SSH
 into it and install CloudStack management server and all other packages:
 
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BDF0E176584DF93F
+    gpg --recv-keys --keyserver keyserver.ubuntu.com BDF0E176584DF93F
+    gpg --export BDF0E176584DF93F > /etc/apt/trusted.gpg.d/shapeblue.gpg
     echo deb http://packages.shapeblue.com/cloudstack/upstream/debian/4.17 / > /etc/apt/sources.list.d/cloudstack.list
     apt-get update -y
     apt-get install cloudstack-management cloudstack-usage cloudstack-agent mysql-server nfs-kernel-server quota qemu-kvm
@@ -176,12 +177,14 @@ Enable VNC for console proxy:
 
 Enable libvirtd in listen mode and configure non-TLS setup:
 
-    sed -i -e 's/.*libvirtd_opts.*/libvirtd_opts="-l"/' /etc/default/libvirtd
+    sed -i -e 's/.*libvirtd_opts.*/libvirtd_opts="-l"/' /etc/default/libvirtd # For Ubuntu 18.04/20.04
+    sed -i -e 's/^LIBVIRTD_ARGS=""/LIBVIRTD_ARGS="--listen"/' /etc/default/libvirtd # For Ubuntu 22.04
     echo 'listen_tls=0' >> /etc/libvirt/libvirtd.conf
     echo 'listen_tcp=1' >> /etc/libvirt/libvirtd.conf
     echo 'tcp_port = "16509"' >> /etc/libvirt/libvirtd.conf
     echo 'mdns_adv = 0' >> /etc/libvirt/libvirtd.conf
     echo 'auth_tcp = "none"' >> /etc/libvirt/libvirtd.conf
+    systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket # For Ubuntu 20.04/22.04
     systemctl restart libvirtd
     
 Note: while adding KVM host (default, via ssh) it may fail on newer distros which has OpenSSH version 7+ which has deprecated some legacy algorithms. To fix that the sshd_config on the KVM host may temporarily be changed to following before adding the KVM host in CloudStack:
