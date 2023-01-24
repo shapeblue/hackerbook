@@ -135,10 +135,10 @@ Laptop spec/build criteria:
 
 ### Software Setup
 
-Check if hardware virutalization is enabled on the laptop/serer
+Check if hardware virutalization is enabled on the workstation
 
-apt install cpu-checker
-kvm-ok
+    apt install cpu-checker
+    kvm-ok
 
 Setup your workstation with Ubuntu 20.04 and install following:
 
