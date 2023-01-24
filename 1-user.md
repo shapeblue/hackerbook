@@ -32,13 +32,13 @@ http://docs.cloudstack.apache.org/en/latest/installguide/
 
 On your workstation, with KVM enabled and installed, using the
 [virt-manager](https://virt-manager.org/) create a new VM
-using [Ubuntu](https://www.ubuntu.com/download/server) 20.04+ ISO with at least
-20GB disk, 2 CPUs and 4GB RAM. Before starting the VM, go to the VM's
+using [Ubuntu](https://www.ubuntu.com/download/server) 22.04 ISO with at least
+30GB disk, 4 CPUs and 8GB RAM. Before starting the VM, go to the VM's
 setting and tick `Copy host CPU configuration`. Start the VM and complete the
 installation.
 
 NOTE: DO NOT install or experiment anything from this chapter on your laptop,
-but in a VM.
+but do them in a VM.
 
 Next, find out the IP of the VM, ensure that you're able to SSH into the host.
 Ensure that you can SSH as `root` user with a known password. Also ensure
@@ -48,7 +48,7 @@ Next, we'll be building a local all-in-a-box cloud using CloudStack. You may
 optionally refer to the CentOS based quick installation guide here:
 http://docs.cloudstack.apache.org/en/latest/quickinstallationguide/qig.html
 
-You'll use the `Ubuntu 20.04` host you've created to install CloudStack. This
+You'll use the `Ubuntu 22.04` host you've created to install CloudStack. This
 guide assumes that the VM is on a 192.168.122.0/24 network, can run KVM on it.
 
 Reference:
@@ -109,11 +109,12 @@ Your connection will break since the VM's IP has changed, SSH again:
 
 ### Install Packages
 
-Note that now your VM should be accessible on the address 192.168.122.10. SSH
-into it and install CloudStack management server and all other packages:
+Note that now your VM should be accessible on the address 192.168.122.10
+(or IP of your VM). SSH into it and install CloudStack management server
+and all other packages:
 
-mkdir -p /etc/apt/keyrings
-wget -O- http://packages.shapeblue.com/release.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/cloudstack.gpg > /dev/null
+    mkdir -p /etc/apt/keyrings
+    wget -O- http://packages.shapeblue.com/release.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/cloudstack.gpg > /dev/null
     echo deb [signed-by=/etc/apt/keyrings/cloudstack.gpg] http://packages.shapeblue.com/cloudstack/upstream/debian/4.17 / > /etc/apt/sources.list.d/cloudstack.list
     apt-get update -y
     apt-get install cloudstack-management cloudstack-usage cloudstack-agent mysql-server nfs-kernel-server quota qemu-kvm
@@ -161,6 +162,7 @@ that provides a building block for creating service VMs in CloudStack such as
 the SSVM, CPVM, virtual routers etc.
 
 Note: From ACS 4.16 onwards, this is automatically seeded and you don't need to do anything.
+This section has been added just for reference.
 
 For 4.15 and older versions, something like the following are needed.
 
@@ -187,7 +189,7 @@ Enable libvirtd in listen mode and configure non-TLS setup:
     systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket # For Ubuntu 20.04/22.04
     systemctl restart libvirtd
     
-Note: while adding KVM host (default, via ssh) it may fail on newer distros which has OpenSSH version 7+ which has deprecated some legacy algorithms. To fix that the sshd_config on the KVM host may temporarily be changed to following before adding the KVM host in CloudStack:
+Note: while adding KVM host (default, via ssh) it may fail on newer distros which has OpenSSH version 7+ which has deprecated some legacy algorithms. This is only necessary for older ACS versions and you may not need to do this. To fix that the sshd_config on the KVM host may temporarily be changed to following before adding the KVM host in CloudStack:
 
     PubkeyAcceptedKeyTypes=+ssh-dss
     HostKeyAlgorithms=+ssh-dss
@@ -473,7 +475,7 @@ Troubleshooting references:
 - https://cwiki.apache.org/confluence/display/CLOUDSTACK/SSVM%2C+templates%2C+Secondary+storage+troubleshooting
 
 **Recommended Exercises**:
-- Repeat fresh installation and deployment with a CentOS environment https://www.youtube.com/watch?v=9gXEmWbgX2o
+- Repeat fresh installation and deployment with an EL (AlmaLinux, Rocky Linux or RHEL) environment https://www.youtube.com/watch?v=9gXEmWbgX2o
 - Learn to read the CloudStack management server logs, `tail -f` the logs and
   deploy a fresh virtual machine with a new network, read and try to understand
   all the steps that happen during VM deployment.
