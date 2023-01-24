@@ -112,8 +112,8 @@ Your connection will break since the VM's IP has changed, SSH again:
 Note that now your VM should be accessible on the address 192.168.122.10. SSH
 into it and install CloudStack management server and all other packages:
 
-    gpg --recv-keys --keyserver keyserver.ubuntu.com BDF0E176584DF93F
-    gpg --export BDF0E176584DF93F > /etc/apt/keyrings/cloudstack.gpg
+mkdir -p /etc/apt/keyrings
+wget -O- http://packages.shapeblue.com/release.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/cloudstack.gpg > /dev/null
     echo deb [signed-by=/etc/apt/keyrings/cloudstack.gpg] http://packages.shapeblue.com/cloudstack/upstream/debian/4.17 / > /etc/apt/sources.list.d/cloudstack.list
     apt-get update -y
     apt-get install cloudstack-management cloudstack-usage cloudstack-agent mysql-server nfs-kernel-server quota qemu-kvm
