@@ -135,6 +135,11 @@ Laptop spec/build criteria:
 
 ### Software Setup
 
+Check if hardware virutalization is enabled on the laptop/serer
+
+apt install cpu-checker
+kvm-ok
+
 Setup your workstation with Ubuntu 20.04 and install following:
 
     add-apt-repository universe
