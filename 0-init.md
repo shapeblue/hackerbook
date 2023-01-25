@@ -156,6 +156,19 @@ Setup your workstation with Ubuntu 20.04 and install following:
 
 Note: If you're using Ubuntu 19.04+, [libmysql-java](https://packages.ubuntu.com/bionic/all/libmysql-java/filelist) package is missing and please manually install the latest mysql-connector-java manually at `/usr/share/java/` path. This is only needed when building/running older CloudStack versions.
 
+In order to launch a Vm from the Virt-manager (Gui), Perform the following steps
+
+ sudo systemctl enable --now libvirtd
+ sudo systemctl start libvirtd
+ sudo systemctl status libvirtd
+ sudo usermod -aG kvm $USER
+ sudo usermod -aG libvirt $USER
+
+Logout and Logback so that the changes are applied 
+ 
+ sudo virt-manager
+  
+
 Install pip and related packages on Ubuntu 20.04:
 
     curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
