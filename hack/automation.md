@@ -66,3 +66,9 @@ Tools to use:
 
 **Challenges**:
 - Deploy a VM in an isolated network or a VPC with two tiers
+
+# Terraform
+
+# CAPC
+
+# mbx
