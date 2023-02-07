@@ -140,19 +140,19 @@ Check if hardware virutalization is enabled on the workstation
     apt install cpu-checker
     kvm-ok
 
-Setup your workstation with Ubuntu 20.04 and install following:
+Setup your workstation with Ubuntu 22.04 and install following:
 
-    add-apt-repository universe
-    apt-get update
-    apt-get dist-upgrade
+    sudo add-apt-repository universe
+    sudo apt-get update
+    sudo apt-get dist-upgrade
     # general packages
-    apt-get install vim git subversion mercurial patch rsync curl wget sed openssh-client gpg gnupg2 build-essential gzip bzip2 zip unzip p7zip-full p7zip-rar
+    sudo apt-get install vim git subversion mercurial patch rsync curl wget sed openssh-client gpg gnupg2 build-essential gzip bzip2 zip unzip p7zip-full p7zip-rar
     # cloudstack related development
-    apt-get install openjdk-11-jdk maven mysql-client mysql-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python2 python2-dev python-setuptools python-openssl python-dev libffi-dev build-essential libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
+    sudo apt-get install openjdk-11-jdk maven mysql-client mysql-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python2 python2-dev python-setuptools python3-openssl python3-dev libffi-dev build-essential libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
     # security
-    apt-get install microcode.ctl intel-microcode amd64-microcode ca-certificates
+    sudo apt-get install microcode.ctl intel-microcode amd64-microcode ca-certificates
     # opinionated development env (optional)
-    apt-get install zsh guake kazam ipython3 pv sshpass htop tmux tig vlc xchat irssi mutt bc cmake cmus cowsay dia gcc g++ wireshark openvpn network-manager-openvpn clisp
+    sudo apt-get install zsh guake kazam ipython3 pv sshpass htop tmux tig vlc mutt bc cmake cmus cowsay gcc g++ wireshark openvpn network-manager-openvpn clisp
 
 Note: If you're using Ubuntu 19.04+, [libmysql-java](https://packages.ubuntu.com/bionic/all/libmysql-java/filelist) package is missing and please manually install the latest mysql-connector-java manually at `/usr/share/java/` path. This is only needed when building/running older CloudStack versions.
 
@@ -169,7 +169,7 @@ Logout and Logback so that the changes are applied
     sudo virt-manager
   
 
-Install pip and related packages on Ubuntu 20.04:
+Install pip and related packages on Ubuntu 22.04:
 
     curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
     sudo python2 get-pip.py

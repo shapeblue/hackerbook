@@ -189,7 +189,7 @@ Enable libvirtd in listen mode and configure non-TLS setup:
     systemctl mask libvirtd.socket libvirtd-ro.socket libvirtd-admin.socket libvirtd-tls.socket libvirtd-tcp.socket # For Ubuntu 20.04/22.04
     systemctl restart libvirtd
     
-Note: while adding KVM host (default, via ssh) it may fail on newer distros which has OpenSSH version 7+ which has deprecated some legacy algorithms. This is only necessary for older ACS versions and you may not need to do this. To fix that the sshd_config on the KVM host may temporarily be changed to following before adding the KVM host in CloudStack:
+Note: while adding KVM host (default, via ssh) it may fail on newer distros which has OpenSSH version 7+ which has deprecated some legacy algorithms. This is only necessary for older ACS versions and you may not need to do this. To fix that the `sshd_config` on the KVM host may temporarily be changed to following before adding the KVM host in CloudStack:
 
     PubkeyAcceptedKeyTypes=+ssh-dss
     HostKeyAlgorithms=+ssh-dss
@@ -348,7 +348,7 @@ http://docs.cloudstack.apache.org/en/latest/adminguide/
 CloudStack has a query based HTTP API endpoint that can be used to access and
 use the management server. There are two common modes of access:
 
-- UI: The CloudStack UI is a jQuery based single page app. The UI is by default
+- UI: The CloudStack UI is a VueJS and Ant Design. The UI is by default
   accessible at `http://<ip>:8080/client`.
 - CLI: The CloudStack cloudmonkey (cmk) is the official CLI, it can be installed
   on Linux, Mac and Windows to access the API endpoint by default at
@@ -367,7 +367,7 @@ CloudStack feature sets can be broadly divided into three types:
   default roles.
 - Accounts: Record of an individual user/customer or a team, all the resources
   in CloudStack are owned by an account. The `system` and `admin` are default
-  CloudStack accounts. All account have a `role`.
+  CloudStack accounts. All accounts have a `role`.
 - Users: A member/user of an account. Users in an account can be treated as
   aliases to the account. All accounts have one or more users.
 - Domains: Accounts in a group. All account in a domain, by default in `/` the
@@ -406,7 +406,7 @@ CloudStack feature sets can be broadly divided into three types:
 CloudStack has several organization units such as zones, pods, clusters, hosts
 etc.
 
-- Zone: Represents a datacenter or availability zone
+- Zone: Represents a datacenter or an availability zone
   - Basic zone: massively scalable AWS styled flat-network cloud usually with
     isolation and multitenancy implemented at host/hypervisor level by L2
     firewall (ebtables) rules by a feature called security groups.
@@ -422,21 +422,22 @@ etc.
     - Local storage: When disks are on same machine as the VM.
     - Shared storage: When disks are on a different machine, for example on a
       NFS server/host, Ceph, etc.
-  - Secondary Storage: Image storage pool for templates, isos and snapshots.
+  - Secondary Storage: Image storage pool for templates, ISOs and snapshots.
 - Physical network: Allows configuration of physical network, traffic labels,
   VLAN and IP address ranges for guest, public and private networks.
 - System VMs: Special service VMs created and managed by CloudStack management
   server that implements an infrastructural service. They are based on a Debian
-  based guest template called the `systemvmtemplates`. All system vms run sshd
+  based guest template called the `systemvmtemplates`. All system VMs run `sshd`
   on port `3922` and can be accessed as follows based on the hypervisor:
-  - KVM and XenServer: ssh to the link-local IP of the systemvm on port 3922
+  - KVM and XenServer: ssh to the link-local IP of the systemvm on port `3922`
     using local `~/.ssh` key file.
   - VMware: ssh to the private IP of the systemvm from a management server host
     using the ssh key file at `/var/cloudstack/management/.ssh` location.
+
   Notable systemvm types:
   - SSVM: Secondary storage virtual machine provides means to manage the
-    secondary storage, register/copy templates/isos, host snapshots and copy
-    templates/isos to primary storage for consumption.
+    secondary storage, register/copy templates/ISOs, host snapshots and copy
+    templates/ISOs to primary storage for consumption.
   - CPVM: Console proxy virtual machine provides means to access console of a
     VM. They act as a VNC/RDP proxy between the end user (browser) and the
     hypervisor where VMs run.
