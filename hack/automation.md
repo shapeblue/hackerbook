@@ -69,6 +69,13 @@ Tools to use:
 
 # Terraform
 
+https://github.com/apache/cloudstack-terraform-provider
+
 # CAPC
 
+https://github.com/kubernetes-sigs/cluster-api-provider-cloudstack
+https://cluster-api-cloudstack.sigs.k8s.io/
+
 # mbx
+
+https://github.com/shapeblue/mbx
