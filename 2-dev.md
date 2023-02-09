@@ -246,6 +246,7 @@ To build CloudStack with `noredist` (this include vmware plugins etc):
 
 Deploy CloudStack database using:
 
+    $ cd /path/to/cloudstack
     $ mvn -Pdeveloper -pl developer -Ddeploydb
 
 Run management server using:
@@ -274,6 +275,14 @@ Note: due to bug in `surefire` plugin you may need to use
 
 Build tips:
 
+-  In case the build fails on Ubuntu 22.04, please make sure there is correct alias for python
+
+    $ sudo apt install python-is-python3
+
+    or create an alias. Place this into ~/.bashrc or ~/.zshrc  file:
+
+    $ alias python=python3
+
 - For an iterative styled development and code building, you may use the mvn
 `-pl` or `--projects` flag to which you can pass comma separate list of maven
 projects or paths you've changed and the `client` (which builds a fatjar based
@@ -287,6 +296,17 @@ on all other projects), for example if you only changed `api` and `vmware`:
 
 - You will need to build and install/update marvin library every time you change
   a major CloudStack branch and/or if you add/remove/modify CloudStack APIs.
+
+- To bring up the Cloudstack Ui
+
+    $ cd /path/to/cloudstack/ui
+    $ npm install
+    $ npm run serve
+
+Make sure to set CS_URL=http://localhost:8080/client on .env.local file on ui.
+
+You should be able to run the management server on http://localhost:5050
+
 
 ## Testing CloudStack
 
