@@ -241,12 +241,12 @@ Clone the above repository and execute the install script to install the noredis
     $ bash -x install-non-oss.sh
 
 To build CloudStack with `noredist` (this include vmware plugins etc):
-
+```
+    $ cd /path/to/cloudstack
     $ mvn clean install -Dnoredist -P developer,systemvm
-
+```
 Deploy CloudStack database using:
 
-    $ cd /path/to/cloudstack
     $ mvn -Pdeveloper -pl developer -Ddeploydb
 
 Run management server using:
