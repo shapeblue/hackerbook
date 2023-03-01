@@ -114,7 +114,7 @@ http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/index.html
 Minimum laptop spec:
 - Intel x64 i5 with HT and VTx/VTd enabled or equivalent AMD processor with AMD-V enabled
 - 16GB RAM, 256GB hard disk
-- OS: Ubuntu LTS (18.04/20.04) (recommended), Fedora 25+
+- OS: Ubuntu LTS (20.04/22.04) (recommended), Fedora 25+
 
 Recommended laptop spec:
 - Intel x64 i7/i9 with VTx/VTd enabled
