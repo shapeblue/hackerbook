@@ -5,6 +5,10 @@ For the modern UI, starting 4.15, refer to the following:
 - https://github.com/apache/cloudstack/blob/main/ui/docs/development.md
 - (Optional) https://github.com/apache/cloudstack/blob/main/ui/docs/customize.md
 
+Learn VueJS:
+- https://vuejs.org/guide/introduction.html
+- https://www.youtube.com/results?search_query=Vue.js+3+tutorial
+
 ## Exercises
 
 1. Implement the Coffee UI plugin
