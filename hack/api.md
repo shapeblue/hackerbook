@@ -164,7 +164,7 @@ type of user account may be allowed to execute the API.
 Example API code:
 
 ```java
-@APICommand(name = MyAPICmd.APINAME,
+@APICommand(name = "myAPI",
             description = "My API short description here",
             responseObject = MyAPIResponse.class,
             since = "4.xx.yy",
@@ -172,7 +172,6 @@ Example API code:
             authorized = {RoleType.Admin, RoleType.ResourceAdmin, RoleType.DomainAdmin, RoleType.User})
 public class MyAPICmd extends BaseCmd {
     public static final Logger LOG = Logger.getLogger(MyAPICmd.class);
-    public static final String APINAME = "myAPI";
 
 ```
 
@@ -230,13 +229,14 @@ example:
     }
 ```
 
-The API implementation is a group of methods that exports the API name
-(`getCommandName`), the account ID of the resource owner on which the API is
+The API implementation is a group of methods that exports
+the account ID of the resource owner on which the API is
 acted up (`getEntityOwnerId`) and the `execute()` method that handles the API
 request. The `getEntityOwnerId()` method can also make use of `CallContext`
 utility to get information about the current thread/execution context. For
 example, get the account ID that made the API request by using
 `CallContext.current().getCallingAccountId()`.
+Method to export the API name (`getCommandName`) is not needed now in 4.18 branch or later, after changes introduced in https://github.com/apache/cloudstack/pull/7022.
 
 Reference reading: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Using+CallContext
 
@@ -246,11 +246,6 @@ Example API implementation:
     /////////////////////////////////////////////////////
     /////////////// API Implementation///////////////////
     /////////////////////////////////////////////////////
-
-    @Override
-    public String getCommandName() {
-        return APINAME.toLowerCase() + BaseCmd.RESPONSE_SUFFIX;
-    }
 
     @Override
     public long getEntityOwnerId() {
