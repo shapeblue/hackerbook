@@ -53,7 +53,7 @@ CloudStack clustering, agent LB etc. Agent/Cluster manager
 
 ### SystemVM Template and systemvm.iso
 
-Packer, build etc.
+Packer, build etc. (note: systemvm.iso has been deprecated with 4.17 onwards)
 https://cwiki.apache.org/confluence/display/CLOUDSTACK/SystemVm.iso
 
 ### CPVM and SSVM
