@@ -41,7 +41,7 @@ It consists of the following main components :
 - `/tests` : Does pretty much what it says
 - `/templates` : Contains the template YAMLs which are used as flavours while generating the workload cluster definition
 
-Now that you've got a good overview, head on over to the official repo on how to get started! https://github.com/aws/cluster-api-provider-cloudstack
+Now that you've got a good overview, head on over to the official repo on how to get started! https://github.com/kubernetes-sigs/cluster-api-provider-cloudstack
 
 ## Internals
 
