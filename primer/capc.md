@@ -24,7 +24,7 @@ This results in a bunch of pods running on your management cluster :
 
 Now that you have a management cluster, it's time to create your workload clusters! It's these clusters that run on the specific infrastructure and can be exposed to the end-user.
 
-Have a look at the presentation [here](https://docs.google.com/presentation/d/1DTUOaL74pzzd7vwp07a8la1fxxEOnZYoJehjVyyeMQs/edit?usp=sharing)
+Have a look at the presentation here: https://github.com/shapeblue/hackerbook/blob/main/primer/capi-capc.pdf
 
 Also have a look at the documentation [here](https://cluster-api-cloudstack.sigs.k8s.io/) to get started
 
