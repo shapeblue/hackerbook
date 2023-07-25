@@ -83,7 +83,7 @@ The recommended development environment is Linux based, in this course Ubuntu
 Linux 20.04+ is preferred. Run the following to install packages required for
 CloudStack development on Ubuntu: (see first chapter on software installation)
 
-    $ sudo apt-get install openjdk-11-jdk maven mysql-server mysql-client bzip2 nfs-common uuid-runtime python-setuptools ipmitool genisoimage nfs-kernel-server quota
+    $ sudo apt-get install openjdk-11-jdk maven mysql-server mysql-client bzip2 nfs-common uuid-runtime python3-setuptools ipmitool genisoimage nfs-kernel-server quota
 
 Older CloudStack versions may require older jdk/jre version, therefore setup,
 install and learn to use `jenv`: http://www.jenv.be and also run `jenv
