@@ -111,27 +111,30 @@ http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/index.html
 
 ## Workstation Setup
 
-Minimum laptop spec:
-- Intel x64 i5 with HT and VTx/VTd enabled or equivalent AMD processor with AMD-V enabled
-- 16GB RAM, 256GB hard disk
-- OS: Ubuntu LTS (20.04/22.04) (recommended), Fedora 25+
+The workstation setup varies depending on personal preference. One can buy a performant and expensive workstation laptop or a more optimal setup of a cost-effective thin/light laptop and a powerful and cost-effective mini PC. For example, getting a decent i7/i9/M1/M2 laptop with 16-32GB RAM (usually in USD 1200-1800 range) and a powerful Intel NUC mini-PC (i7/i9, 64GB RAM, 1TB NVMe, usually in USD 800-1200 range) which can used with [wireguard and mbx](https://github.com/shapeblue/mbx/tree/main#mbx-) for development purposes.
 
 Recommended laptop spec:
-- Intel x64 i7/i9 with VTx/VTd enabled
-- 32GB RAM, 1TB SSD
-- OS: Ubuntu 20.04 (recommended)
+- Intel x64 i7/i9 with VTx/VTd enabled or equivalent AMD
+- 6 or more physical CPU cores
+- 32GB RAM, 1TB NVMe
+- OS: Ubuntu 22.04 (recommended), Mac OS, Fedora
 
 Reference laptop models:
-- Dell XPS 13/15 series
-- HP Spectre or ZBook/Elite series
-- Thinkpad P/X Extreme Series
-- Any high spec gaming laptop
+- MacBook Air M1/M2 (16/24 GB RAM)
+- Dell XPS 13/15 series (32GB RAM)
+- HP Spectre or ZBook/Elite series (32GB RAM)
+- Thinkpad P/X Extreme Series (32GB RAM)
+- Any high spec workstation laptop
 
-Laptop spec/build criteria:
-- Does laptop meet development standard? Benchmark reference: https://browser.geekbench.com/v4/cpu/11716190
-- Does laptop have at least 4 cores (>3Ghz/core), 16GB RAM, 512GB SSD/HDD?
-- Does laptop have sturdy hinges, flex-resistant screen and keyboard?
+Reference mini PC models:
+- NUC9 Extreme i9
+- NUC13 i7 PRO Desk-mini
+
+Other Laptop spec/build purchase questions to review:
 - Does laptop have good input devices, ports, extensionabilty?
+- Is the laptop durable, and have sturdy hinges, flex-resistant screen and keyboard?
+- Is the laptop model/brand serviceable in your area?
+- What is the post-sales support and warranty?
 
 ### Software Setup
 
