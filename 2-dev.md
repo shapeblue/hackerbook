@@ -165,7 +165,7 @@ Start the IDE, configure as needed and import CloudStack as:
 - Select options suitably and import!
 
 You may configure IDEA per your preference or use this [settings
-jar](https://github.com/rhtyd/dotfiles/tree/master/intellij) which you can import
+jar](https://github.com/rohityadavcloud/dotfiles/tree/main/intellij) which you can import
 in IDEA as `File > Import Settings > select jar file`.
 
 ### Setup MySQL Server
