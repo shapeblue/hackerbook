@@ -345,7 +345,7 @@ You may use following references to know more about using Python `unittest`
 framework:
 
 - https://docs.python.org/2/library/unittest.html
-- http://pythontesting.net/framework/unittest/unittest-introduction
+- https://pythontest.com/framework/unittest/unittest-introduction
 - https://www.geeksforgeeks.org/unit-testing-python-unittest
 
 The [functional testing](hack/testing.md) exercise will cover in much detail
@@ -360,7 +360,7 @@ interpreter is set, Marvin lib shouold appear in the available packages
 
 In order to execute a marvin test you'll need to setup a Run Configuration
    - In PyCharm, click Run -> Edit Configurations -> add new python test configuration (nosetest)
-   -  Then add the following line into Additional Configurations `--with-marvin --marvin-config=[path-to-config-file] -s -a tags=advanced --hypervisor=[xenserver|kvm|vmware] --zone=[zone-id]`
+   -  Then add the following line into Additional Configurations `--with-marvin --marvin-config=[path-to-config-file] -s -a tags=advanced --hypervisor=[xenserver|kvm|vmware|simulator] --zone=[zone-id]`
    - Target -> Script Path and select the particular test file you want to execute for example:  `test/integration/smoke/test_dynamicroles.py`
 Now you should be able to run/debug any Marvin test.
 
