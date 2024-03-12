@@ -11,7 +11,7 @@ Learn VueJS:
 
 ## Exercises
 
-1. Implement the Coffee UI plugin
+1. Implement support for Coffee feature in the UI
 
 2. Implement list and details views along with CRUD action for all the APIs
 
