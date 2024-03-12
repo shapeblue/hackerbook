@@ -15,5 +15,7 @@ Learn VueJS:
 
 2. Implement list and details views along with CRUD action for all the APIs
 
+3. Implement a customised Vue component for say the Coffee Create form.
+
 Challenge: Attempt and fix CloudStack UI issue(s)
 https://github.com/apache/cloudstack/issues?q=is%3Aissue+is%3Aopen+label%3Acomponent%3AUI
