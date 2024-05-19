@@ -31,7 +31,7 @@ From an application setup and functioning perspective, a typical CloudStack
 deployment consists of the following:
 
 - CloudStack Management server(s)
-- CloudStack Agent (on KVM and HyperV)
+- CloudStack Agent (on KVM)
 - CloudStack Usage server(s)
 
 The CloudStack management server is a monolith Java application that embeds
