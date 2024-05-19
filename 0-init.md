@@ -113,22 +113,22 @@ http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/index.html
 
 The workstation setup varies depending on personal preference. One can buy a performant and expensive workstation laptop or a more optimal setup of a cost-effective thin/light laptop and a powerful and cost-effective mini PC. For example, getting a decent i7/i9/M1/M2 laptop with 16-32GB RAM (usually in USD 1200-1800 range) and a powerful Intel NUC mini-PC (i7/i9, 64GB RAM, 1TB NVMe, usually in USD 800-1200 range) which can used with [wireguard and mbx](https://github.com/shapeblue/mbx/tree/main#mbx-) for development purposes.
 
-Recommended laptop spec:
+Suggested laptop spec:
 - Intel x64 i7/i9 with VTx/VTd enabled or equivalent AMD
 - 6 or more physical CPU cores
 - 32GB RAM, 1TB NVMe
-- OS: Ubuntu 22.04 (recommended), Mac OS, Fedora
+- OS: Ubuntu 24.04 (recommended), Mac OS, Fedora
 
 Reference laptop models:
-- MacBook Air M1/M2 (16/24 GB RAM)
+- MacBook Air M2/M3 (16/24 GB RAM)
 - Dell XPS 13/15 series (32GB RAM)
 - HP Spectre or ZBook/Elite series (32GB RAM)
 - Thinkpad P/X Extreme Series (32GB RAM)
 - Any high spec workstation laptop
 
 Reference mini PC models:
-- NUC9 Extreme i9
 - NUC13 i7 PRO Desk-mini
+- NUC9 Extreme i9
 
 Other Laptop spec/build purchase questions to review:
 - Does laptop have good input devices, ports, extensionabilty?
@@ -143,23 +143,19 @@ Check if hardware virutalization is enabled on the workstation
     apt install cpu-checker
     kvm-ok
 
-Setup your workstation with Ubuntu 22.04 and install following:
+Setup your workstation with Ubuntu 24.04 and install following:
 
-    sudo add-apt-repository universe
     sudo apt-get update
     sudo apt-get dist-upgrade
+    
     # general packages
     sudo apt-get install vim git subversion mercurial patch rsync curl wget sed openssh-client gpg gnupg2 build-essential gzip bzip2 zip unzip p7zip-full p7zip-rar
     # cloudstack related development
-    sudo apt-get install openjdk-11-jdk maven mysql-client mysql-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python2 python2-dev python-setuptools python3-openssl python3-dev libffi-dev build-essential libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot
-    # security
-    sudo apt-get install microcode.ctl intel-microcode amd64-microcode ca-certificates
-    # opinionated development env (optional)
-    sudo apt-get install zsh guake kazam ipython3 pv sshpass htop tmux tig vlc mutt bc cmake cmus cowsay gcc g++ wireshark openvpn network-manager-openvpn clisp
+    sudo apt-get install openjdk-11-jdk maven mysql-client mysql-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python3 python3-dev python3-setuptools python3-openssl python3-pip libffi-dev build-essential libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot ca-certificates
+    # (optional) misc and development related
+    sudo apt-get install zsh guake kazam ipython3 pv sshpass htop tmux tig vlc mutt bc cmake cowsay gcc g++ wireshark openvpn network-manager-openvpn clisp
 
-Note: If you're using Ubuntu 19.04+, [libmysql-java](https://packages.ubuntu.com/bionic/all/libmysql-java/filelist) package is missing and please manually install the latest mysql-connector-java manually at `/usr/share/java/` path. This is only needed when building/running older CloudStack versions.
-
-In order to launch a Vm from the Virt-manager (Gui), Perform the following steps
+In order to launch a VM from the `virt-manager` (GUI), Perform the following steps
     
     sudo systemctl enable --now libvirtd
     sudo systemctl start libvirtd
@@ -170,30 +166,19 @@ In order to launch a Vm from the Virt-manager (Gui), Perform the following steps
 Logout and Logback so that the changes are applied 
 
     sudo virt-manager
-  
-
-Install pip and related packages on Ubuntu 22.04:
-
-    curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-    sudo python2 get-pip.py
-    sudo pip2 install --upgrade mysql-connector-python    
 
 (Preferred) Install software using `snap`:
 
     sudo snap install slack --classic
     sudo snap install intellij-idea-community --classic
-    sudo snap install vscode --classic
-    sudo snap install pycharm-community --classic
+    sudo snap install code --classic
 
 Note: Intellij IDEA is the preferred and recommended IDE for developing CloudStack
 
 (Optional) Gnome extensions:
 
-    https://extensions.gnome.org/extension/1060/timezone/ (useful extension to track team around the world)
-    https://extensions.gnome.org/extension/1497/topicons-redux/
+    https://extensions.gnome.org/extension/1060/timezone/ (useful extension to see team around the world)
     https://extensions.gnome.org/extension/120/system-monitor/
-    https://extensions.gnome.org/extension/841/freon/
-    https://extensions.gnome.org/extension/1082/cpufreq/
 
 Productivity recommendations:
 - Develop muscle memory for git, maven, vi/vim and IntelliJ IDEA.
