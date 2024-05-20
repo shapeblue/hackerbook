@@ -153,7 +153,7 @@ Setup your workstation with Ubuntu 24.04 and install following:
     # cloudstack related development
     sudo apt-get install openjdk-11-jdk maven mysql-client mysql-server nfs-kernel-server quota genisoimage qemu-kvm qemu-utils libvirt-daemon virt-manager ipmitool jq uuid uuid-runtime python3 python3-dev python3-setuptools python3-openssl python3-pip libffi-dev build-essential libssl-dev dpkg-dev libffi-dev rpm rpm2cpio bridge-utils iproute2 iptables ebtables ethtool vlan ipset tcpdump telnet fakeroot ca-certificates
     # (optional) misc and development related
-    sudo apt-get install zsh guake kazam ipython3 pv sshpass htop tmux tig vlc mutt bc cmake cowsay gcc g++ wireshark openvpn network-manager-openvpn clisp
+    sudo apt-get install zsh guake kazam ipython3 pv sshpass htop tmux tig vlc mutt bc cmake cowsay gcc g++ net-tools wireshark openvpn network-manager-openvpn clisp
 
 In order to launch a VM from the `virt-manager` (GUI), Perform the following steps
     
