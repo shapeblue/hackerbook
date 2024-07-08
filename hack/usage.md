@@ -14,7 +14,7 @@ The usage server can be started using maven using:
 
     mvn -P usage -Drun -Dpid=$$ -pl usage
 
-CloudStack management server creates usage jobs in `cloud_usage.usage_job` table
+CloudStack usage server creates usage jobs in `cloud_usage.usage_job` table
 based on the `usage.stats.job.aggregation.range` global setting. To create an
 adhoc usage job, the API `generateUsageRecords` can be called.
 
