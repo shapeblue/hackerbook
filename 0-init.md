@@ -114,8 +114,8 @@ http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/index.html
 The workstation setup varies depending on personal preference. One can buy a performant and expensive workstation laptop or a more optimal setup of a cost-effective thin/light laptop (such as MacBooks) and a powerful and cost-effective mini PC. For example, getting a decent i7/i9/M1/M2 laptop with 16-32GB RAM or a MacBook Air 24GB RAM (usually in USD 1200-1800 range) and a powerful Intel NUC mini-PC (i7/i9, 64GB RAM, 1TB NVMe, usually in USD 800-1200 range) which can used with [wireguard and mbx](https://github.com/shapeblue/mbx/tree/main#mbx-) for development purposes.
 
 Suggested laptop spec:
-- Intel x64 i7/i9 with VTx/VTd enabled or equivalent AMD, with 6+ CPU cores, 32GB RAM, 1TB NVMe & Ubuntu 24.04 (LTS)
-- MacBook Air M3 24GB RAM and a 32-64GB RAM 6-12 CPU core x86 Mini PC
+- Intel x64 i7/i9 with VTx/VTd enabled or equivalent AMD, with 8+ CPU cores, 32GB RAM & Ubuntu 24.04 (LTS)
+- MacBook Air 24GB RAM with a 32-64GB RAM 6-12 CPU core x86 Mini PC
 
 Reference laptop models/series: Dell XPS, HP ZBook/Elite/Spectre, Think P/X Extreme 
 
