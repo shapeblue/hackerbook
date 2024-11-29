@@ -570,7 +570,8 @@ For any bugfix or improvement change(s) send a pull request: https://github.com/
 
 For feature submission the typical process is as follows:
 
-- Write a high level functional specification (FS).
+- Write a high level functional specification (FS), this can be either shared on cwiki
+  or the content be shared via a Github issue or PR.
 - Start a discussion on dev@ mailing list with reference to the FS and/or any
   issues. You can use `[DISCUSS]` in the email subject. Continue the discussion
   and engage with the community if anyone posts any feedback or has a question.
