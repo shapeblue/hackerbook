@@ -38,6 +38,7 @@ We assume you know:
 
 - Official answer: https://cloudstack.apache.org/about.html
 - 2 minute video: https://www.youtube.com/watch?v=oJ4b8HFmFTc
+- CloudStack 101: https://www.youtube.com/watch?v=pASzZR57V_8
 
 Hour long talks: (optional)
 - Building IaaS with Apache CloudStack: https://www.youtube.com/watch?v=bxEL06BPGNw
