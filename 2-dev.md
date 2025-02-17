@@ -80,7 +80,7 @@ Old videos:
 Video: https://s3-eu-west-1.amazonaws.com/shapeblue-engineering-videos/hackerbook/2-dev/2-dev-chapter.mp4
 
 The recommended development environment is Linux based, in this course Ubuntu
-Linux 20.04+ is preferred. Run the following to install packages required for
+Linux 24.04+ is preferred. Run the following to install packages required for
 CloudStack development on Ubuntu: (see first chapter on software installation)
 
     $ sudo apt-get install openjdk-11-jdk maven mysql-server mysql-client bzip2 nfs-common uuid-runtime python3-setuptools ipmitool genisoimage nfs-kernel-server quota
@@ -203,9 +203,9 @@ when required.
 
 The following is one way to seed a systemvmtemplate, for example for the 4.15:
 
-    wget http://packages.shapeblue.com/systemvmtemplate/4.15/systemvmtemplate-4.15.0-kvm.qcow2.bz2
+    wget http://packages.shapeblue.com.s3-eu-west-1.amazonaws.com/systemvmtemplate/4.20/systemvmtemplate-4.20.0-x86_64-kvm.qcow2.bz2
     ./scripts/storage/secondary/cloud-install-sys-tmplt \
-          -m /export/testing/secondary -f systemvmtemplate-4.15.0-kvm.qcow2.bz2 \
+          -m /export/testing/secondary -f systemvmtemplate-4.20.0-x86_64-kvm.qcow2.bz2 \
           -h kvm -o localhost -r cloud -d cloud
 
 Notes:
@@ -267,6 +267,10 @@ Note: Use pip3 to install/upgrade any dependencies for Marvin
 Example of how to run a marvin based integration test: (change parameters suitably)
 
     $ nosetests --with-xunit --xunit-file=results.xml --with-marvin --marvin-config=/path/to/config.cfg -s -a tags=advanced --hypervisor=KVM test/integration/smoke/test_vm_life_cycle.py
+
+Note: Python version 3.10 may require you to install pynose
+
+    $ pip install pynose
 
 When needed, the usage server can be started using:
 
@@ -583,7 +587,7 @@ For feature submission the typical process is as follows:
 
 **Case Study**: Dynamic Roles feature
 - Functional specification: https://cwiki.apache.org/confluence/display/CLOUDSTACK/Dynamic+Role+Based+API+Access+Checker+for+CloudStack
-- Mailing list: https://markmail.org/message/kkn5ihttg65i76kl
+- Mailing list: https://lists.apache.org/thread/610q6b96vkvqddltxco1dl6b0kxszm8s
 - Jira/bug ticket: https://issues.apache.org/jira/browse/CLOUDSTACK-8562
 - Pull request and reviews: https://github.com/apache/cloudstack/pull/1489
 - Documentation PR: https://github.com/apache/cloudstack-docs-admin/pull/37

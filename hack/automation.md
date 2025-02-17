@@ -49,7 +49,7 @@ more about it here: https://www.ansible.com/resources/get-started
 
 Recommended reading:
 http://docs.cloudstack.apache.org/projects/archived-cloudstack-getting-started/en/latest/ansible.html
-https://docs.ansible.com/ansible/2.6/scenario_guides/guide_cloudstack.html
+https://docs.ansible.com/ansible/2.9/scenario_guides/guide_cloudstack.html
 
 Example projects using Ansible for CloudStack automation:
 - Trillian, ACS environment automation: https://github.com/shapeblue/trillian

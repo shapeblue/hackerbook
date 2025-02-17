@@ -1,7 +1,7 @@
 # Packaging
 
 RPM packaging references:
-- https://fedoraproject.org/wiki/How_to_create_a_GNU_Hello_RPM_package
+- https://docs.fedoraproject.org/en-US/package-maintainers/Packaging_Tutorial_2_GNU_Hello/
 - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/rpm_packaging_guide/index
 - https://rpm-guide.readthedocs.io/en/latest/rpm-guide.html
 
