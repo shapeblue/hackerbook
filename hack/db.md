@@ -79,10 +79,10 @@ represents a row in the table. The VO typically implements the resource
 interface (contract), however for purpose of any subsystem consuming a resource
 object, the resource interface should be used/passed around than a VO instance.
 
-The VO class exports and use several annotations for its table/db fields and
+The VO class exports and uses several annotations for its table/db fields and
 `@Table` to define the name of the table that the VO represents. Most CloudStack
 tables have an internal (bigint) ID or database `id`, but the resources are
-queries by users based on an external string based `uuid`.
+queried by users based on an external string based `uuid`.
 
 Define the `VO` and make it implement the feature/resource interface. For
 example:
@@ -243,7 +243,7 @@ list/add/remove/save details.
 A Finite State Machine or
 [FSM](https://en.wikipedia.org/wiki/Finite-state_machine) defines a transition
 table that takes in a state and an event to transition to a new state. In
-CloudStack FSM is used to implement state machine and restrict how state of a
+CloudStack, FSM is used to implement state machine and restrict how state of a
 resource such as a VM, volume, network etc. transition given an event occurs.
 The resource state and events are both defined as `enum`, usually in the
 resource interface. The resource interface need to extend the `StateObject<S>`

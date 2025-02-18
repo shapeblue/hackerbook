@@ -52,7 +52,7 @@ we can the async-callback method to brew coffee using the configured
 
 ```java
     // Note: callback method should be `protected Void` for `Enhancer` to work
-    protected Void BrewCoffeeAsyncCallback(AsyncCallbackDispatcher<CoffeeManagerImpl, Coffee> callback, CreateCoffeeContext<Coffee> context) {
+    protected Void brewCoffeeAsyncCallback(AsyncCallbackDispatcher<CoffeeManagerImpl, Coffee> callback, CreateCoffeeContext<Coffee> context) {
         Coffee coffee = callback.getResult();
         context.getCoffeeMachine().brew(coffee);
         stateTransitTo(coffee, Coffee.Event.OrderReady);

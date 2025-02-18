@@ -30,9 +30,9 @@ resource, `Coffee`. First define the usage type for the new resource in
 `UsageTypes` and confirm it in the `listUsageTypes` response:
 
 ```java
-    public static final int COFFEE = 30;
+    public static final int COFFEE = 40;
     // .. code redacted ..
-    responseList.add(new UsageTypeResponse(COFFEE, "Coffee usage"));
+    responseList.add(new UsageTypeResponse(COFFEE, "COFFEE", "Coffee usage"));
 ```
 
 Ensure that usage events are emitted by your service layer code when (for
