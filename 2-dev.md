@@ -227,7 +227,7 @@ privileged commands:
 
     username ALL=(ALL) NOPASSWD:CLOUDSTACK
 
-Tip: replace `username` with your Linux username.
+Tip: replace `username` with your Linux or Mac OS username.
 
 ## Building CloudStack
 
