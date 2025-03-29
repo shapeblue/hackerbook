@@ -112,20 +112,16 @@ http://docs.cloudstack.apache.org/en/latest/conceptsandterminology/index.html
 
 ## Workstation Setup
 
-The workstation setup varies depending on personal preference. One can buy a performant and expensive workstation laptop or a more optimal setup of a cost-effective thin/light laptop (such as MacBooks) and a powerful and cost-effective mini PC. For example, getting a decent i7/i9/M1/M2 laptop with 16-32GB RAM or a MacBook Air 24GB RAM (usually in USD 1200-1800 range) and a powerful Intel NUC mini-PC (i7/i9, 64GB RAM, 1TB NVMe, usually in USD 800-1200 range) which can used with [wireguard and mbx](https://github.com/shapeblue/mbx/tree/main#mbx-) for development purposes.
+The workstation setup varies depending on personal preference. One can buy a performant and expensive workstation laptop or a more optimal setup of a cost-effective thin/light laptop (such as MacBooks) and a powerful and cost-effective mini PC. For example, getting a decent x86 (i7/i9) laptop with 32-64GB RAM, or a MacBook Air M3/M4 24-32GB RAM (usually in USD 1200-1800 range) with a x86 mini-PC (i7/i9, 64-96GB RAM, 1TB NVMe, usually in USD 800-1200 range) which can used with [wireguard and mbx](https://github.com/shapeblue/mbx/tree/main#mbx-) for development purposes.
 
 Suggested laptop spec:
-- Intel x64 i7/i9 with VTx/VTd enabled or equivalent AMD, with 8+ CPU cores, 32GB RAM & Ubuntu 24.04 (LTS)
-- MacBook Air 24GB RAM with a 32-64GB RAM 6-12 CPU core x86 Mini PC
+- Intel x64 i7/i9 with VTx/VTd enabled or equivalent AMD, with 16+ CPU cores, 32-64GB RAM & Ubuntu 24.04 (LTS)
+- MacBook Air M3/M4 24-32GB RAM with a 32-64GB RAM, with x86 Mini PC with 12-24 CPU cores and 64-96GB RAM
 
 Reference laptop models/series: Dell XPS, HP ZBook/Elite/Spectre, Think P/X Extreme 
 
-Reference mini PC models:
-- NUC13/14 i7/i9 Mini PC
-- NUC9 Extreme i9
-
 Other Laptop spec/build purchase questions to review:
-- Does laptop have good input devices, ports, extensionabilty?
+- Does laptop have good input devices, ports, extensionabilty? Could you use a type-C hub for ports?
 - Is the laptop durable, and have sturdy hinges, flex-resistant screen and keyboard?
 - Is the laptop model/brand serviceable in your area?
 - What is the post-sales support and warranty?
