@@ -48,13 +48,15 @@ be able to work on any reported issue and offer individual help to the reader.
 We encourage readers to join and ask questions on the Apache CloudStack dev/user
 mailing lists: http://cloudstack.apache.org/mailing-lists.html
 
-## Changelog
+## About
+
+Hackerbook was created by Rohit Yadav <rohit@apache.org> in 2018 to train
+new developers at ShapeBlue. Now, it's been widely used by partners and
+developers in the Apache CloudStack ecosystem.
 
 - 18 Feb 2025 - updated for Ubuntu 24.04 & MacOS as dev platforms
 - 1 Jan 2023 - updated for Ubuntu 22.04 as dev platform
 - 26 Feb 2021 - hackerbook opensourced
-- 22 Feb 2021 - repository updated against Ubuntu 20.04 as dev platform
-- 15 Oct 2018 - hackerbook started by Rohit Yadav to train new engineers at ShapeBlue
 
 ## License
 
