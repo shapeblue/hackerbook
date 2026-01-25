@@ -173,7 +173,7 @@ Note: Intellij IDEA is the preferred and recommended IDE for developing CloudSta
 Productivity recommendations:
 - Develop muscle memory for git, maven, vi/vim and IntelliJ IDEA.
 - Create and maintain a `dotfiles` repo for your env configuration. For example,
-  see https://github.com/rohityadavcloud/dotfiles.
+  see https://github.com/yadvr/dotfiles.
 - Learn to touch type faster.
 
 ## References: Additional Books and Readings  List
