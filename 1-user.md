@@ -3,6 +3,7 @@
 The best way to learn about CloudStack is to start as a user, learn how to setup
 and install it and test drive its features.
 
+* [Architecture Overview](#architecture-overview)
 * [Installing CloudStack](#installing-cloudstack)
     * [Validate your VM](#validate-your-vm)
     * [Configure Networking](#configure-networking)
@@ -22,6 +23,100 @@ and install it and test drive its features.
     * [Access](#access)
     * [CloudStack Feature Set](#cloudstack-feature-set)
     * [CloudStack Ops](#cloudstack-ops)
+
+## Architecture Overview
+
+Before installing, understand what we're building. This all-in-one setup runs
+four components on a single VM:
+
+```
+┌───────────────────────────────────────────────────────────────────┐
+│                        All-in-One VM                              │
+│                                                                   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────────┐ │
+│  │  Management  │  │    MySQL     │  │           NFS            │ │
+│  │    Server    │  │              │  │  /export/primary         │ │
+│  │              │  │              │  │  /export/secondary       │ │
+│  └──────────────┘  └──────────────┘  └──────────────────────────┘ │
+│                                                                   │
+│  ┌──────────────────────────────────────────────────────────────┐ │
+│  │                        KVM Host                              │ │
+│  │                                                              │ │
+│  │     ┌──────┐    ┌──────┐    ┌──────┐                         │ │
+│  │     │ SSVM │    │ CPVM │    │ VMs  │                         │ │
+│  │     └───┬──┘    └───┬──┘    └───┬──┘                         │ │
+│  │         └───────────┼───────────┘                            │ │
+│  │                     │                                        │ │
+│  │              cloudbr0 (192.168.122.10)                       │ │
+│  │                     │                                        │ │
+│  │              eth0/ens3 (bridge port)                         │ │
+│  │                                                              │ │
+│  └──────────────────────────────────────────────────────────────┘ │
+│                            │                                      │
+└────────────────────────────┼──────────────────────────────────────┘
+                             │
+                          Network
+```
+
+### Why cloudbr0?
+
+The bridge (`cloudbr0`) is **required** for CloudStack to function. It acts as
+a virtual switch that:
+
+- Holds the host's IP address (192.168.122.10)
+- Connects the physical NIC (eth0/ens3) to the network
+- Provides network access for all VMs (SSVM, CPVM, virtual routers, guest VMs)
+
+Without a bridge, VMs would be isolated inside the KVM host with no network
+connectivity. CloudStack checks for this bridge when adding a KVM host - if
+it doesn't exist, the host addition fails.
+
+### Storage
+
+| Path | Purpose | Used By |
+|------|---------|---------|
+| /export/primary | VM disks (active I/O) | KVM host mounts this |
+| /export/secondary | Templates, ISOs, snapshots | SSVM manages this |
+
+When you create a VM, the template is copied from secondary to primary storage,
+then the VM boots from primary.
+
+### Traffic Flow
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                  │
+│    ┌──────────────┐         commands/API          ┌──────────────┐               │
+│    │              │ ───────────────────────────▶  │              │               │
+│    │  Mgmt Server │                               │   KVM Host   │               │
+│    │              │ ◀───────────────────────────  │              │               │
+│    └──────┬───────┘      status/heartbeat         └──────┬───────┘               │
+│           │                                              │                       │
+│           │                                              │                       │
+│    DB read/write                                   VM disk I/O                   │
+│           │                                              │                       │
+│           ▼                                              ▼                       │
+│    ┌──────────────┐                               ┌──────────────┐               │
+│    │              │                               │              │               │
+│    │    MySQL     │                               │     NFS      │               │
+│    │              │                               │              │               │
+│    └──────────────┘                               └──────────────┘               │
+│                                                          ▲                       │
+│                                                          │                       │
+│                                         templates/ISOs   │                       │
+│    ┌──────────────┐                                      │                       │
+│    │  Mgmt Server │ ─────────────────────────────────────┘                       │
+│    └──────────────┘                                                              │
+│                                                                                  │
+└──────────────────────────────────────────────────────────────────────────────────┘
+```
+
+| From | To | Purpose |
+|------|-----|---------|
+| Management Server | MySQL | Database queries |
+| Management Server | KVM Host | Commands (start/stop VMs) |
+| KVM Host | NFS | VM disk I/O (heaviest traffic) |
+| SSVM | NFS (secondary) | Template/ISO management |
 
 ## Installing CloudStack
 
