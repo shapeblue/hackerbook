@@ -41,22 +41,24 @@ ShapeBlue opensourced `hackerbook` for the Apache CloudStack community in 2021.
 - [CloudStack Awesome List](https://github.com/resmo/awesome-cloudstack)
 - [CloudStack Docs](http://docs.cloudstack.apache.org/en/latest/)
 
-## Contribution and Getting Help
-
-Raise a pull request to contribute changes to the course documentation. We may not
-be able to work on any reported issue and offer individual help to the reader.
-We encourage readers to join and ask questions on the Apache CloudStack dev/user
-mailing lists: http://cloudstack.apache.org/mailing-lists.html
-
 ## About
 
-Hackerbook was created by Rohit Yadav <rohit@apache.org> in 2018 to train
-new developers at ShapeBlue. Now, it's been widely used by partners and
-developers in the Apache CloudStack ecosystem.
+Hackerbook was created by [Rohit Yadav](https://yadv.in/) in 2018 to train
+and onboard new developers at ShapeBlue to work on Apache CloudStack. Now,
+over the years, it's been widely used and adopted by partners and developers
+in the Apache CloudStack ecosystem.
 
 - 18 Feb 2025 - updated for Ubuntu 24.04 & MacOS as dev platforms
 - 1 Jan 2023 - updated for Ubuntu 22.04 as dev platform
 - 26 Feb 2021 - hackerbook opensourced
+
+## Contribution and Getting Help
+
+Raise a pull request to contribute changes to the course documentation. We may not
+be able to work on any reported issue and offer individual help to the reader.
+
+We encourage readers and learners to join and ask questions on the Apache CloudStack
+dev and user mailing lists: http://cloudstack.apache.org/mailing-lists.html
 
 ## License
 
