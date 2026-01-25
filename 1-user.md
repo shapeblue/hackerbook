@@ -147,7 +147,7 @@ You'll use the `Ubuntu 22.04` host you've created to install CloudStack. This
 guide assumes that the VM is on a 192.168.122.0/24 network, can run KVM on it.
 
 Reference:
-https://rohityadav.cloud/blog/cloudstack-kvm/
+https://yadv.in/blog/cloudstack-kvm/
 
 ### Validate your VM
 
